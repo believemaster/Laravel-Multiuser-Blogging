@@ -1,12 +1,22 @@
-    @extends('admin.layout.master')
+@extends('admin.layout.master')
     @section('content')
+    
+    <script>
+        jQuery(document).ready(function(){
+            jQuery(".myselect").chosen({
+                disable_search_threshold: 10,
+                no_results_text: "Oops No Results Found!",
+                width: "100%"
+            });
+        });
+    </script>
 
     <link rel="stylesheet" href="{{ asset('/admin/assets/scss/style.css') }}">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <strong class="card-title">Permission Create Page</strong>
+                    <strong class="card-title">{{ $page_name }}</strong>
                 </div>
                 <div class="card-body">
                     <!-- Credit Card -->
@@ -22,7 +32,7 @@
                         </div>
                         @endif
 
-                            <form method="post" action="{{ url('/admin/permission/store') }}">
+                            <form method="post" action="{{ url('/admin/roles/store') }}">
                                 @csrf
                                 <div class="form-group">
                                     <label for="name" class="control-label mb-1">Name</label>
@@ -37,6 +47,14 @@
                                 <div class="form-group">
                                     <label for="description" name="description" class="control-label mb-1">Description</label>
                                     <textarea id="description" name="description" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="permission" name="permission[]" class="control-label mb-1">Permission</label>
+                                    <select id="permission" name="permission[]" class="form-control myselect" data-placeholder="Select Permission" multiple="multiple">
+                                        @foreach($permission as $permission)
+                                            <option>{{ $permission, null }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">

@@ -28,6 +28,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/permission/edit/{id}', ['uses'=>'Admin\PermissionController@edit', 'as'=>'permission-edit']);
     Route::put('/permission/update/{id}', ['uses'=>'Admin\PermissionController@update', 'as'=>'permission-update']);
     Route::delete('/permission/delete/{id}', ['uses'=>'Admin\PermissionController@destroy', 'as'=>'permission-delete']);
+    Route::get('/roles', 'Admin\RoleController@index');
+    Route::get('/roles/create', 'Admin\RoleController@create');
+    Route::post('/roles/store', 'Admin\RoleController@store');
 });
 
 Auth::routes();
