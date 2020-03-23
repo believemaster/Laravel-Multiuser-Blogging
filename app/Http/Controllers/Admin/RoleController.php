@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Permission;
 use App\Role;
+use DB;
 use App\Http\Controllers\Controller;
 
 class RoleController extends Controller
@@ -30,7 +31,7 @@ class RoleController extends Controller
     public function create()
     {
         $page_name = "Role Create";
-        $permission = Permission::pluck('name', 'id');
+        $permission = Permission::pluck('id', 'name');
 
         return view('admin.role.create', compact('permission', 'page_name'));
     }
@@ -84,7 +85,14 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $page_name = "Role Edit";
+        $role = Role::find($id);
+
+        $permission = Permission::pluck('id', 'name');
+
+        $selectedPermission = DB::table('permission_role')->where('permission_role.role_id', $id)
+                                                        ->pluck('permission_id')->toArray();
+        return view('admin.role.edit', compact('page_name', 'role', 'permission', 'selectedPermission'));
     }
 
     /**
@@ -96,7 +104,28 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'permission' => 'required|array',
+            'permission.*' => 'required'
+        ],[
+            'name.required' => "Name Field is Required",
+            'permission.required' => "Your Must Select Permissions",
+            'permission.*.required' => "You Must Select a Permission"
+        ]);
+
+        $role = Role::find($id);
+        $role->name = $request->name;
+        $role->display_name = $request->display_name;
+        $role->description = $request->description;
+        $role->save();
+
+        DB::table('permission_role')->where('role_id', $id)->delete();
+
+        foreach($request->permission as $value) {
+            $role->attachPermission($value);
+        }
+        return redirect()->action('Admin\RoleController@index')->with('success', 'Role Updated Successfully');
     }
 
     /**
@@ -107,6 +136,8 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Role::where('id', $id)->delete();
+
+        return redirect()->action('Admin\RoleController@index')->with('success', "Role Deleted Successfully");
     }
 }

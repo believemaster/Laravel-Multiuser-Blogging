@@ -32,21 +32,22 @@
                         </div>
                         @endif
 
-                            <form method="post" action="{{ url('/admin/roles/store') }}">
+                            <form method="post" action="{{ route('role-update', $role) }}">
+                                @method('PUT')
                                 @csrf
                                 <div class="form-group">
                                     <label for="name" class="control-label mb-1">Name</label>
-                                    <input id="name" name="name" type="text" class="form-control">
+                                    <input id="name" name="name" type="text" class="form-control" value="{{ $role->name }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="display_name" name="display_name" class="control-label mb-1">Display Name</label>
-                                    <input id="display_name" name="display_name" type="text" class="form-control">
+                                    <input id="display_name" name="display_name" type="text" class="form-control" value="{{ $role->display_name }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="description" name="description" class="control-label mb-1">Description</label>
-                                    <textarea id="description" name="description" class="form-control"></textarea>
+                                    <textarea id="description" name="description" class="form-control">v{{ $role->description }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="permission" name="permission[]" class="control-label mb-1">Permission</label>
@@ -59,7 +60,7 @@
 
                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                     <i class="fa fa-save fa-lg"></i>&nbsp;
-                                    <span id="payment-button-amount">Save</span>
+                                    <span id="payment-button-amount">Update</span>
                                 </button>
                                 </div>
                             </form>

@@ -31,6 +31,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/roles', 'Admin\RoleController@index');
     Route::get('/roles/create', 'Admin\RoleController@create');
     Route::post('/roles/store', 'Admin\RoleController@store');
+    Route::get('/roles/edit/{id}', ['uses'=>'Admin\RoleController@edit', 'as'=>'role-edit']);
+    Route::put('/roles/update/{id}', ['uses'=>'Admin\RoleController@update', 'as'=>'role-update']);
+    Route::delete('/roles/delete/{id}', ['uses'=>'Admin\RoleController@destroy', 'as'=>'role-delete']);
 });
 
 Auth::routes();
