@@ -39,7 +39,7 @@ class PermissionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name'=>'required|alpha_num'
+            'name'=>'required'
         ], [
             'name.required'=> "Name Field Is Required",
             'name.alpha_num'=>"This Field Accepts Alpha Numeric Characters"
@@ -88,7 +88,7 @@ class PermissionController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name'=>'required|alpha_num'
+            'name'=>'required'
         ], [
             'name.required'=> "Name Field Is Required",
             'name.alpha_num'=>"This Field Accepts Alpha Numeric Characters"

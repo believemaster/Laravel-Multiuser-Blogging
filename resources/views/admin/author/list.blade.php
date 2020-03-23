@@ -41,9 +41,7 @@
 
                     <div class="card-header">
                         <strong class="card-title">{{ $page_name }}</strong>
-                        @permission(['Post Add', 'All'])
-                        <a href="{{ url('/admin/permission/create') }}" class="btn btn-primary pull-right">Create</a>
-                        @endpermission
+                        <a href="{{ url('/admin/author/create') }}" class="btn btn-primary pull-right">Create</a>
                     </div>
                     <div class="card-body">
                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -51,8 +49,8 @@
                     <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Display Name</th>
-                    <th>Description</th>
+                    <th>Email</th>
+                    <th>Role</th>
                     <th>Action</th>
                     </tr>
                 </thead>
@@ -61,19 +59,23 @@
                     <tr>
                     <td>{{ ++$i }}</td>
                     <td>{{ $row->name }}</td>
-                    <td>{{ $row->display_name }}</td>
-                    <td>{{ $row->description }}</td>
+                    <td>{{ $row->email }}</td>
                     <td>
-                        @permission(['Post Add', 'All'])
-                        <a href="{{ url('/admin/permission/edit/'.$row->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                        @endpermission
-                        @permission(['Post Add', 'All'])
-                        <form method="post" action="{{ url('/admin/permission/delete/'.$row->id) }}" style="display:inline">
+                        @if($row->roles()->get())
+                            <ul style="padding: 20px; margin: 20px">
+                                @foreach($row->roles()->get() as $role)
+                                    <li>{{ $role->name }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </td>
+                    <td>
+                        <a href="{{ url('/admin/author/edit/'.$row->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                        <form method="post" action="{{ url('/admin/author/delete/'.$row->id) }}" style="display:inline">
                         @method('DELETE')
                         @csrf
                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                         </form>
-                        @endpermission
                     </td>
                     </tr>
                 @endforeach

@@ -22,18 +22,33 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/category', 'Admin\CategoryController@index');
     Route::get('/category/create', 'Admin\CategoryController@create');
     Route::get('/category/edit', 'Admin\CategoryController@edit');
-    Route::get('/permission', 'Admin\PermissionController@index');
-    Route::get('/permission/create', 'Admin\PermissionController@create');
-    Route::post('/permission/store', 'Admin\PermissionController@store');
-    Route::get('/permission/edit/{id}', ['uses'=>'Admin\PermissionController@edit', 'as'=>'permission-edit']);
-    Route::put('/permission/update/{id}', ['uses'=>'Admin\PermissionController@update', 'as'=>'permission-update']);
-    Route::delete('/permission/delete/{id}', ['uses'=>'Admin\PermissionController@destroy', 'as'=>'permission-delete']);
+    
+    Route::get('/permission', ['uses'=>'Admin\PermissionController@index', 'as'=>'permission-list', 
+                               'middleware'=>'permission:Permission List|All']);
+    Route::get('/permission/create', ['uses'=>'Admin\PermissionController@create', 'as'=>'permission-create', 
+                                      'middleware'=>'permission:Permission List|All']);
+    Route::post('/permission/store', ['uses'=>'Admin\PermissionController@store', 'as'=>'permission-store', 
+                                      'middleware'=>'permission:Permission List|All']);
+    Route::get('/permission/edit/{id}', ['uses'=>'Admin\PermissionController@edit', 'as'=>'permission-edit', 
+                                         'middleware'=>'permission:Permission List|All']);
+    Route::put('/permission/update/{id}', ['uses'=>'Admin\PermissionController@update', 'as'=>'permission-update', 
+                                           'middleware'=>'permission:Permission List|All']);
+    Route::delete('/permission/delete/{id}', ['uses'=>'Admin\PermissionController@delete', 'as'=>'permission-delete', 
+                                              'middleware'=>'permission:Permission List|All']);
+    
     Route::get('/roles', 'Admin\RoleController@index');
     Route::get('/roles/create', 'Admin\RoleController@create');
     Route::post('/roles/store', 'Admin\RoleController@store');
     Route::get('/roles/edit/{id}', ['uses'=>'Admin\RoleController@edit', 'as'=>'role-edit']);
     Route::put('/roles/update/{id}', ['uses'=>'Admin\RoleController@update', 'as'=>'role-update']);
     Route::delete('/roles/delete/{id}', ['uses'=>'Admin\RoleController@destroy', 'as'=>'role-delete']);
+
+    Route::get('/author', 'Admin\AuthorController@index');
+    Route::get('/author/create', 'Admin\AuthorController@create');
+    Route::post('/author/store', 'Admin\AuthorController@store');
+    Route::get('/author/edit/{id}', ['uses'=>'Admin\AuthorController@edit', 'as'=>'author-edit']);
+    Route::put('/author/update/{id}', ['uses'=>'Admin\AuthorController@update', 'as'=>'author-update']);
+    Route::delete('/author/delete/{id}', ['uses'=>'Admin\AuthorController@destroy', 'as'=>'author-delete']);
 });
 
 Auth::routes();
