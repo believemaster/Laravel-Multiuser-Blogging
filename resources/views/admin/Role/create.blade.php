@@ -49,10 +49,10 @@
                                     <textarea id="description" name="description" class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="permission" name="permission[]" class="control-label mb-1">Permission</label>
+                                    <label for="permission" name="permission" class="control-label mb-1">Permission</label>
                                     <select id="permission" name="permission[]" class="form-control myselect" data-placeholder="Select Permission" multiple="multiple">
                                         @foreach($permission as $permission)
-                                            <option>{{ $permission }}</option>
+                                            <option value="{{ $permission->id }}">{{ $permission->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -61,6 +61,7 @@
                                     <i class="fa fa-save fa-lg"></i>&nbsp;
                                     <span id="payment-button-amount">Save</span>
                                 </button>
+
                                 </div>
                             </form>
                         </div>

@@ -43,7 +43,7 @@
                                     <label for="roles" name="roles[]" class="control-label mb-1">Roles</label>
                                     <select id="roles" name="roles[]" class="form-control myselect" data-placeholder="Select Role" multiple="multiple">
                                         @foreach($roles as $roles)
-                                            <option>{{ $roles }}</option>
+                                            <option value="{{ $roles->id }}">{{ $roles->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

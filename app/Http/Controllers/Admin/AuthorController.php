@@ -32,7 +32,7 @@ class AuthorController extends Controller
     public function create()
     {
         $page_name = 'Author Create';
-        $roles = Role::pluck('id', 'name');
+        $roles = Role::select('name', 'id')->get();
 
         return view('admin.author.create', compact('page_name', 'roles'));
     }
@@ -91,7 +91,7 @@ class AuthorController extends Controller
     {
         $page_name = 'Author Edit';
         $author = User::find($id);
-        $roles = Role::pluck('id', 'name');
+        $roles = Role::select('name', 'id')->get();
 
         $selectedRoles = DB::table('role_user')->where('user_id', $id)->pluck('role_id')->toArray();
 

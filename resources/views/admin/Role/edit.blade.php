@@ -47,13 +47,13 @@
 
                                 <div class="form-group">
                                     <label for="description" name="description" class="control-label mb-1">Description</label>
-                                    <textarea id="description" name="description" class="form-control">v{{ $role->description }}</textarea>
+                                    <textarea id="description" name="description" class="form-control">{{ $role->description }}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="permission" name="permission[]" class="control-label mb-1">Permission</label>
+                                    <label for="permission" name="permission" class="control-label mb-1">Permission</label>
                                     <select id="permission" name="permission[]" class="form-control myselect" data-placeholder="Select Permission" multiple="multiple">
                                         @foreach($permission as $permission)
-                                            <option>{{ $permission }}</option>
+                                            <option value="{{ $permission->id }}">{{ $permission->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

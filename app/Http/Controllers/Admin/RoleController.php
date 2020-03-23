@@ -31,9 +31,10 @@ class RoleController extends Controller
     public function create()
     {
         $page_name = "Role Create";
-        $permission = Permission::pluck('id', 'name');
+        $permission = Permission::select('name', 'id')->get();
+        // $permission = Permission::pluck('name', 'id'); // This method didn't worked so applied above method and get the data in template
 
-        return view('admin.role.create', compact('permission', 'page_name'));
+        return view('admin.role.create', compact('page_name', 'permission'));
     }
 
     /**
@@ -88,7 +89,7 @@ class RoleController extends Controller
         $page_name = "Role Edit";
         $role = Role::find($id);
 
-        $permission = Permission::pluck('id', 'name');
+        $permission = Permission::select('name', 'id')->get();
 
         $selectedPermission = DB::table('permission_role')->where('permission_role.role_id', $id)
                                                         ->pluck('permission_id')->toArray();
@@ -107,7 +108,7 @@ class RoleController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'permission' => 'required|array',
-            'permission.*' => 'required'
+            'permission.*' => 'required|string'
         ],[
             'name.required' => "Name Field is Required",
             'permission.required' => "Your Must Select Permissions",
