@@ -1,6 +1,7 @@
 @extends('admin.layout.master')
     @section('content')
 
+    <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>
     <script>
         jQuery(document).ready(function(){
             jQuery(".myselect").chosen({
@@ -8,7 +9,7 @@
                 no_results_text: "Oops No Results Found!",
                 width: "100%"
             });
-            jQuery("textarea.my-editor").ckeditor({
+            jQuery("textarea.ckeditor").ckeditor({
                 filebrowserImageBrowseUrl: '{{ url("/public") }}/laravel-filemanager?type-Images',
                 filebrowserImageBrowseUrl: '{{ url("/public") }}/laravel-filemanager/upload?type-Images&_token={{ csrf_token() }}',
                 filebrowserBrowseUrl: '{{ url("/public") }}/laravel-filemanager?type-Files',
@@ -61,7 +62,7 @@
 
                                 <div class="form-group">
                                     <label for="description" name="description" class="control-label mb-1">Description</label>
-                                    <textarea id="description" name="description" class="form-control my-editor" rows="8" cols="12"></textarea>
+                                    <textarea id="description" name="description" class="form-control ckeditor" rows="8" cols="12"></textarea>
                                 </div>
 
                                 <div class="form-group">
