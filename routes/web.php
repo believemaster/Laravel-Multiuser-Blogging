@@ -90,6 +90,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::put('/comment/status/{id}', ['uses'=>'Admin\CommentController@status', 'as'=>'comment-status', 
                                         'middleware'=>'permission:Post List|All']);
 
+    Route::get('/settings', ['uses'=>'Admin\SettingController@index', 'as'=>'setting', 
+    'middleware'=>'permission:Post List|All']);
+    Route::put('/settings/update', ['uses'=>'Admin\SettingController@update', 'as'=>'setting-update', 
+    'middleware'=>'permission:Post List|All']);
+
 });
 
 Auth::routes();
