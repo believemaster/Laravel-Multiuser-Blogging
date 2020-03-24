@@ -42,7 +42,7 @@
                     <div class="card-header">
                         <strong class="card-title">{{ $page_name }}</strong>
                         @permission(['Post Add', 'All'])
-                        <a href="{{ url('/admin/category/create') }}" class="btn btn-primary pull-right">Create</a>
+                        <a href="{{ url('/admin/post/create') }}" class="btn btn-primary pull-right">Create</a>
                         @endpermission
                     </div>
                     <div class="card-body">
@@ -50,8 +50,12 @@
                 <thead>
                     <tr>
                     <th>#</th>
-                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Total Views</th>
                     <th>Status</th>
+                    <th>Hot News</th>
                     <th>Action</th>
                     </tr>
                 </thead>
@@ -59,9 +63,18 @@
                 @foreach($data as $i=>$row)
                     <tr>
                     <td>{{ ++$i }}</td>
-                    <td>{{ $row->name }}</td>
                     <td>
-                        <form method="post" action="{{ url('/admin/category/status/'.$row->id) }}" style="display:inline">
+                        @if(file_exists(public_path('/post/').$row->thumb_image))
+                        <img src="{{ asset('public/post') }}/{{ $row->thumb_image }}" class="img img-responsive" />
+                        @endif
+                    </td>
+
+                    <td>{{ $row->title }}</td>
+                    <td>{{ $row->creator->name }}</td>
+                    <td>{{ $row->view_count }}</td>
+
+                    <td>
+                        <form method="post" action="{{ url('/admin/post/status/'.$row->id) }}" style="display:inline">
                         @method('PUT')
                         @csrf
                         @if($row->status === 1)
@@ -71,12 +84,25 @@
                         @endif
                         </form>
                     </td>
+
+                    <td>
+                        <form method="post" action="{{ url('/admin/post/hot/news/'.$row->id) }}" style="display:inline">
+                        @method('PUT')
+                        @csrf
+                        @if($row->hot_news === 1)
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-times"></i> No</button>
+                        @else
+                        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Yes</button>
+                        @endif
+                        </form>
+                    </td>
+
                     <td>
                         @permission(['Post Add', 'All'])
-                        <a href="{{ url('/admin/category/edit/'.$row->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                        <a href="{{ url('/admin/post/edit/'.$row->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                         @endpermission
                         @permission(['Post Add', 'All'])
-                        <form method="post" action="{{ url('/admin/category/delete/'.$row->id) }}" style="display:inline">
+                        <form method="post" action="{{ url('/admin/post/delete/'.$row->id) }}" style="display:inline">
                         @method('DELETE')
                         @csrf
                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>

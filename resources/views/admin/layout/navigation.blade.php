@@ -32,7 +32,12 @@
                     @endpermission
                     @permission(['Category List', 'All'])
                     <li>
-                        <a href="{{ url('/admin/category') }}"> <i class="menu-icon fa fa-list"></i>Category </a>
+                        <a href="{{ url('/admin/category') }}"> <i class="menu-icon fa fa-list"></i>Categories </a>
+                    </li>
+                    @endpermission
+                    @permission(['Post List', 'All'])
+                    <li>
+                        <a href="{{ url('/admin/post') }}"> <i class="menu-icon fa fa-book"></i>Posts </a>
                     </li>
                     @endpermission
 

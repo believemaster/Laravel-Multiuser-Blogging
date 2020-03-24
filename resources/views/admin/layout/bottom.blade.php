@@ -3,6 +3,8 @@
     <script src="{{ asset('/admin/assets/js/plugins.js') }}"></script>
     <script src="{{ asset('/admin/assets/js/main.js') }}"></script>
 
+    <script type="text/javascript" src="{{ asset('/public/vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+    <script type="text/javascript" src="asset('/public/vendor/unisharp/laravel-ckeditor/adapters/jquery.js) }}"></script>
 
     <script src="{{ asset('/admin/assets/js/lib/chart-js/Chart.bundle.js') }}"></script>
     <script src="{{ asset('/admin/assets/js/dashboard.js') }}"></script>

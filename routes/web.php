@@ -63,7 +63,24 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::put('/category/update/{id}', ['uses'=>'Admin\CategoryController@update', 'as'=>'category-update', 
                                         'middleware'=>'permission:Category Update|All']);
     Route::delete('/category/delete/{id}', ['uses'=>'Admin\CategoryController@destroy', 'as'=>'category-delete', 
-                                        'middleware'=>'permission:Category Delete|All']);                                    
+                                        'middleware'=>'permission:Category Delete|All']);     
+                            
+    Route::get('/post', ['uses'=>'Admin\PostController@index', 'as'=>'post-list', 
+                        'middleware'=>'permission:Post List|All']);
+    Route::get('/post/create', ['uses'=>'Admin\PostController@create', 'as'=>'post-create', 
+                                'middleware'=>'permission:Post List|All']);
+    Route::post('/post/store', ['uses'=>'Admin\PostController@store', 'as'=>'post-store', 
+                                'middleware'=>'permission:Post List|All']);
+    Route::put('/post/status/{id}', ['uses'=>'Admin\PostController@status', 'as'=>'post-status', 
+                                    'middleware'=>'permission:Post List|All']);
+    Route::put('/post/hot/news/{id}', ['uses'=>'Admin\PostController@hot_news', 'as'=>'post-hot news', 
+                                    'middleware'=>'permission:Post List|All']);
+    Route::get('/post/edit/{id}', ['uses'=>'Admin\PostController@edit', 'as'=>'post-edit', 
+                                    'middleware'=>'permission:Post List|All']);
+    Route::put('/post/update/{id}', ['uses'=>'Admin\PostController@update', 'as'=>'post-update', 
+                                    'middleware'=>'permission:Post Update|All']);
+    Route::delete('/post/delete/{id}', ['uses'=>'Admin\PostController@destroy', 'as'=>'post-delete', 
+                                    'middleware'=>'permission:Post Delete|All']);
 
 });
 
