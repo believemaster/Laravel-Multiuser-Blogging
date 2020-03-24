@@ -41,21 +41,16 @@
 
                     <div class="card-header">
                         <strong class="card-title">{{ $page_name }}</strong>
-                        @permission(['Post Add', 'All'])
-                        <a href="{{ url('/admin/post/create') }}" class="btn btn-primary pull-right">Create</a>
-                        @endpermission
                     </div>
                     <div class="card-body">
                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                     <th>#</th>
-                    <th>Image</th>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Total Views</th>
+                    <th>Name</th>
+                    <th>Post</th>
+                    <th>Comment</th>
                     <th>Status</th>
-                    <th>Hot News</th>
                     <th>Action</th>
                     </tr>
                 </thead>
@@ -63,18 +58,13 @@
                 @foreach($data as $i=>$row)
                     <tr>
                     <td>{{ ++$i }}</td>
-                    <td>
-                        @if(file_exists(public_path('/post/').$row->thumb_image))
-                        <img src="{{ asset('public/post') }}/{{ $row->thumb_image }}" class="img img-responsive" />
-                        @endif
-                    </td>
 
-                    <td>{{ $row->title }}</td>
-                    <td>{{ $row->creator->name }}</td>
-                    <td>{{ $row->view_count }}</td>
+                    <td>{{ $row->name }}</td>
+                    <td>{{ $row->post->title }}</td>
+                    <td>{{ $row->comment }}</td>
 
                     <td>
-                        <form method="post" action="{{ url('/admin/post/status/'.$row->id) }}" style="display:inline">
+                        <form method="post" action="{{ url('/admin/comment/status/'.$row->id) }}" style="display:inline">
                         @method('PUT')
                         @csrf
                         @if($row->status === 1)
@@ -86,30 +76,8 @@
                     </td>
 
                     <td>
-                        <form method="post" action="{{ url('/admin/post/hot/news/'.$row->id) }}" style="display:inline">
-                        @method('PUT')
-                        @csrf
-                        @if($row->hot_news === 1)
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-times-circle"></i> No</button>
-                        @else
-                        <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Yes</button>
-                        @endif
-                        </form>
-                    </td>
-
-                    <td>
                         @permission(['Post Add', 'All'])
-                        <a href="{{ url('/admin/comment/'.$row->id) }}" class="btn btn-info"><i class="fa fa-comments-o"></i></a>
-                        @endpermission
-                        @permission(['Post Add', 'All'])
-                        <a href="{{ url('/admin/post/edit/'.$row->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                        @endpermission
-                        @permission(['Post Add', 'All'])
-                        <form method="post" action="{{ url('/admin/post/delete/'.$row->id) }}" style="display:inline">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                        </form>
+                        <a href="{{ url('/admin/comment/reply/'.$row->post_id) }}" class="btn btn-info"><i class="fa fa-reply"></i></a>
                         @endpermission
                     </td>
                     </tr>

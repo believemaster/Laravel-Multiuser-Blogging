@@ -65,9 +65,9 @@
                         @method('PUT')
                         @csrf
                         @if($row->status === 1)
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-times"></i> Unpublish</button>
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-times-circle"></i> Unpublish</button>
                         @else
-                        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Publish</button>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Publish</button>
                         @endif
                         </form>
                     </td>
