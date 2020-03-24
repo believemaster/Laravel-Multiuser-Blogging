@@ -27,7 +27,9 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        return view('admin.permission.create');
+        $page_name = 'Permission Create';
+
+        return view('admin.permission.create', compact('page_name'));
     }
 
     /**

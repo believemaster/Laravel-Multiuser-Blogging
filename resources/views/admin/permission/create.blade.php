@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <strong class="card-title">Permission Create Page</strong>
+                    <strong class="card-title">{{ $page_name }}</strong>
                 </div>
                 <div class="card-body">
                     <!-- Credit Card -->
