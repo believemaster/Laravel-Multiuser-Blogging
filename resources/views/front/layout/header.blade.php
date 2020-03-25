@@ -58,11 +58,10 @@
                                             <form role="form">
                                                 <!-- Input Group -->
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control"
-                                                           placeholder="Type Something"> 
-                                                           <span class="input-group-btn">
-                                                                <button type="submit" class="btn btn-primary">Search</button>
-                                                            </span>
+                                                    <input type="text" class="form-control" placeholder="Type Something"> 
+                                                        <span class="input-group-btn">
+                                                            <button type="submit" class="btn btn-primary">Search</button>
+                                                        </span>
                                                 </div>
                                             </form>
                                         </div>
@@ -91,8 +90,8 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="#navbar-collapse-1">
                         <ul class="nav navbar-nav main-nav">
-                            <li class="active"><a href="{{ url('/') }}">Home</a></li>
-                            @foreach($shareData['categories'] as $category)
+                            <li><a href="{{ url('/') }}">Home</a></li>
+                            @foreach($shareData['categories']->take(5) as $category)
                             <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
                             @endforeach
 
@@ -106,6 +105,26 @@
                                                 <li class="dropdown-header">Authors</li>
                                                 @foreach($shareData['authors'] as $author)
                                                 <li><a href="{{ url('/author') }}/{{ $author->id }}">{{ $author->name }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="m-menu-content">
+                                            <ul class="col-sm-3">
+                                                <li class="dropdown-header">Other Categories</li>
+                                                @foreach($shareData['categories']->slice(0, 5) as $category)
+                                                <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="m-menu-content">
+                                            <ul class="col-sm-3">
+                                                <li class="dropdown-header">Other Categories</li>
+                                                @foreach($shareData['categories']->slice(5, 10) as $category)
+                                                <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
