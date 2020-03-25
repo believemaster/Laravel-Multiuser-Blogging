@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Setting;
+use App\Category;
+use App\User;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,11 +37,17 @@ class AppServiceProvider extends ServiceProvider
             elseif($key === 3) $admin_logo = $setting->value;
         }
 
+        $categories = Category::where('status', 1)->get();
+
+        $authors = User::where('id', '!=', 1)->get();
+
         $shareData = array(
             'system_name'=>$system_name,
             'favicon'=>$favicon,
             'front_logo'=>$front_logo,
             'admin_logo'=>$admin_logo,
+            'categories'=>$categories,
+            'authors'=>$authors,
         );
         view()->share('shareData', $shareData);
 
