@@ -112,7 +112,7 @@
                                     <li>
                                         <div class="m-menu-content">
                                             <ul class="col-sm-3">
-                                                <li class="dropdown-header">Other Categories</li>
+                                                <li class="dropdown-header">Categories</li>
                                                 @foreach($shareData['categories']->slice(0, 5) as $category)
                                                 <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
                                                 @endforeach
@@ -122,8 +122,18 @@
                                     <li>
                                         <div class="m-menu-content">
                                             <ul class="col-sm-3">
-                                                <li class="dropdown-header">Other Categories</li>
+                                                <li class="dropdown-header">Categories</li>
                                                 @foreach($shareData['categories']->slice(5, 10) as $category)
+                                                <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="m-menu-content">
+                                            <ul class="col-sm-3">
+                                                <li class="dropdown-header">Cateories</li>
+                                                @foreach($shareData['categories']->slice(10, 15) as $category)
                                                 <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
                                                 @endforeach
                                             </ul>
