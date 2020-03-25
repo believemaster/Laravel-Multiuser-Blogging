@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomePageController@index');
 Route::get('/listing', 'ListingPageController@index');
 Route::get('/details', 'DetailsPageController@index');
+
+Route::get('/category/{id}', 'ListingPageController@listing');
+Route::get('/author/{id}', 'ListingPageController@listing');
+
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/dashboard', 'Admin\DashboardController@index');
     Route::get('/category', 'Admin\CategoryController@index');

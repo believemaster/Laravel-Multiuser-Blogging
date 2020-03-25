@@ -104,7 +104,7 @@
     <div class="article_title header_purple">
         <h2><a href="" target="_self">{{ $category->name }}</a></h2>
     </div>
-    <!----article_title------>
+    <!-- article_title -->
 
     @foreach($category->posts->take(5) as $key=>$item)
     @if($key === 0)
@@ -116,7 +116,7 @@
                     <img class="img-responsive" src="{{ asset('/storage/post') }}/{{ $item->list_image }}" alt="{{ $item->title }}">
                     </a>
                 </div>
-                <!----top_article_img------>
+                <!-- top_article_img -->
             </div>
             <div class="col-md-6">
                 <span class="tag purple">{{ $category->name }}</span>
@@ -124,18 +124,18 @@
                 <div class="category_article_title">
                     <h2><a href="{{ url('/details') }}/{{ $item->slug }}">{{ $item->title }}</a></h2>
                 </div>
-                <!----category_article_title------>
+                <!-- category_article_title --->
                 <div class="category_article_date"><a href="#">{{ date('F j,Y', strtotime($item->created_at)) }}</a>, by: <a href="{{ url('/author') }}/{{ $item->creator->id }}">{{ $item->creator->name }}</a></div>
-                <!----category_article_date------>
+                <!-- category_article_date -->
                 <div class="category_article_content">
                     {{ str_limit($item->short_description, 100, '...') }}
                 </div>
-                <!----category_article_content------>
+                <!-- category_article_content -->
                 <div class="media_social">
                     <!-- <span><a href="#"><i class="fa fa-share-alt"></i>424 </a> Shares</span> -->
                     <span><i class="fa fa-comments-o"></i><a href="">{{ count($item->comments) }}</a> Comments</span>
                 </div>
-                <!----media_social------>
+                <!-- media_social -->
             </div>
         </div>
     </div>
