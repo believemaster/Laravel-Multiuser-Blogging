@@ -5,8 +5,8 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="{{ asset('/admin/images/logo.png') }}" alt="Logo"></a> <!-- Replace Logo with own -->
-                <a class="navbar-brand hidden" href="./"><img src="{{ asset('/admin/images/logo2.png') }}" alt="Logo"></a>
+                <a class="navbar-brand" href="{{ url('/admin') }}"><img src="{{ asset('storage/others') }}/{{ $shareData['admin_logo'] }}" alt=""></a> <!-- Replace Logo with own -->
+                <a class="navbar-brand hidden" href="{{ url('/admin') }}"><img src="{{ asset('storage/others') }}/{{ $shareData['admin_logo'] }}" alt=""></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">

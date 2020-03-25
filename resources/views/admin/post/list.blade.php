@@ -65,7 +65,7 @@
                     <td>{{ ++$i }}</td>
                     <td>
                         @if(file_exists(public_path('/post/').$row->thumb_image))
-                        <img src="{{ asset('/public/post') }}/{{ $row->thumb_image }} }}" class="img img-responsive" />
+                        <img src="{{ asset('/storage/post') }}/{{ $row->thumb_image }}" class="img img-responsive" />
                         @endif
                     </td>
 
