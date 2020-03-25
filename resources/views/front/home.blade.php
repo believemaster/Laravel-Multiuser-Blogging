@@ -8,32 +8,31 @@
             <div class="col-md-7">
                 <div class="feature_article_wrapper">
                     <div class="feature_article_img">
-                        <img class="img-responsive top_static_article_img" src="{{ asset('/front/img/feature-top.jpg') }}"
-                             alt="feature-top">
+                        <img class="img-responsive top_static_article_img" src="{{ asset('/storage/post') }}/{{ $hot_news->main_image }}"
+                             alt="{{ $hot_news->title }}">
                     </div>
                     <!-- feature_article_img -->
 
                     <div class="feature_article_inner">
                         <div class="tag_lg red"><a href="category.html">Hot News</a></div>
                         <div class="feature_article_title">
-                            <h1><a href="single.html" target="_self">Chevrolet car-saving technology delivers </a></h1>
+                            <h1><a href="{{ url('/details') }}/{{ $hot_news->slug }}" target="_self">{{ $hot_news->title }}</a></h1>
                         </div>
                         <!-- feature_article_title -->
 
-                        <div class="feature_article_date"><a href="#" target="_self">Stive Clark</a>,<a href="#"
-                                                                                                         target="_self">Aug
-                            4, 2015</a></div>
+                        <div class="feature_article_date">
+                        <a href="{{ url('/author') }}/{{ $hot_news->creator->id }}" >{{ $hot_news->creator->name }}</a>,
+                        <a href="#" target="_self">{{ date('F j,Y', strtotime($hot_news->created_at)) }}</a></div>
                         <!-- feature_article_date -->
 
                         <div class="feature_article_content">
-                            In a move to address mounting concerns about security on Android, Google and Samsung are
-                            now issuing.
+                        {{ $hot_news->short_description }}
                         </div>
                         <!-- feature_article_content -->
 
                         <div class="article_social">
-                            <span><i class="fa fa-share-alt"></i><a href="#">424</a>Shares</span>
-                            <span><i class="fa fa-comments-o"></i><a href="#">4</a>Comments</span>
+                            <!-- <span><i class="fa fa-share-alt"></i><a href="#">424</a>Shares</span> -->
+                            <span><i class="fa fa-comments-o"></i><a href="{{ url('/details') }}/{{ $hot_news->comments_count }}">{{ $hot_news->comments_count }}</a>Comments</span>
                         </div>
                         <!-- article_social -->
 
@@ -46,33 +45,34 @@
             </div>
             <!-- col-md-7 -->
 
-            <div class="col-md-5">
+            @foreach($top_viewed as $item)
+            <div class="col-md-5" style="margin-bottom: 3%">
+                
                 <div class="feature_static_wrapper">
                     <div class="feature_article_img">
-                        <img class="img-responsive" src="{{ asset('/front/img/feature-static1.jpg') }}" alt="feature-top">
+                        <img class="img-responsive" width="450" style="height: 270px;" src="{{ asset('/storage/post') }}/{{ $item->main_image }}" alt="{{ $item->title }}">
                     </div>
                     <!-- feature_article_img -->
 
                     <div class="feature_article_inner">
                         <div class="tag_lg purple"><a href="category.html">Top Viewed</a></div>
                         <div class="feature_article_title">
-                            <h1><a href="single.html" target="_self">Alcatel's $180 Idol 3 4.7 is a </a></h1>
+                            <h1><a href="{{ url('/details') }}/{{ $item->slug }}" target="_self">{{ str_limit($item->title, 30, '..') }}</a></h1>
                         </div>
                         <!-- feature_article_title -->
 
-                        <div class="feature_article_date"><a href="#" target="_self">Stive Clark</a>,<a href="#"
-                                                                                                         target="_self">Aug
-                            4, 2015</a></div>
+                        <div class="feature_article_date"><a href="{{ url('/author') }}/{{ $item->creator->id }}" target="_self">{{ $item->creator->name }}</a>,
+                        <a href="#" target="_self">{{ date('F j,Y', strtotime($hot_news->created_at)) }}</a></div>
                         <!-- feature_article_date -->
 
                         <div class="feature_article_content">
-                            In a move to address mounting concerns about security on Android...
+                        {{ str_limit($item->short_description, 50, '...') }}
                         </div>
                         <!-- feature_article_content -->
 
                         <div class="article_social">
-                            <span><i class="fa fa-share-alt"></i><a href="#">424</a>Shares</span>
-                            <span><i class="fa fa-comments-o"></i><a href="#">4</a>Comments</span>
+                            <!-- <span><i class="fa fa-share-alt"></i><a href="#">424</a>Shares</span> -->
+                            <span><i class="fa fa-comments-o"></i><a href="{{ url('/details') }}/{{ $hot_news->comments_count }}">{{ $hot_news->comments_count }}</a>Comments</span>
                         </div>
                         <!-- article_social -->
 
@@ -83,47 +83,7 @@
                 <!-- feature_static_wrapper -->
 
             </div>
-            <!-- col-md-5 -->
-
-            <div class="col-md-5">
-                <div class="feature_static_last_wrapper">
-                    <div class="feature_article_img">
-                        <img class="img-responsive" src="{{ asset('/front/img/feature-static2.jpg') }}" alt="feature-top">
-                    </div>
-                    <!-- feature_article_img -->
-
-                    <div class="feature_article_inner">
-                        <div class="tag_lg blue"><a href="category.html">Top Viewed</a></div>
-
-                        <div class="feature_article_title">
-                            <h1><a href="single.html" target="_self">Gadget user good news</a></h1>
-                        </div>
-                        <!-- feature_article_title -->
-
-                        <div class="feature_article_date"><a href="#" target="_self">Stive Clark</a>,<a href="#"
-                                                                                                         target="_self">Aug
-                            4, 2015</a></div>
-                        <!-- feature_article_date -->
-
-                        <div class="feature_article_content">
-                            In a move to address mounting concerns about security on Android...
-                        </div>
-                        <!-- feature_article_content -->
-
-                        <div class="article_social">
-                            <span><i class="fa fa-share-alt"></i><a href="#">424</a>Shares</span>
-                            <span><i class="fa fa-comments-o"></i><a href="#">4</a>Comments</span>
-                        </div>
-                        <!-- article_social -->
-
-                    </div>
-                    <!-- feature_article_inner -->
-
-                </div>
-                <!-- feature_static_wrapper -->
-
-            </div>
-            <!-- col-md-5 -->
+            @endforeach
 
         </div>
         <!-- Row -->
@@ -802,87 +762,31 @@
 <div class="col-md-4">
 <div class="widget">
     <div class="widget_title widget_black">
-        <h2><a href="#">Popular News</a></h2>
+        <h2><a href="#">Most Viewed</a></h2>
     </div>
+
+    @foreach($shareData['most_viewed'] as $item)
     <div class="media">
         <div class="media-left">
-            <a href="#"><img class="media-object" src="{{ asset('/front/img/pop_right1.jpg') }}" alt="Generic placeholder image"></a>
+            <a href="{{ url('/details') }}/{{ $item->slug }}">
+            <img class="media-object" src="{{ asset('/storage/post') }}/{{ $item->thumb_image }}" alt="{{ $item->title }}"></a>
         </div>
         <div class="media-body">
             <h3 class="media-heading">
-                <a href="single.html" target="_self">Canon launches photo centric 00214 Model supper shutter camera</a>
-            </h3> <span class="media-date"><a href="#">10Aug- 2015</a>,  by: <a href="#">Eric joan</a></span>
+                <a href="{{ url('/details') }}/{{ $item->slug }}" target="_self">{{ $item->title }}</a>
+            </h3> <span class="media-date"><a href="#">{{ date('j F -y', strtotime($item->created_at)) }}</a>,  by: <a href="{{ url('/author') }}/{{ $item->creator->id }}">{{ $item->creator->name }}</a></span>
 
             <div class="widget_article_social">
-                <span>
+                <!-- <span>
                     <a href="single.html" target="_self"> <i class="fa fa-share-alt"></i>424</a> Shares
-                </span>
+                </span> -->
                 <span>
-                    <a href="single.html" target="_self"><i class="fa fa-comments-o"></i>4</a> Comments
+                    <a href="single.html" target="_self"><i class="fa fa-comments-o"></i>{{ count($item->comments) }}</a> Comments
                 </span>
             </div>
         </div>
     </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#"><img class="media-object" src="{{ asset('/front/img/pop_right2.jpg') }}" alt="Generic placeholder image"></a>
-        </div>
-        <div class="media-body">
-            <h3 class="media-heading">
-                <a href="single.html" target="_self">Samsung galaxy note are the supper mobile of all products.</a>
-            </h3>
-            <span class="media-date"><a href="#">10Aug- 2015</a>,  by: <a href="#">Eric joan</a></span>
-
-            <div class="widget_article_social">
-                <span>
-                    <a href="single.html" target="_self"> <i class="fa fa-share-alt"></i>424</a> Shares
-                </span>
-                <span>
-                    <a href="single.html" target="_self"><i class="fa fa-comments-o"></i>4</a> Comments
-                </span>
-            </div>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#"><img class="media-object" src="{{ asset('/front/img/pop_right3.jpg') }}" alt="Generic placeholder image"></a>
-        </div>
-        <div class="media-body">
-            <h3 class="media-heading">
-                <a href="single.html" target="_self">Apple launches photo-centric wrist watch for Android</a>
-            </h3>
-            <span class="media-date"><a href="#">10Aug- 2015</a>,  by: <a href="#">Eric joan</a></span>
-
-            <div class="widget_article_social">
-                <span>
-                    <a href="single.html" target="_self"> <i class="fa fa-share-alt"></i>424</a> Shares
-                </span>
-                <span>
-                    <a href="single.html" target="_self"><i class="fa fa-comments-o"></i>4</a> Comments
-                </span>
-            </div>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#"><img class="media-object" src="{{ asset('/front/img/pop_right4.jpg') }}" alt="Generic placeholder image"></a>
-        </div>
-        <div class="media-body">
-            <h3 class="media-heading">
-                <a href="single.html" target="_self">Kodak Hi-Speed shutter double shot camera comming soon</a>
-            </h3>
-            <span class="media-date"><a href="#">10Aug- 2015</a>,  by: <a href="#">Eric joan</a></span>
-
-            <div class="widget_article_social">
-                <span>
-                    <a href="single.html" target="_self"><i class="fa fa-share-alt"></i>424</a> Shares
-                </span>
-                <span>
-                    <a href="single.html" target="_self"><i class="fa fa-comments-o"></i>4</a> Comments
-                </span>
-            </div>
-        </div>
-    </div>
+    @endforeach
     <p class="widget_divider"><a href="#" target="_self">More News&nbsp;&raquo;</a></p>
 </div>
 <!-- Popular News -->
@@ -980,63 +884,23 @@
     <div class="widget_title widget_black">
         <h2><a href="#">Most Commented</a></h2>
     </div>
+    @foreach($shareData['most_commented'] as $item)
     <div class="media">
         <div class="media-left">
-            <a href="#"><img class="media-object" src="{{ asset('/front/img/pop_right1.jpg') }}" alt="Generic placeholder image"></a>
+            <a href="{{ url('/details') }}/{{ $item->slug }}">
+            <img class="media-object" src="{{ asset('/storage/post') }}/{{ $item->thumb_image }}" alt="{{ $item->title }}"></a>
         </div>
         <div class="media-body">
             <h3 class="media-heading">
-                <a href="single.html" target="_self">Yasaki camera launches new generic hi-speed shutter camera.</a>
+                <a href="{{ url('/details') }}/{{ $item->slug }}">{{ $item->title }}</a>
             </h3>
 
             <div class="media_social">
-                <span><i class="fa fa-comments-o"></i><a href="#">4</a> Comments</span>
+                <span><i class="fa fa-comments-o"></i><a href="#">{{ $item->comments_count }}</a> Comments</span>
             </div>
         </div>
     </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#"><img class="media-object" src="{{ asset('/front/img/pop_right2.jpg') }}" alt="Generic placeholder image"></a>
-        </div>
-        <div class="media-body">
-            <h3 class="media-heading">
-                <a href="single.html" target="_self">Samsung is the best mobile in the android market.</a>
-            </h3>
-
-            <div class="media_social">
-                <span><i class="fa fa-comments-o"></i><a href="#">4</a> Comments</span>
-            </div>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#"><img class="media-object" src="{{ asset('/front/img/pop_right3.jpg') }}" alt="Generic placeholder image"></a>
-        </div>
-        <div class="media-body">
-            <h3 class="media-heading">
-                <a href="single.html" target="_self">Apple launches photo-centric wrist watch for Android</a>
-            </h3>
-
-            <div class="media_social">
-                <span><i class="fa fa-comments-o"></i><a href="#">4</a> Comments</span>
-            </div>
-        </div>
-    </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#"><img class="media-object" src="{{ asset('/front/img/pop_right4.jpg') }}" alt="Generic placeholder image"></a>
-        </div>
-        <div class="media-body">
-            <h3 class="media-heading">
-                <a href="single.html" target="_self">DSLR is the most old camera at this time readmore about new
-                    products</a>
-            </h3>
-
-            <div class="media_social">
-                <span><i class="fa fa-comments-o"></i><a href="#">4</a> Comments</span>
-            </div>
-        </div>
-    </div>
+    @endforeach
     <p class="widget_divider"><a href="#" target="_self">More News&nbsp;&nbsp;&raquo; </a></p>
 </div>
 <!-- Most Commented News -->
