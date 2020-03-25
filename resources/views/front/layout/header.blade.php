@@ -13,15 +13,15 @@
                                             </span>
                         <!-- Time -->
                         <div class="social">
-                            <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
+                            <a class="icons-sm fb-ic" href="https://www.facebook.com/believemaster"><i class="fa fa-facebook"></i></a>
                             <!--Twitter-->
-                            <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
+                            <a class="icons-sm tw-ic" href="https://www.twitter.com/believe_master"><i class="fa fa-twitter"></i></a>
                             <!--Google +-->
-                            <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
+                            <a class="icons-sm inst-ic" href="https://www.instagram.com/believemaster"><i class="fa fa-instagram"> </i></a>
                             <!--Linkedin-->
-                            <a class="icons-sm tmb-ic"><i class="fa fa-tumblr"> </i></a>
+                            <a class="icons-sm tmb-ic" href="https://www.tumblr.com/blog/believemaster"><i class="fa fa-tumblr"> </i></a>
                             <!--Pinterest-->
-                            <a class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
+                            <a class="icons-sm rss-ic" href="https://www.youtube.com/believemaster"><i class="fa fa-youtube-play"> </i></a>
                         </div>
                         <!-- Top Social Section -->
                     </div>
@@ -59,11 +59,11 @@
                                                 <!-- Input Group -->
                                                 <div class="input-group">
                                                     <input type="text" class="form-control"
-                                                           placeholder="Type Something"> <span class="input-group-btn">
-                                                                            <button type="submit"
-                                                                                    class="btn btn-primary">Search
-                                                                            </button>
-                                                                        </span></div>
+                                                           placeholder="Type Something"> 
+                                                           <span class="input-group-btn">
+                                                                <button type="submit" class="btn btn-primary">Search</button>
+                                                            </span>
+                                                </div>
                                             </form>
                                         </div>
                                     </li>

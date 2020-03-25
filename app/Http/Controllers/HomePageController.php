@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Category;
 
 class HomePageController extends Controller
 {
@@ -23,6 +24,12 @@ class HomePageController extends Controller
                             ->limit(2)
                             ->get();
 
-        return view('front.home', compact('hot_news', 'top_viewed'));
+        $category_posts = Category::with('posts')
+                                    ->where('status',1)
+                                    ->orderBy('id','DESC')
+                                    ->limit(5)
+                                    ->get();
+
+        return view('front.home', compact('hot_news', 'top_viewed', 'category_posts'));
     }
 }

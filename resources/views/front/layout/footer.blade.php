@@ -160,22 +160,22 @@
                 <div class="footer">
                     <div class="col-sm-3">
                         <div class="social">
-                            <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
+                            <a class="icons-sm fb-ic" href="https://www.facebook.com/believemaster"><i class="fa fa-facebook"></i></a>
                             <!--Twitter-->
-                            <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
+                            <a class="icons-sm tw-ic" href="https://www.twitter.com/believe_master"><i class="fa fa-twitter"></i></a>
                             <!--Google +-->
-                            <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
+                            <a class="icons-sm inst-ic" href="https://www.instagram.com/believemaster"><i class="fa fa-instagram"> </i></a>
                             <!--Linkedin-->
-                            <a class="icons-sm tmb-ic"><i class="fa fa-tumblr"> </i></a>
+                            <a class="icons-sm tmb-ic" href="https://www.tumblr.com/blog/believemaster"><i class="fa fa-tumblr"> </i></a>
                             <!--Pinterest-->
-                            <a class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
+                            <a class="icons-sm rss-ic" href="https://www.youtube.com/believemaster"><i class="fa fa-youtube-play"> </i></a>
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <p>&copy; Copyright 2016-Tech News . Design by: <a href="https://uicookies.com">uiCookies</a> </p>
+                        <p>&copy; Copyright 2020-Believe Master News . Developed by: <a href="https://believemaster.github.io">Believe Master</a> </p>
                     </div>
                     <div class="col-sm-3">
-                        <p>Technology News Magazine</p>
+                        <p>All In One News</p>
                     </div>
                 </div>
             </div>
