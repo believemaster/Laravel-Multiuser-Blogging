@@ -69,13 +69,13 @@
     <div class="entity_footer">
         <div class="entity_tag">
         @foreach($related_news as $news)
-            <span class="blank"><a href="{{ url('/category') }}/{{ $news->id }}">{{ $news->category->name }}</a></span>
+            <span class="blank"><a href="{{ url('/category') }}/{{ $news->id }}">{{ $news->category['name'] }}</a></span>
         @endforeach
         </div>
         <!-- entity_tag -->
 
         <div class="entity_social">
-            <span><i class="fa fa-share-alt"></i>424 <a href="#">Shares</a> </span>
+            <!-- <span><i class="fa fa-share-alt"></i>424 <a href="#">Shares</a> </span> -->
             <span><i class="fa fa-comments-o"></i><a href="#">{{ count($post->comments) }} Comments</a></span>
         </div>
         <!-- entity_social -->
@@ -101,10 +101,10 @@
                     <img class="media-object" src="{{ asset('/storage/post') }}/{{ $news->thumb_image }}" alt="{{ $news->title }}"></a>
                 </div>
                 <div class="media-body">
-                    <span class="tag purple"><a href="{{ url('/category') }}/{{ $news->id }}" target="_self">{{ $news->category->name }}</a></span>
+                    <span class="tag purple"><a href="{{ url('/category') }}/{{ $news->id }}" target="_self">{{ $news->category['name'] }}</a></span>
 
                     <h3 class="media-heading"><a href="{{ url('/details') }}/{{ $news->slug }}" target="_self">{{ $news->title }}</a></h3>
-                    <span class="media-date"><a href="#">{{ date('j F -y', strtotime($news->created_at)) }}</a>,  by: <<a href="{{ url('/author') }}/{{ $news->creator->id }}">{{ $news->creator->name }}</a></span>
+                    <span class="media-date"><a href="#">{{ date('j F -y', strtotime($news->created_at)) }}</a>,  by: <a href="{{ url('/author') }}/{{ $news->creator->id }}">{{ $news->creator['name'] }}</a></span>
 
                     <div class="media_social">
                         <!-- <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Shares</span> -->
@@ -212,7 +212,7 @@
         <div class="media-body">
             <h3 class="media-heading">
                 <a href="{{ url('/details') }}/{{ $item->slug }}" target="_self">{{ $item->title }}</a>
-            </h3> <span class="media-date"><a href="#">{{ date('j F -y', strtotime($item->created_at)) }}</a>,  by: <a href="{{ url('/author') }}/{{ $item->creator->id }}">{{ $item->creator->name }}</a></span>
+            </h3> <span class="media-date"><a href="#">{{ date('j F -y', strtotime($item->created_at)) }}</a>,  by: <a href="{{ url('/author') }}/{{ $item->creator->id }}">{{ $item->creator['name'] }}</a></span>
 
             <div class="widget_article_social">
                 <!-- <span>

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomePageController@index');
 Route::get('/listing', 'ListingPageController@index');
-Route::get('/category/{id}', 'ListingPageController@listing');
+Route::get('/category/{id}', 'ListingPageController@listingCategory');
 Route::get('/author/{id}', 'ListingPageController@listing');
 
 Route::get('/details', 'DetailsPageController@index');

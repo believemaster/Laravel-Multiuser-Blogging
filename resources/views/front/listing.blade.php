@@ -66,7 +66,7 @@
             <!-- top_article_img -->
 
             <div class="category_article_title">
-                <h5><a href="{{ url('/details') }}/{{ $post->slug }}">{{ $post->title }}</a></h5>
+                <h5><a href="{{ url('/details') }}/{{ $post->slug }}">{{ str_limit($post->title, 35, '...') }}</a></h5>
             </div>
             <!-- category_article_title -->
 

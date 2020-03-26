@@ -99,7 +99,7 @@
 <div class="row">
 <div class="col-md-8">
 
-@foreach($category_posts as $category)
+@foreach($shareData['categories'] as $category)
 <div class="category_section mobile">
     <div class="article_title header_purple">
         <h2><a href="{{ url('/category') }}/{{ $category->id }}" target="_self">{{ $category->name }}</a></h2>
@@ -173,6 +173,12 @@
 </div>
 @endforeach
 <!-- Category News Section -->
+<nav aria-label="Page navigation" class="pagination_section">
+    <div class="pagination">
+        {{ $shareData['categories']->links() }}
+    </div>
+</nav>
+<!-- navigation -->
 </div>
 <!-- Left Section -->
 
