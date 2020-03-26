@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <a href="index.html"><img src="{{ asset('storage/others') }}/{{ $shareData['front_logo'] }}" alt="Logo"></a>
+                        <a href="{{ url('/') }}"><img src="{{ asset('storage/others') }}/{{ $shareData['front_logo'] }}" alt="Logo"></a>
                     </div>
                     <!-- Logo Section -->
                 </div>
@@ -91,7 +91,7 @@
                     <div class="collapse navbar-collapse" id="#navbar-collapse-1">
                         <ul class="nav navbar-nav main-nav">
                             <li><a href="{{ url('/') }}">Home</a></li>
-                            @foreach($shareData['categories']->take(5) as $category)
+                            @foreach($shareData['categories']->take(6) as $category)
                             <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
                             @endforeach
 

@@ -82,7 +82,7 @@
 
             <div class="article_social">
                 <!-- <span><a href="#"><i class="fa fa-share-alt"></i>424 </a> Shares</span> -->
-                <span><i class="fa fa-comments-o"></i><a href="#">{{ count($post->comments) }}</a>  Comments</span>
+                <span><i class="fa fa-comments-o"></i><a href="#">{{ count($post->comments) }}  Comments</a></span>
             </div>
             <!-- article_social -->
 

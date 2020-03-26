@@ -102,7 +102,7 @@
 @foreach($category_posts as $category)
 <div class="category_section mobile">
     <div class="article_title header_purple">
-        <h2><a href="" target="_self">{{ $category->name }}</a></h2>
+        <h2><a href="{{ url('/category') }}/{{ $category->id }}" target="_self">{{ $category->name }}</a></h2>
     </div>
     <!-- article_title -->
 

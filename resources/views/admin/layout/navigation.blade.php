@@ -12,7 +12,7 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                 <h3 class="menu-title">BM Blogs Control Pannel</h3>
-                    <li class="active">
+                    <li>
                         <a href="{{ url('/admin/dashboard') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     @permission(['Permission Update', 'All', 'Permission'])

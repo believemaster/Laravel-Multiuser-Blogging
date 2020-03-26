@@ -19,7 +19,7 @@ class ListingPageController extends Controller
                         ->where('category_id', $id)
                         ->orWhere('created_by', $id)
                         ->orderBy('id', 'DESC')
-                        ->paginate(3);
+                        ->paginate(5);
         return view('front.listing', compact('posts'));
     }
 }

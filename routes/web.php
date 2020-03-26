@@ -16,10 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomePageController@index');
 Route::get('/listing', 'ListingPageController@index');
-Route::get('/details', 'DetailsPageController@index');
-
 Route::get('/category/{id}', 'ListingPageController@listing');
 Route::get('/author/{id}', 'ListingPageController@listing');
+
+Route::get('/details', 'DetailsPageController@index');
+Route::get('/details/{slug}', 'DetailsPageController@index')->name('details');
+
+Route::post('/comments', 'DetailsPageController@comment');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/dashboard', 'Admin\DashboardController@index');
