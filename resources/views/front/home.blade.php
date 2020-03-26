@@ -5,6 +5,13 @@
 <section id="feature_news_section" class="feature_news_section">
     <div class="container">
         <div class="row">
+
+            @if($message = Session::get('success'))
+                <div class="alert alert-success">
+                    {{ $message }}
+                </div>
+            @endif
+
             <div class="col-md-7">
                 <div class="feature_article_wrapper">
                     <div class="feature_article_img">
