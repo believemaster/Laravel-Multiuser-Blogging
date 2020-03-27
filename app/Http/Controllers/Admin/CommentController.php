@@ -53,6 +53,7 @@ class CommentController extends Controller
     public function showComments(){
         $page_name = 'All Comments';
         $data = Comment::all();
+
         return view('admin.comment.commentslist', compact('data', 'page_name'));
     }
 

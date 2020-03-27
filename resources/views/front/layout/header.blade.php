@@ -38,14 +38,14 @@
                         <ul class="nav navbar-nav">
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
-                            <li class="dropdown lang">
+                            <!-- <li class="dropdown lang">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">En <i
                                         class="fa fa-angle-down"></i></button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <li><a href="#">Bn</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                         </ul>
                         <!-- Language Section -->
 

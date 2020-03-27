@@ -23,39 +23,39 @@ class SettingController extends Controller
 
         $fav_settings = Setting::find(2);
         if($request->file('favicon')){
-            @unlink(public_path('/others/'.$fav_settings->value));
+            @unlink(public_path('/storage/others/'.$fav_settings->value));
             
             $file = $request->file('favicon');
             $extension = $file->getClientOriginalExtension();
             $favicon = 'favicon.'.$extension;
 
-            $file->move(public_path('/others'), $favicon);
+            $file->move(public_path('/storage/others'), $favicon);
             $fav_settings->value = $favicon;
             $fav_settings->save();
         }
 
         $front_settings = Setting::find(3);
         if($request->file('front_logo')){
-            @unlink(public_path('/others/'.$front_settings->value));
+            @unlink(public_path('/storage/others/'.$front_settings->value));
             
             $file = $request->file('front_logo');
             $extension = $file->getClientOriginalExtension();
             $front_logo = 'front_logo.'.$extension;
 
-            $file->move(public_path('/others'), $front_logo);
+            $file->move(public_path('/storage/others'), $front_logo);
             $front_settings->value = $front_logo;
             $front_settings->save();
         }
 
         $admin_settings = Setting::find(4);
         if($request->file('admin_logo')){
-            @unlink(public_path('/others/'.$admin_settings->value));
+            @unlink(public_path('/storage/others/'.$admin_settings->value));
             
             $file = $request->file('admin_logo');
             $extension = $file->getClientOriginalExtension();
             $admin_logo = 'admin_logo.'.$extension;
 
-            $file->move(public_path('/others'), $admin_logo);
+            $file->move(public_path('/storage/others'), $admin_logo);
             $admin_settings->value = $admin_logo;
             $admin_settings->save();
         }

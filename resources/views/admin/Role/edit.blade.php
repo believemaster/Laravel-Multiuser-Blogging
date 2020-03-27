@@ -53,7 +53,7 @@
                                     <label for="permission" name="permission" class="control-label mb-1">Permission</label>
                                     <select id="permission" name="permission[]" class="form-control myselect" data-placeholder="Select Permission" multiple="multiple">
                                         @foreach($permission as $permission)
-                                            <option value="{{ $permission->id }}">{{ $permission->name }}</option>
+                                                <option value="{{ $permission->id }}">{{ $permission->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
