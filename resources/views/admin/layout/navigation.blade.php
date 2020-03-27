@@ -40,6 +40,11 @@
                         <a href="{{ url('/admin/post') }}"> <i class="menu-icon fa fa-book"></i>Posts </a>
                     </li>
                     @endpermission
+                    @permission(['Post List', 'All'])
+                    <li>
+                        <a href="{{ url('/admin/comments') }}"> <i class="menu-icon fa fa-comments"></i>Comments </a>
+                    </li>
+                    @endpermission
                     @permission(['System Settings', 'All'])
                     <li>
                         <a href="{{ url('/admin/settings') }}"> <i class="menu-icon fa fa-cog"></i>Settings </a>

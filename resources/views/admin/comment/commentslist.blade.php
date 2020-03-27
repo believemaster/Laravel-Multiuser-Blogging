@@ -48,9 +48,10 @@
                     <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Post</th>
                     <th>Comment</th>
+                    <th>Post Id</th>
                     <th>Status</th>
+                    <th>Email</th>
                     <th>Action</th>
                     </tr>
                 </thead>
@@ -58,23 +59,11 @@
                 @foreach($data as $i=>$row)
                     <tr>
                     <td>{{ ++$i }}</td>
-
                     <td>{{ $row->name }}</td>
-                    <td>{{ $row->post->title }}</td>
                     <td>{{ $row->comment }}</td>
-
-                    <td>
-                        <form method="post" action="{{ url('/admin/comment/status/'.$row->id) }}" style="display:inline">
-                        @method('PUT')
-                        @csrf
-                        @if($row->status === 1)
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-times-circle"></i> Unpublish</button>
-                        @else
-                        <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Publish</button>
-                        @endif
-                        </form>
-                    </td>
-
+                    <td>{{ $row->post_id }}</td>
+                    <td>{{ $row->status }}</td>
+                    <td>{{ $row->email }}</td>
                     <td>
                         @permission(['Post Add', 'All'])
                         <a href="{{ url('/admin/comment/reply/'.$row->post_id) }}" class="btn btn-info"><i class="fa fa-reply"></i></a>

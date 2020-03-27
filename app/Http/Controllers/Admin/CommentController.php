@@ -49,4 +49,18 @@ class CommentController extends Controller
 
         return redirect()->route('comment-list', ['id'=>$comment->post_id])->with('success', 'Comment Status Changed Successfully');
     }
+
+    public function showComments(){
+        $page_name = 'All Comments';
+        $data = Comment::all();
+        return view('admin.comment.commentslist', compact('data', 'page_name'));
+    }
+
+    public function destroy($id)
+    {
+        $comment = Comment::find($id);
+        $comment->delete();
+
+        return redirect()->route('comments-all')->with('success', "Comment Deleted Successfully");
+    }
 }
