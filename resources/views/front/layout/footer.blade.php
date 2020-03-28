@@ -75,14 +75,15 @@
                 <div class="footer_widget_title">
                     <h3><a href="#" target="_self">Editor Picks</a></h3>
                 </div>
+                @foreach($shareData['most_viewed']->random(3) as $item)
                 <div class="media">
                     <div class="media-left">
-                        <a href="#"><img class="media-object" src="{{ asset('/front/img/editor_pic1.jpg') }}"
-                                         alt="Generic placeholder image"></a>
+                        <a href="{{ url('/details') }}/{{ $item->slug }}"><img class="media-object" src="{{ asset('/storage/post') }}/{{ $item->thumb_image }}"
+                        height="65px" width="65px" alt="{{ $item->title }}"></a>
                     </div>
                     <div class="media-body">
                         <h3 class="media-heading">
-                            <a href="single.html">Apple launches photo-centric wrist watch for Android</a>
+                            <a href="single.html">{{ str_limit($item->title, 50, '...') }}</a>
                         </h3>
                         <span class="rating">
                             <i class="fa fa-star"></i>
@@ -93,46 +94,11 @@
                         </span>
                     </div>
                 </div>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#"><img class="media-object" src="{{ asset('/front/img/editor_pic2.jpg') }}"
-                                         alt="Generic placeholder image"></a>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="media-heading">
-                            <a href="single.html">Apple launches photo-centric wrist watch for Android</a>
-                        </h3>
-                        <span class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-full"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#"><img class="media-object" src="{{ asset('/front/img/editor_pic3.jpg') }}"
-                                         alt="Generic placeholder image"></a>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="media-heading">
-                            <a href="single.html">Apple launches photo-centric wrist watch for Android</a>
-                        </h3>
-                        <span class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-full"></i>
-                        </span>
-                    </div>
-                </div>
+                 @endforeach
             </div>
             <div class="col-md-3">
                 <div class="footer_widget_title">
-                    <h3><a href="category.html" target="_self">Tech Photos</a></h3>
+                    <h3><a href="category.html" target="_self">Gallery</a></h3>
                 </div>
                 <div class="widget_photos">
                     <img class="img-thumbnail" src="{{ asset('/front/img/tech_photo1.jpg') }}" alt="Tech Photos">
@@ -147,7 +113,6 @@
                     <img class="img-thumbnail" src="{{ asset('/front/img/tech_photo10.jpg') }}" alt="Tech Photos">
                     <img class="img-thumbnail" src="{{ asset('/front/img/tech_photo11.jpg') }}" alt="Tech Photos">
                 </div>
-
             </div>
         </div>
     </div>
