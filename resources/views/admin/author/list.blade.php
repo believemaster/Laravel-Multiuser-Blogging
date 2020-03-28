@@ -5,22 +5,11 @@
 
     <link rel="stylesheet" href="{{ asset('/admin/assets/css/lib/datatable/dataTables.bootstrap.min.css') }}">
 
-    <div class="breadcrumbs">
+    <div class="breadcrumb">
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
                     <h1>{{ $page_name }}</h1>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-8">
-            <div class="page-header float-right">
-                <div class="page-title">
-                    <ol class="breadcrumb text-right">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Table</a></li>
-                        <li class="active">Data table</li>
-                    </ol>
                 </div>
             </div>
         </div>
@@ -40,8 +29,9 @@
                 @endif
 
                     <div class="card-header">
-                        <strong class="card-title">{{ $page_name }}</strong>
+                    @permission(['Post Add', 'All'])
                         <a href="{{ url('/admin/author/create') }}" class="btn btn-primary pull-right">Create</a>
+                    @endpermission
                     </div>
                     <div class="card-body">
                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -93,8 +83,8 @@
     {{-- Data Table JS --}}
 
     <script src="{{ asset('/admin/assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('/admin/assets/js/lib/data-table/datatables.min.js') }}"></script>
+    <script src="{{ asset('/admin/assets/js/lib/data-table/dataTables.bootstrap.min.js') }}"></script>
     <script src="{{ asset('/admin/assets/js/lib/data-table/dataTables.buttons.min.js') }}"></script>
     <script src="{{ asset('/admin/assets/js/lib/data-table/buttons.bootstrap.min.js') }}"></script>
     <script src="{{ asset('/admin/assets/js/lib/data-table/jszip.min.js') }}"></script>

@@ -5,22 +5,11 @@
 
     <link rel="stylesheet" href="{{ asset('/admin/assets/css/lib/datatable/dataTables.bootstrap.min.css') }}">
 
-    <div class="breadcrumbs">
+    <div class="breadcrumb">
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
                     <h1>{{ $page_name }}</h1>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-8">
-            <div class="page-header float-right">
-                <div class="page-title">
-                    <ol class="breadcrumb text-right">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Table</a></li>
-                        <li class="active">Data table</li>
-                    </ol>
                 </div>
             </div>
         </div>
@@ -40,7 +29,7 @@
                 @endif
 
                     <div class="card-header">
-                        <strong class="card-title">{{ $page_name }}</strong>
+                        <strong class="card-title">List Of Comments With Post</strong>
                     </div>
                     <div class="card-body">
                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
