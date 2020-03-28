@@ -1,131 +1,200 @@
-<header id="header" class="header">
+<!-- <header id="header" class="header">
 
-            <div class="header-menu">
+    <div class="header-menu">
 
-                <div class="col-sm-7">
-                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
-                    <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                            </form>
-                        </div>
+        <div class="col-sm-7">
+            <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+        </div>
 
-                        <div class="dropdown for-notification">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-bell"></i>
-                            <span class="count bg-danger">5</span>
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="notification">
-                            <p class="red">You have 3 Notification</p>
-                            <a class="dropdown-item media bg-flat-color-1" href="#">
-                                <i class="fa fa-check"></i>
-                                <p>Server #1 overloaded.</p>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-4" href="#">
-                                <i class="fa fa-info"></i>
-                                <p>Server #2 overloaded.</p>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-5" href="#">
-                                <i class="fa fa-warning"></i>
-                                <p>Server #3 overloaded.</p>
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="dropdown for-message">
-                          <button class="btn btn-secondary dropdown-toggle" type="button"
-                                id="message"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="ti-email"></i>
-                            <span class="count bg-primary">9</span>
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="message">
-                            <p class="red">You have 4 Mails</p>
-                            <a class="dropdown-item media bg-flat-color-1" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="{{ asset('/admin/images/avatar/1.jpg') }}"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Jonathan Smith</span>
-                                    <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
-                                </span>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-4" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="{{ asset('/admin/images/avatar/2.jpg') }}"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Jack Sanders</span>
-                                    <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                </span>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-5" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="{{ asset('/admin/images/avatar/3.jpg') }}"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Cheryl Wheeler</span>
-                                    <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
-                                </span>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-3" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="{{ asset('/admin/images/avatar/4.jpg') }}"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Rachel Santos</span>
-                                    <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                </span>
-                            </a>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-5">
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="{{ asset('/admin/images/admin.jpg') }}" alt="User Avatar">
-                        </a>
-
-                        <div class="user-menu dropdown-menu">
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
-
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
-
-                                <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-
-                                <a class="nav-link" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                       document.getElementById('logout-form').submit();">
-                                       <i class="fa fa-power -off"></i>Logout
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                </form>
-                        </div>
-                    </div>
-
-                    <div class="language-select dropdown" id="language-select">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">
-                            <i class="flag-icon flag-icon-us"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="language" >
-                            <div class="dropdown-item">
-                                <span class="flag-icon flag-icon-fr"></span>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-es"></i>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-us"></i>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-it"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+        <div class="col-sm-5">
+            <div class="float-right">
+                <a class="nav-link" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        <i class="fa fa-power -off"></i>Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                </form>
             </div>
 
-        </header><!-- /header -->
+        </div>
+    </div>
+
+</header> -->
+
+
+<header class="main-header">
+    <!-- Logo -->
+    <a href="{{ url('/') }}" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><i class="fa fa-newspaper-o"></i></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b><img src="{{ asset('storage/others') }}/{{ $shareData['admin_logo'] }}" height="30px" width="200px"></span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <!-- Menu toggle button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope-o"></i>
+              <span class="label label-success">4</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 4 messages</li>
+              <li>
+                <!-- inner menu: contains the messages -->
+                <ul class="menu">
+                  <li><!-- start message -->
+                    <a href="#">
+                      <div class="pull-left">
+                        <!-- User Image -->
+                        <img src="{{ asset('/admin/assets/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                      </div>
+                      <!-- Message title and timestamp -->
+                      <h4>
+                        Support Team
+                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                      </h4>
+                      <!-- The message -->
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <!-- end message -->
+                </ul>
+                <!-- /.menu -->
+              </li>
+              <li class="footer"><a href="#">See All Messages</a></li>
+            </ul>
+          </li>
+          <!-- /.messages-menu -->
+
+          <!-- Notifications Menu -->
+          <li class="dropdown notifications-menu">
+            <!-- Menu toggle button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-warning">10</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 10 notifications</li>
+              <li>
+                <!-- Inner Menu: contains the notifications -->
+                <ul class="menu">
+                  <li><!-- start notification -->
+                    <a href="#">
+                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                    </a>
+                  </li>
+                  <!-- end notification -->
+                </ul>
+              </li>
+              <li class="footer"><a href="#">View all</a></li>
+            </ul>
+          </li>
+          <!-- Tasks Menu -->
+          <li class="dropdown tasks-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-flag-o"></i>
+              <span class="label label-danger">9</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 9 tasks</li>
+              <li>
+                <!-- Inner menu: contains the tasks -->
+                <ul class="menu">
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <!-- Task title and progress text -->
+                      <h3>
+                        Design some buttons
+                        <small class="pull-right">20%</small>
+                      </h3>
+                      <!-- The progress bar -->
+                      <div class="progress xs">
+                        <!-- Change the css width attribute to simulate progress -->
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">20% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                </ul>
+              </li>
+              <li class="footer">
+                <a href="#">View all tasks</a>
+              </li>
+            </ul>
+          </li>
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <img src="{{ asset('/admin/assets/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs">Alexander Pierce</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <li class="user-header">
+                <img src="{{ asset('/admin/assets/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+
+                <p>
+                  Alexander Pierce - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            <i class="fa fa-power -off"></i>Sign out
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                    </form>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</header>

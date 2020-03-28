@@ -3,24 +3,20 @@
 @section('content')
 
 
-    <link rel="stylesheet" href="{{ asset('/admin/assets/css/lib/datatable/dataTables.bootstrap.min.css') }}">
-
-    <div class="breadcrumb">
-        <div class="col-sm-4">
-            <div class="page-header float-left">
-                <div class="page-title">
-                    <h1>{{ $page_name }}</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            <div class="row">
-
-            <div class="col-md-12">
-                <div class="card">
+<div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        {{ $page_name }}
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="{{ url('admin/dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Authors</li>
+      </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
 
                 @if($message = Session::get('success'))
                     <div class="alert alert-success">
@@ -28,13 +24,14 @@
                     </div>
                 @endif
 
-                    <div class="card-header">
+                    <div class="box-header">
+                    <h3 class="box-title">{{ $page_name }}</h3>
                     @permission(['Post Add', 'All'])
                         <a href="{{ url('/admin/author/create') }}" class="btn btn-primary pull-right">Create</a>
                     @endpermission
                     </div>
-                    <div class="card-body">
-                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                    <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped dt-responsive">
                 <thead>
                     <tr>
                     <th>#</th>
@@ -71,39 +68,27 @@
                 @endforeach
                 </tbody>
                 </table>
-                    </div>
+                </div>
                 </div>
             </div>
-
-
-            </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
+        </div>
+    </section>
+    </div>
 
     {{-- Data Table JS --}}
 
-    <script src="{{ asset('/admin/assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/datatables.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/dataTables.bootstrap.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/buttons.bootstrap.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/jszip.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/buttons.colVis.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/datatables-init.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/datatables-init.js') }}"></script>
-
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#bootstrap-data-table-export').DataTable();
-        } );
+    <script>
+    $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+        'paging'      : true,
+        'lengthChange': false,
+        'searching'   : false,
+        'ordering'    : true,
+        'info'        : true,
+        'autoWidth'   : false
+        })
+    })
     </script>
 
     {{-- Data Table JS Ends --}}

@@ -6,30 +6,18 @@
 <head>
     @include('admin.layout.top')
 </head>
-<body>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
 
+   @include('admin.layout.header')
+    
+   @include('admin.layout.navigation')
+   
+    @yield('content')
+    
+<div class="control-sidebar-bg"></div>
+</div>
 
-    <!-- Left Panel -->
-
-    @include('admin.layout.navigation')
-
-    <!-- Left Panel -->
-
-    <!-- Right Panel -->
-
-    <div id="right-panel" class="right-panel">
-
-        <!-- Header-->
-        @include('admin.layout.header')
-        <!-- Header-->
-
-        @yield('content')
-
-    </div><!-- /#right-panel -->
-
-    <!-- Right Panel -->
-
-    @include('admin.layout.bottom')
-
+@include('admin.layout.bottom')
 </body>
 </html>

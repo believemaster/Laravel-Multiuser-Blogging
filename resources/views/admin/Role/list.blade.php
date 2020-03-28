@@ -3,36 +3,33 @@
 @section('content')
 
 
-    <link rel="stylesheet" href="{{ asset('/admin/assets/css/lib/datatable/dataTables.bootstrap.min.css') }}">
-
-    <div class="breadcrumb">
-        <div class="col-sm-4">
-            <div class="page-header float-left">
-                <div class="page-title">
-                    <h1>{{ $page_name }}</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="content mt-3">
-        <div class="animated fadeIn">
+    <div class="content-wrapper">
+        <section class="content-header">
+        <h1>
+            {{ $page_name }}
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="{{ url('admin/dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Roles</li>
+        </ol>
+        </section>
+        <section class="content">
             <div class="row">
-
-            <div class="col-md-12">
-                <div class="card">
-
+                <div class="col-xs-12">
+                    <div class="box">
                 @if($message = Session::get('success'))
                     <div class="alert alert-success">
                         {{ $message }}
                     </div>
                 @endif
-
-                    <div class="card-header">
-                        <a href="{{ url('/admin/roles/create') }}" class="btn btn-primary pull-right">Create</a>
+                    <div class="box-header">
+                    <h3 class="box-title">{{ $page_name }}</h3>
+                        @permission(['All'])
+                            <a href="{{ url('/admin/roles/create') }}" class="btn btn-primary pull-right">Create</a>
+                        @endpermission
                     </div>
-                    <div class="card-body">
-                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                    <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped dt-responsive">
                 <thead>
                     <tr>
                     <th>#</th>
@@ -71,35 +68,28 @@
                 @endforeach
                 </tbody>
                 </table>
-                    </div>
+                </div>
                 </div>
             </div>
+        </div>
+    </section>
+    </div>
 
-
-            </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
 
     {{-- Data Table JS --}}
 
-    <script src="{{ asset('/admin/assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/datatables.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/dataTables.bootstrap.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/buttons.bootstrap.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/jszip.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/buttons.colVis.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/datatables-init.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/datatables-init.js') }}"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#bootstrap-data-table-export').DataTable();
-        } );
+    <script>
+    $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+        'paging'      : true,
+        'lengthChange': false,
+        'searching'   : false,
+        'ordering'    : true,
+        'info'        : true,
+        'autoWidth'   : false
+        })
+    })
     </script>
 
     {{-- Data Table JS Ends --}}

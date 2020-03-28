@@ -2,197 +2,161 @@
 
 @section('content')
 
-<div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Dashboard</h1>
-                    </div>
-                </div>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Page Header
+        <small>Optional description</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li class="active"><a href="{{ url('admin/dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>150</h3>
+
+              <p>New Orders</p>
             </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li class="active">Dashboard</li>
-                        </ol>
-                    </div>
-                </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
             </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
         </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-        <div class="content mt-3">
-
-            <div class="col-sm-12">
-                <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                  <span class="badge badge-pill badge-success">Howdy!</span> Welcome to the Dashboard.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+              <p>Bounce Rate</p>
             </div>
-
-
-           <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-1">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="mb-0">
-                            <span class="count">10468</span>
-                        </h4>
-                        <p class="text-light">Users Registered</p>
-
-                        <div class="chart-wrapper px-0" style="height:70px;" height="70">
-                            <canvas id="widgetChart1"></canvas>
-                        </div>
-
-                    </div>
-
-                </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
             </div>
-            <!--/.col-->
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3>44</h3>
 
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-2">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="mb-0">
-                            <span class="count">10468</span>
-                        </h4>
-                        <p class="text-light">Active Users</p>
-
-                        <div class="chart-wrapper px-0" style="height:70px;" height="70">
-                            <canvas id="widgetChart2"></canvas>
-                        </div>
-
-                    </div>
-                </div>
+              <p>User Registrations</p>
             </div>
-            <!--/.col-->
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-3">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="mb-0">
-                            <span class="count">10468</span>
-                        </h4>
-                        <p class="text-light">Total Visitors</p>
-
-                    </div>
-
-                        <div class="chart-wrapper px-0" style="height:70px;" height="70">
-                            <canvas id="widgetChart3"></canvas>
-                        </div>
-                </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
             </div>
-            <!--/.col-->
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>65</h3>
 
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-4">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="mb-0">
-                            <span class="count">10468</span>
-                        </h4>
-                        <p class="text-light">Total Comments</p>
-
-                        <div class="chart-wrapper px-3" style="height:70px;" height="70">
-                            <canvas id="widgetChart4"></canvas>
-                        </div>
-
-                    </div>
-                </div>
+              <p>Unique Visitors</p>
             </div>
-            <!--/.col-->
-  
-            <div class="col-xl-3 col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="ti-user text-success border-success"></i></div>
-                            <div class="stat-content dib">
-                                <div class="stat-text">Total Authors</div>
-                                <div class="stat-digit">1,012</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
             </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
 
+      <!-- Info boxes -->
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
 
-            <div class="col-xl-3 col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="ti-book text-primary border-primary"></i></div>
-                            <div class="stat-content dib">
-                                <div class="stat-text">Total Posts</div>
-                                <div class="stat-digit">961</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="info-box-content">
+              <span class="info-box-text">CPU Traffic</span>
+              <span class="info-box-number">90<small>%</small></span>
             </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
 
-            <div class="col-xl-3 col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
-                            <div class="stat-content dib">
-                                <div class="stat-text">Total Categories</div>
-                                <div class="stat-digit">770</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="info-box-content">
+              <span class="info-box-text">Likes</span>
+              <span class="info-box-number">41,410</span>
             </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
 
-        </div> <!-- .content -->
+        <!-- fix for small devices only -->
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Sales</span>
+              <span class="info-box-number">760</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">New Members</span>
+              <span class="info-box-number">2,000</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong>Copyright &copy; 2020-2022 <a href="https://www.believemaster.github.io">Believe Master</a>.</strong> All rights
+    reserved.
+  </footer>
 
 @endsection

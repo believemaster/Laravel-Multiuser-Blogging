@@ -7,93 +7,119 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ $shareData['system_name'] }}</title>
-    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/bower_components/font-awesome/css/font-awesome.min.css') }}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/bower_components/Ionicons/css/ionicons.min.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/dist/css/AdminLTE.min.css') }}">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/plugins/iCheck/square/blue.css') }}">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="{{ asset('public/others') }}/{{ $shareData['favicon'] }}">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-     <link rel="stylesheet" href="{{ asset('admin/assets/css/normalize.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/themify-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/flag-icon.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/cs-skin-elastic.css') }}">
-    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/scss/style.css') }}">
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
 </head>
-<body class="bg-dark">
+<body class="hold-transition register-page">
+<div class="register-box">
+  <div class="register-logo">
+    <img class="align-content" src="{{ asset('public/others') }}/{{ $shareData['admin_logo'] }}" alt="">
+  </div>
 
+  <div class="register-box-body">
+    <p class="login-box-msg">Register For BM News</p>
 
-    <div class="sufee-login d-flex align-content-center flex-wrap">
-        <div class="container">
-            <div class="login-content">
-                <div class="login-logo">
-                    <a href="index.html">
-                        <img class="align-content" src="{{ asset('public/others') }}/{{ $shareData['admin_logo'] }}" alt="">
-                    </a>
-                </div>
-                <div class="login-form">
-                   <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
-                        <div class="form-group">
-                            <label>User Name</label>
-                             <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                        </div>
-                        <div class="form-group">
-                            <label>Email address</label>
-                             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-
-                                <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Agree the terms and policy
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Register</button>
-                        <div class="register-link m-t-15 text-center">
-                        <p>Already have account ? <a href="{{ route('login') }}"> Sign in</a></p>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <form action="{{ route('register') }}" method="post">
+    {{ csrf_field() }}
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="Full name" name="name" value="{{ old('name') }}" required>
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        @if ($errors->has('name'))
+            <span class="help-block">
+                <strong>{{ $errors->first('name') }}</strong>
+            </span>
+        @endif
+      </div>
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        @if ($errors->has('email'))
+            <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+        @endif
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="Password" name="password" required>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        @if ($errors->has('password'))
+            <span class="help-block">
+                <strong>{{ $errors->first('password') }}</strong>
+            </span>
+        @endif
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="Retype password" name="password_confirmation" required>
+        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> I agree to the <a href="">terms</a>
+            </label>
+          </div>
         </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+
+    <div class="social-auth-links text-center">
+      <p>- OR -</p>
+      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
+        Facebook</a>
+      <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
+        Google+</a>
     </div>
 
+    <a href="{{ route('login') }}" class="text-center">Already Registered? Login Here</a>
+  </div>
+  <!-- /.form-box -->
+</div>
+<!-- /.register-box -->
 
-  <script src="{{ asset('admin/assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/plugins.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/main.js') }}"></script>
+
+
+    <!-- jQuery 3 -->
+    <script src="{{ asset('admin/assets/bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="{{ asset('admin/assets/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ asset('admin/assets/plugins/iCheck/icheck.min.js') }}"></script>
+    <script>
+    $(function () {
+        $('input').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%' // optional
+        });
+    });
+    </script>
 
 
 </body>

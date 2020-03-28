@@ -1,27 +1,28 @@
 @extends('admin.layout.master')
     @section('content')
-    
-    <script>
-        jQuery(document).ready(function(){
-            jQuery(".myselect").chosen({
-                disable_search_threshold: 10,
-                no_results_text: "Oops No Results Found!",
-                width: "100%"
-            });
-        });
-    </script>
 
-    <link rel="stylesheet" href="{{ asset('/admin/assets/scss/style.css') }}">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <strong class="card-title">{{ $page_name }}</strong>
-                </div>
-                <div class="card-body">
-                    <!-- Credit Card -->
-                    <div id="pay-invoice">
-                        <div class="card-body">
+    <div class="content-wrapper">
+        <section class="content-header">
+        <h1>
+            {{ $page_name }}
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li >Roles</li>
+            <li class="active">Edit</li>
+        </ol>
+        </section>
+        <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <strong class="card-title">{{ $page_name }}</strong>
+                    </div>
+                    <div class="box-body">
+                        <!-- Credit Card -->
+                        <div id="">
+                            <div class="box-body">
                         @if(count($errors) > 0)
                         <div class="alert alert-danger" role="alert">
                             <ul>
@@ -51,7 +52,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="permission" name="permission" class="control-label mb-1">Permission</label>
-                                    <select id="permission" name="permission[]" class="form-control myselect" data-placeholder="Select Permission" multiple="multiple">
+                                    <select id="permission" name="permission[]" class="form-control select2" style="width: 100%;" data-placeholder="Select Permission" multiple="multiple">
                                         @foreach($permission as $permission)
                                                 <option value="{{ $permission->id }}">{{ $permission->name }}</option>
                                         @endforeach
