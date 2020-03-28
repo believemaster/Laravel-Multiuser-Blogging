@@ -11,7 +11,9 @@
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                <h3 class="menu-title">BM Blogs Control Pannel</h3>
+                <a href="{{ url('/') }}">
+                <h3 class="menu-title text-white"><i class="fa fa-globe fa-2x"></i> &nbsp;&nbsp; Back To Website</h3>
+                </a>
                     <li>
                         <a href="{{ url('/admin/dashboard') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>

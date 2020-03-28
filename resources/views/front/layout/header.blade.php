@@ -36,8 +36,20 @@
                 <div class="col-md-4">
                     <div class="right_section">
                         <ul class="nav navbar-nav">
+                        @if (Route::has('login'))
+                            @auth
+                            <li><a href="{{ url('/admin/dashboard') }}">Dashboard</a></li>
+                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                Logout</a>
+                            </li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            @else
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
+                            @endauth
                             <!-- <li class="dropdown lang">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">En <i
@@ -46,6 +58,7 @@
                                     <li><a href="#">Bn</a></li>
                                 </ul>
                             </li> -->
+                        @endif
                         </ul>
                         <!-- Language Section -->
 

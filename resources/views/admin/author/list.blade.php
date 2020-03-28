@@ -93,8 +93,8 @@
     {{-- Data Table JS --}}
 
     <script src="{{ asset('/admin/assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/datatables.min.js') }}"></script>
-    <script src="{{ asset('/admin/assets/js/lib/data-table/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('/admin/assets/js/lib/data-table/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('/admin/assets/js/lib/data-table/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('/admin/assets/js/lib/data-table/dataTables.buttons.min.js') }}"></script>
     <script src="{{ asset('/admin/assets/js/lib/data-table/buttons.bootstrap.min.js') }}"></script>
     <script src="{{ asset('/admin/assets/js/lib/data-table/jszip.min.js') }}"></script>
@@ -105,6 +105,10 @@
     <script src="{{ asset('/admin/assets/js/lib/data-table/buttons.colVis.min.js') }}"></script>
     <script src="{{ asset('/admin/assets/js/lib/data-table/datatables-init.js') }}"></script>
     <script src="{{ asset('/admin/assets/js/lib/data-table/datatables-init.js') }}"></script>
+
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {

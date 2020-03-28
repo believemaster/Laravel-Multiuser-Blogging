@@ -135,4 +135,4 @@ Route::get('/joining', 'DbController@joining');
 Route::get('/model', 'DbController@model');
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomePageController@index')->name('home');
