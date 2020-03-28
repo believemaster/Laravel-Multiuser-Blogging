@@ -34,48 +34,37 @@
     <div>
         <div>
             <ul id="menu">
-                <li class="active"><a href="blog.html">News</a></li>
-                <li><a href="category.html">Mobile</a></li>
-                <li><a href="blog.html">Tablet</a></li>
-                <li><a href="category.html">Gadgets</a></li>
-                <li><a href="blog.html">Camera</a></li>
-                <li><a href="category.html">Design</a></li>
-                <li class="dropdown m-menu-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">More
+                <li><a href="{{ url('/') }}">Home</a></li>
+                @foreach($shareData['categories']->take(5) as $category)
+                <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
+                @endforeach
+                <li class="dropdown m-menu-fw">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">More
                     <span><i class="fa fa-angle-down"></i></span></a>
                     <ul class="dropdown-menu">
                         <li>
                             <div class="m-menu-content">
                                 <ul class="col-sm-3">
-                                    <li class="dropdown-header">Widget Haeder</li>
-                                    <li><a href="#">Awesome Features</a></li>
-                                    <li><a href="#">Clean Interface</a></li>
-                                    <li><a href="#">Available Possibilities</a></li>
-                                    <li><a href="#">Responsive Design</a></li>
-                                    <li><a href="#">Pixel Perfect Graphics</a></li>
+                                    <li class="dropdown-header">Categories</li>
+                                    @foreach($shareData['categories']->slice(5, 20) as $category)
+                                    <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
+                                    @endforeach
                                 </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown m-menu-fw">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Authors
+                    <span><i class="fa fa-angle-down"></i></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="m-menu-content">
                                 <ul class="col-sm-3">
-                                    <li class="dropdown-header">Widget Haeder</li>
-                                    <li><a href="#">Awesome Features</a></li>
-                                    <li><a href="#">Clean Interface</a></li>
-                                    <li><a href="#">Available Possibilities</a></li>
-                                    <li><a href="#">Responsive Design</a></li>
-                                    <li><a href="#">Pixel Perfect Graphics</a></li>
-                                </ul>
-                                <ul class="col-sm-3">
-                                    <li class="dropdown-header">Widget Haeder</li>
-                                    <li><a href="#">Awesome Features</a></li>
-                                    <li><a href="#">Clean Interface</a></li>
-                                    <li><a href="#">Available Possibilities</a></li>
-                                    <li><a href="#">Responsive Design</a></li>
-                                    <li><a href="#">Pixel Perfect Graphics</a></li>
-                                </ul>
-                                <ul class="col-sm-3">
-                                    <li class="dropdown-header">Widget Haeder</li>
-                                    <li><a href="#">Awesome Features</a></li>
-                                    <li><a href="#">Clean Interface</a></li>
-                                    <li><a href="#">Available Possibilities</a></li>
-                                    <li><a href="#">Responsive Design</a></li>
-                                    <li><a href="#">Pixel Perfect Graphics</a></li>
+                                    <li class="dropdown-header">Authors</li>
+                                    @foreach($shareData['authors'] as $author)
+                                    <li><a href="{{ url('/author') }}/{{ $author->id }}">{{ $author->name }}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </li>

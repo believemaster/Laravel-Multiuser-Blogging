@@ -50,14 +50,6 @@
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                             @endauth
-                            <!-- <li class="dropdown lang">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">En <i
-                                        class="fa fa-angle-down"></i></button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="#">Bn</a></li>
-                                </ul>
-                            </li> -->
                         @endif
                         </ul>
                         <!-- Language Section -->
@@ -96,7 +88,7 @@
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span> <span
+                                data-target="#navbar-collapse-1"><span class="sr-only">BM News</span> <span
                                 class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                         </button>
                     </div>
