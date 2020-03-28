@@ -108,7 +108,7 @@
 
 @foreach($shareData['categories'] as $category)
 <div class="category_section mobile">
-    <div class="article_title header_purple">
+    <div class="article_title header_black">
         <h2><a href="{{ url('/category') }}/{{ $category->id }}" target="_self">{{ $category->name }}</a></h2>
     </div>
     <!-- article_title -->
@@ -244,8 +244,7 @@
         </div>
         <div class="media-body">
             <h3 class="media-heading">
-                <a href="single.html" target="_self">DSLR is the most old camera at this time readmore about new
-                    products</a>
+                <a href="#" target="_self">The Best Place to find contents of different categories.</a>
             </h3>
             <span class="rating">
                 <i class="fa fa-star"></i>
@@ -260,8 +259,7 @@
         <div class="media-left">
             <a href="#"><img class="media-object" src="{{ asset('/front/img/pop_right2.jpg') }}" alt="Generic placeholder image"></a>
         </div>
-        <div class="media-body"><h3 class="media-heading"><a href="single.html" target="_self">Samsung is the best
-            mobile in the android market.</a></h3> <span class="rating">
+        <div class="media-body"><h3 class="media-heading"><a href="#" target="_self">Finding information in BM News is easy with updated content.</a></h3> <span class="rating">
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -275,7 +273,7 @@
         </div>
         <div class="media-body">
             <h3 class="media-heading">
-                <a href="single.html" target="_self">Apple launches photo-centric wrist watch for Android</a>
+                <a href="single.html" target="_self">Easy access with lots of content and categories.</a>
             </h3>
             <span class="rating">
                 <i class="fa fa-star"></i>
@@ -291,7 +289,7 @@
         </div>
         <div class="media-body">
             <h3 class="media-heading">
-                <a href="single.html" target="_self">Yasaki camera launches new generic hi-speed shutter camera.</a>
+                <a href="single.html" target="_self">For Tech, for sports for everything, It's a perfect place to find content.</a>
             </h3>
             <span class="rating">
                 <i class="fa fa-star"></i>
@@ -337,21 +335,21 @@
 
 <div class="widget m30">
     <div class="widget_title widget_black">
-        <h2><a href="#">Editor Corner</a></h2>
+        <h2><a href="#">About Founder</a></h2>
     </div>
     <div class="widget_body"><img class="img-responsive left" src="{{ asset('/front/img/editor.jpg') }}"
                                   alt="Generic placeholder image">
 
-        <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C
-            users after installed base benefits. Dramatically visualize customer directed convergence without</p>
+        <p>Yanik Kumar a.k.a Believe Master is a Content Creator fond of learning about new things no matter which 
+        field the it belongs. This blog is soberly created by him to provide best contents in different categories.</p>
 
-        <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C
-            users after installed base benefits. Dramatically visualize customer directed convergence without
-            revolutionary ROI.</p>
+        <p>If you are serious to know about Believe Master and want know more about the organition you can completely 
+        find out on Believe Master Organisation. Moreover if your are a content creator just ping us a mail for joining
+        BM News.</p>
         <button class="btn pink">Read more</button>
     </div>
 </div>
-<!-- Editor News -->
+<!-- Founder News -->
 
 <div class="widget hidden-xs m30">
     <img class="img-responsive add_img" src="{{ asset('/front/img/right_add7.jpg') }}" alt="add_one">
@@ -368,12 +366,12 @@
     <div class="widget_body"><img class="img-responsive left" src="{{ asset('/front/img/reader.jpg') }}"
                                   alt="Generic placeholder image">
 
-        <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C
-            users after installed base benefits. Dramatically visualize customer directed convergence without</p>
+        <p>To all readers out there BM News welcomes you and hoping for you to find best content on our website flushed with knowledge
+        in different categories. You are free to access the website and share the content.</p>
 
-        <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C
-            users after installed base benefits. Dramatically visualize customer directed convergence without
-            revolutionary ROI.</p>
+        <p>You can comments to the any post you like and you comments will be showacased once approved by the editors or by the admin.
+        If you wish to provide content to our website you can contact us for a editors request. If you are a developer and opensourcely provide
+        features to our website feel free to contact and joing the Development Team a.k.a BM Devs.</p>
         <button class="btn pink">Read more</button>
     </div>
 </div>
@@ -401,7 +399,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="embed-responsive embed-responsive-4by3">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/MJ-jbFdUPns"
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RZA9hN2H2ik"
                                 frameborder="0" allowfullscreen></iframe>
                     </div>
                     <!-- embed-responsive -->
@@ -411,12 +409,12 @@
 
                 <div class="col-md-3">
                     <div class="embed-responsive embed-responsive-4by3">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/h5Jni-vy_5M"></iframe>
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Zmt9vIFcadc"></iframe>
                     </div>
                     <!-- embed-responsive -->
 
                     <div class="embed-responsive embed-responsive-4by3 m16">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wQ5Gj0UB_R8"></iframe>
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Hw8Xhx6KZ8c"></iframe>
                     </div>
                     <!-- embed-responsive -->
 
@@ -425,12 +423,12 @@
 
                 <div class="col-md-3">
                     <div class="embed-responsive embed-responsive-4by3">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UPvJXBI_3V4"></iframe>
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2xiCVNwhrDU"></iframe>
                     </div>
                     <!-- embed-responsive -->
 
                     <div class="embed-responsive embed-responsive-4by3 m16">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DTCtj5Wz6BM"></iframe>
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7mj_vK_lLMc"></iframe>
                     </div>
                     <!-- embed-responsive -->
 

@@ -31,8 +31,8 @@
                         <img src="{{ asset('/front/img/tech_about.jpg') }}" alt="technews">
                     </a>
 
-                    <p>Competently conceptualize go forward testing procedures and B2B expertise. Phosfluorescently
-                        cultivate principle-centered methods.of empowerment through fully researched.</p>
+                    <p>BM News is collection of different category news website where you can read contents of all cateogories
+                       It is a blog cum news website where contents are updated daily.</p>
                 </div>
             </div>
             <div class="col-md-3">
@@ -42,16 +42,13 @@
                 <div class="row">
                     <div class="col-xs-4">
                         <ul class="list-unstyled left">
-                            <li><a href="#">Mobile</a></li>
-                            <li><a href="#">Tablet</a></li>
-                            <li><a href="#">Gadgets</a></li>
-                            <li><a href="#">Design</a></li>
-                            <li><a href="#">Camera</a></li>
-                            <li><a href="#">Apps</a></li>
-                            <li><a href="#">Login</a></li>
+                        @foreach($shareData['categories']->take(6) as $category)
+                            <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
+                        @endforeach
+                            <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">Membership</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="{{ url('/') }}">Blog</a></li>
                             <li><a href="#">Job</a></li>
                             <li><a href="#">SiteMap</a></li>
                         </ul>

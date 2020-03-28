@@ -100,7 +100,7 @@
     </ul> -->
     <!-- /.sidebar-menu -->
     <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HOWDY USER</li>
+        <li class="header">HOWDY! {{ Auth::user()->name }}</li>
         <li>
           <a href="{{ url('/') }}">
             <i class="fa fa-globe"></i>

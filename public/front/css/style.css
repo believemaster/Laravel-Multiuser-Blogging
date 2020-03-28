@@ -819,16 +819,16 @@ section {
     z-index         : 1;
 }
 
-.header_purple h2:after {
+.header_black h2:after {
     display         : table;
     position        : relative;
-    left            : 100px;
+    left            : 150px;
     bottom          : 10px;
     height          : 2px;
     content         : " ";
     text-shadow     : none;
     width           : 15%;
-    background-color: #5f35ac;
+    background-color: #000000;
     z-index         : 2;
 }
 
@@ -861,7 +861,7 @@ section {
 .header_black h2:after {
     display         : table;
     position        : relative;
-    left            : 100px;
+    left            : 150px;
     bottom          : 10px;
     height          : 2px;
     content         : " ";

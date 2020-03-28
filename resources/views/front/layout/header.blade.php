@@ -38,7 +38,7 @@
                         <ul class="nav navbar-nav">
                         @if (Route::has('login'))
                             @auth
-                            <li><a href="{{ url('/admin/dashboard') }}">Dashboard</a></li>
+                            <li><a href="{{ url('/admin/dashboard') }}">{{ Auth::user()->name }}</a></li>
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                 Logout</a>
