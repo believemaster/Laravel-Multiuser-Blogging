@@ -137,7 +137,7 @@
           </a>
         </li>
         @endpermission
-        @permission(['Post List', 'All'])
+        @permission(['Category List', 'All'])
         <li>
           <a href="{{ url('/admin/category') }}">
             <i class="fa fa-list"></i>
@@ -153,7 +153,7 @@
           </a>
         </li>
         @endpermission
-        @permission(['Post List', 'All'])
+        @permission(['Comment Approve', 'All'])
         <li>
           <a href="{{ url('/admin/comments') }}">
             <i class="fa fa-comments"></i>
