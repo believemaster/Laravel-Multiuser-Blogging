@@ -59,9 +59,9 @@
                                     </select>
                                 </div>
 
-                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                <button id="payment-button" type="submit" class="btn btn-md btn-info">
                                     <i class="fa fa-save fa-lg"></i>&nbsp;
-                                    <span id="payment-button-amount">Update</span>
+                                    <span id="">Update</span>
                                 </button>
                                 </div>
                             </form>

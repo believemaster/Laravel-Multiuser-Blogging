@@ -50,7 +50,7 @@
                                     <textarea id="description" name="description" class="form-control"></textarea>
                                 </div>
 
-                                <button id="" type="submit" class="btn btn-lg btn-info btn-block">
+                                <button id="" type="submit" class="btn btn-md btn-info">
                                     <i class="fa fa-save fa-lg"></i>&nbsp;
                                     <span id="">Save</span>
                                 </button>

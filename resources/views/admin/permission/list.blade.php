@@ -26,7 +26,7 @@
                     <div class="box-header">
                         <h3 class="box-title">{{ $page_name }}</h3>
                         @permission(['Post Add', 'All'])
-                        <a href="{{ url('/admin/permission/create') }}" class="btn btn-primary pull-right">Create</a>
+                        <a href="{{ url('/admin/permission/create') }}" class="btn btn-sm btn-primary pull-right">Create</a>
                         @endpermission
                     </div>
                     <div class="box-body">
@@ -49,13 +49,13 @@
                             <td>{{ $row->description }}</td>
                             <td>
                                 @permission(['Post Add', 'All'])
-                                <a href="{{ url('/admin/permission/edit/'.$row->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                <a href="{{ url('/admin/permission/edit/'.$row->id) }}" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
                                 @endpermission
                                 @permission(['Post Add', 'All'])
                                 <form method="post" action="{{ url('/admin/permission/delete/'.$row->id) }}" style="display:inline">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></button>
                                 </form>
                                 @endpermission
                             </td>

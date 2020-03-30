@@ -59,7 +59,7 @@
                                     <input type="hidden" name="post_id" value="{{ $id }}"/>
                                 </div>
 
-                                <button id="" type="submit" class="btn btn-lg btn-info btn-block">
+                                <button id="" type="submit" class="btn btn-md btn-info">
                                     <i class="fa fa-reply fa-lg"></i>&nbsp;
                                     <span id="">Reply</span>
                                 </button>

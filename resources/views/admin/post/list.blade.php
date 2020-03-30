@@ -26,11 +26,11 @@
                     <div class="box-header">
                         <h3 class="box-title">{{ $page_name }}</h3>
                         @permission(['Post Add', 'All'])
-                        <a href="{{ url('/admin/post/create') }}" class="btn btn-primary pull-right">Create</a>
+                        <a href="{{ url('/admin/post/create') }}" class="btn btn-sm btn-primary pull-right">Create</a>
                         @endpermission
                     </div>
                     <div class="box-body">
-                <table id="example1" class="table table-bordered table-striped dt-responsive" width="100%">>
+                <table id="example1" class="table table-bordered table-striped dt-responsive" width="100%">
                 <thead>
                     <tr>
                     <th>#</th>
@@ -62,9 +62,9 @@
                         @method('PUT')
                         @csrf
                         @if($row->status === 1)
-                        <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Published</button>
+                        <button type="submit" class="btn btn-xs btn-success"><i class="fa fa-check-circle"></i> Published</button>
                         @else
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-times-circle"></i> Unpublished</button>
+                        <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times-circle"></i> Unpublished</button>
                         @endif
                         </form>
                     </td>
@@ -74,25 +74,25 @@
                         @method('PUT')
                         @csrf
                         @if($row->hot_news === 1)
-                        <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Yes</button>
+                        <button type="submit" class="btn btn-xs btn-success"><i class="fa fa-check-circle"></i> Yes</button>
                         @else
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-times-circle"></i> No</button>
+                        <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times-circle"></i> No</button>
                         @endif
                         </form>
                     </td>
 
                     <td>
                         @permission(['Post Add', 'All'])
-                        <a href="{{ url('/admin/comment/'.$row->id) }}" class="btn btn-info"><i class="fa fa-comments-o"></i></a>
+                        <a href="{{ url('/admin/comment/'.$row->id) }}" class="btn btn-xs btn-info"><i class="fa fa-comments-o"></i></a>
                         @endpermission
                         @permission(['Post Add', 'All'])
-                        <a href="{{ url('/admin/post/edit/'.$row->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                        <a href="{{ url('/admin/post/edit/'.$row->id) }}" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
                         @endpermission
                         @permission(['Post Add', 'All'])
                         <form method="post" action="{{ url('/admin/post/delete/'.$row->id) }}" style="display:inline">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></button>
                         </form>
                         @endpermission
                     </td>

@@ -52,22 +52,22 @@
                         @method('PUT')
                         @csrf
                         @if($row->status === 1)
-                        <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Published</button>
+                        <button type="submit" class="btn btn-xs btn-success"><i class="fa fa-check-circle"></i> Published</button>
                         @else
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-times-circle"></i> Unpublished</button>
+                        <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times-circle"></i> Unpublished</button>
                         @endif
                         </form>
                     </td>
 
                     <td>
                         @permission(['Post Add', 'All'])
-                        <a href="{{ url('/admin/comment/reply/'.$row->post_id) }}" class="btn btn-info"><i class="fa fa-reply"></i></a>
+                        <a href="{{ url('/admin/comment/reply/'.$row->post_id) }}" class="btn btn-xs btn-info"><i class="fa fa-reply"></i></a>
                         @endpermission
                         @permission(['Post Add', 'All'])
                         <form method="post" action="{{ url('/admin/comment/delete/'.$row->id) }}" style="display:inline">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></button>
                         </form>
                         @endpermission
                     </td>

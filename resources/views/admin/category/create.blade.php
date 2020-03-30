@@ -40,7 +40,7 @@
                                     <input id="name" name="name" type="text" class="form-control">
                                 </div>
 
-                                <button id="" type="submit" class="btn btn-lg btn-info btn-block">
+                                <button id="" type="submit" class="btn btn-md btn-info">
                                     <i class="fa fa-save fa-lg"></i>&nbsp;
                                     <span id="">Save</span>
                                 </button>
