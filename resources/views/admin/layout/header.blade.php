@@ -42,6 +42,8 @@
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+        @php 
+        /*
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
             <!-- Menu toggle button -->
@@ -77,7 +79,7 @@
             </ul>
           </li>
           <!-- /.messages-menu -->
-
+          
           <!-- Notifications Menu -->
           <li class="dropdown notifications-menu">
             <!-- Menu toggle button -->
@@ -138,6 +140,8 @@
               </li>
             </ul>
           </li>
+          */
+        @endphp
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->

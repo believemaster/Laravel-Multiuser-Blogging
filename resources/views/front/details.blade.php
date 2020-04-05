@@ -35,15 +35,33 @@
             <i class="fa fa-share-alt"></i>
             <b>424</b> <span class="share_ic">Shares</span>
         </a>
-        <a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
+        <!--Facebook-->
+        <!-- <a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a> -->
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <!-- Your share button code -->
+        <div class="fb-share-button" 
+            data-href="https://localhost:8000" 
+            data-layout="button_count">
+        </div>
+
+
         <!--Twitter-->
-        <a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
+        <!-- <a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a> -->
         <!--Google +-->
-        <a href="#" class="icons-sm inst-ic"><i class="fa fa-google-plus"> </i></a>
+        <!-- <a href="#" class="icons-sm inst-ic"><i class="fa fa-google-plus"> </i></a> -->
         <!--Linkedin-->
-        <a href="#" class="icons-sm tmb-ic"><i class="fa fa-ge"> </i></a>
+        <!-- <a href="#" class="icons-sm tmb-ic"><i class="fa fa-ge"> </i></a> -->
         <!--Pinterest-->
-        <a href="#" class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
+        <!-- <a href="#" class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a> -->
     </div>
     <!-- entity_social -->
 
