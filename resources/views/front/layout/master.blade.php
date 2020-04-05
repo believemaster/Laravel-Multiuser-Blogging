@@ -25,6 +25,31 @@
 @include('front.layout.header')
 
     @yield('content')
+<!-- Sticky Sidebar -->
+<ul id="social-sidebar">
+  <li>
+    <a class="fa fa-twitter"><span>Twitter</span></a>
+  </li>
+  <li>
+    <a class="fa fa-facebook"><span>Facebook</span></a>
+  </li>
+  <li>
+    <a class="fa fa-google"><span>Google</span></a>
+  </li>
+  <li>
+    <a class="fa fa-dribbble"><span>Dribbble</span></a>
+  </li>
+  <li>
+    <a class="fa fa-instagram"><span>Instagram</span></a>
+  </li>
+  <li>
+    <a class="fa fa-github"><span>Github</span></a>
+  </li>
+  <li>
+    <a class="fa fa-youtube-play"><span>Youtube</span></a>
+  </li>
+</ul>
+<!-- Sidebar -->
 
 @include('front.layout.footer')
 

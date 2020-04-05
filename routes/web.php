@@ -15,7 +15,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomePageController@index');
-Route::post('/subscribe', 'HomePageController@subscribe');
 
 Route::get('/sign-in/google', 'Auth\LoginController@googleLogin');
 Route::get('/sign-in/google/redirect', 'Auth\LoginController@googleLoginRedirect');

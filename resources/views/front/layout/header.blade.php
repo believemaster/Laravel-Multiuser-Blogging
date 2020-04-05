@@ -60,10 +60,11 @@
                                 <ul class="dropdown-menu">
                                     <li>
                                         <div class="head-search">
-                                            <form role="form">
+                                            <form role="form" method="post" action="{{ url('/search') }}">
+                                            @csrf
                                                 <!-- Input Group -->
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" placeholder="Type Something"> 
+                                                    <input type="text" class="form-control" placeholder="Search..."> 
                                                         <span class="input-group-btn">
                                                             <button type="submit" class="btn btn-primary">Search</button>
                                                         </span>
@@ -137,10 +138,8 @@
                                     <li>
                                         <div class="m-menu-content">
                                             <ul class="col-sm-3">
-                                                <li class="dropdown-header">Cateories</li>
-                                                @foreach($shareData['categories']->slice(10, 15) as $category)
-                                                <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
-                                                @endforeach
+                                                <li class="dropdown-header">Videos</li>
+                                                <li><a href="#">Coming Soon</a></li>
                                             </ul>
                                         </div>
                                     </li>

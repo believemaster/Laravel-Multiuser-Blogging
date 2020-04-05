@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Post;
 use App\Category;
 use App\Subscribe;
+use DB;
 
 class HomePageController extends Controller
 {
@@ -47,4 +49,5 @@ class HomePageController extends Controller
 
         return redirect()->action('HomePageController@index')->with('success', 'Thank You So Much For Subscription');
     }
+
 }
