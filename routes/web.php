@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomePageController@index');
 Route::post('/subscribe', 'HomePageController@subscribe');
 
+Route::get('/sign-in/google', 'Auth\LoginController@googleLogin');
+Route::get('/sign-in/google/redirect', 'Auth\LoginController@googleLoginRedirect');
+
+Route::get('/sign-in/facebook', 'Auth\LoginController@facebookLogin');
+Route::get('/sign-in/facebook/redirect', 'Auth\LoginController@facebookLoginRedirect');
+
 Route::get('/listing', 'ListingPageController@index');
 Route::get('/category/{id}', 'ListingPageController@listingCategory');
 Route::get('/author/{id}', 'ListingPageController@listing');

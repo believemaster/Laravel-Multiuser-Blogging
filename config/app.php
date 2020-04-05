@@ -183,6 +183,8 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
 
+         // Facebook GAuth
+         Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -240,6 +242,9 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
+
+        // Facebook GAuth
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
