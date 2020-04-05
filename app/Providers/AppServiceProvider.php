@@ -8,6 +8,7 @@ use App\Setting;
 use App\Category;
 use App\User;
 use App\Post;
+use Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -52,7 +53,7 @@ class AppServiceProvider extends ServiceProvider
                             ->where('status', 1)
                             ->orderBy('comments_count', 'DESC')
                             ->limit(5)
-                            ->get();      
+                            ->get();  
 
         $shareData = array(
             'system_name'=>$system_name,

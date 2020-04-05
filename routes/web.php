@@ -34,9 +34,6 @@ Route::post('/comments', 'DetailsPageController@comment');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/dashboard', 'Admin\DashboardController@index');
-    Route::get('/category', 'Admin\CategoryController@index');
-    Route::get('/category/create', 'Admin\CategoryController@create');
-    Route::get('/category/edit', 'Admin\CategoryController@edit');
     
     Route::get('/permission', ['uses'=>'Admin\PermissionController@index', 'as'=>'permission-list', 
                                'middleware'=>'permission:Permission List|All']);
@@ -114,6 +111,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
                             'middleware'=>'permission:Post List|All']);
     Route::put('/settings/update', ['uses'=>'Admin\SettingController@update', 'as'=>'setting-update', 
                                     'middleware'=>'permission:Post List|All']);
+
+    Route::get('/profile', 'Admin\ProfileController@index');
+    Route::put('/profile/update', 'Admin\ProfileController@update');
 
 });
 

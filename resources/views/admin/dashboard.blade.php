@@ -68,6 +68,8 @@
           </div>
         </div>
         <!-- ./col -->
+
+        @permission(['Permission Update', 'All'])
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-red">
@@ -86,7 +88,7 @@
       </div>
       <!-- /.row -->
 
-      @permission(['Permission Update', 'All'])
+      
       <!-- Info boxes -->
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">

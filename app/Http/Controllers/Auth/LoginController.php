@@ -68,6 +68,7 @@ class LoginController extends Controller
                 $user->email_verified_google = $googleUser->id;
                 $user->password = md5(rand(1,10000));
                 $user->type = '2';
+                $user->img = $googleUser->getAvatar();
                 $user->save();
                 Auth::loginUsingId($user->id);
             }
@@ -103,6 +104,7 @@ class LoginController extends Controller
                 $user->email_verified_facebook = $facebookUser->id;
                 $user->password = md5(rand(1,10000));
                 $user->type = '2';
+                $user->img = $facebookUser->getAvatar();
                 $user->save();
                 Auth::loginUsingId($user->id);
             }

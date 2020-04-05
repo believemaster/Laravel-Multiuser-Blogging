@@ -41,8 +41,8 @@
                                 @method('PUT')
                                 @csrf
                                 <div class="form-group">
-                                    <label for="system_name" name="system_name" class="control-label mb-1">System Name</label>
-                                    <input id="system_name" value="{{ $system_name }}" type="text" class="form-control">
+                                    <label for="system_name" class="control-label mb-1">System Name</label>
+                                    <input id="system_name" name="system_name" value="{{ $system_name }}" type="text" class="form-control">
                                 </div>
 
                                 <div class="form-group">

@@ -18,7 +18,7 @@ class SettingController extends Controller
 
     public function update(Request $request) {
         $this->validate($request, [
-            'system_name'=>'require'
+            'system_name'=>'required'
         ]);
 
         $fav_settings = Setting::find(2);
@@ -60,9 +60,9 @@ class SettingController extends Controller
             $admin_settings->save();
         }
 
-        // $sys_settings = Setting::find(1);
-        // $sys_settings->value = $request->system_name;
-        // $sys_settings->save();
+        $sys_settings = Setting::find(1);
+        $sys_settings->value = $request->system_name;
+        $sys_settings->save();
 
         return redirect()->action('Admin\SettingController@index')->with('success', 'Settings Updated Successfully');
     }
