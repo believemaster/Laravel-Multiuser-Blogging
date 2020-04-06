@@ -58,6 +58,7 @@
                     <td>{{ $row->view_count }}</td>
 
                     <td>
+                    @permission(['Publish Comment', 'All'])
                         <form method="post" action="{{ url('/admin/post/status/'.$row->id) }}" style="display:inline">
                         @method('PUT')
                         @csrf
@@ -67,9 +68,11 @@
                         <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times-circle"></i> Unpublished</button>
                         @endif
                         </form>
+                    @endpermission
                     </td>
 
                     <td>
+                    @permission(['Publish Comment', 'All'])
                         <form method="post" action="{{ url('/admin/post/hot/news/'.$row->id) }}" style="display:inline">
                         @method('PUT')
                         @csrf
@@ -79,6 +82,7 @@
                         <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times-circle"></i> No</button>
                         @endif
                         </form>
+                    @endpermission
                     </td>
 
                     <td>
