@@ -71,13 +71,13 @@
       </div>
       <div class="form-group has-feedback">
         <input type="password" class="form-control" placeholder="Retype password" name="password_confirmation" required>
-        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+        <span class="glyphicon glyphicon-repeat form-control-feedback"></span>
       </div>
       <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> I agree to the <a href="">terms</a>
+              <input type="checkbox"> I agree to the <a href="{{ url('/terms-condition') }}}">T&C</a> & <a href="{{ url('/privacy-policy') }}">PP</a>
             </label>
           </div>
         </div>

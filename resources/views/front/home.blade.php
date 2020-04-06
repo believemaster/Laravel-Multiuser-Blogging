@@ -140,7 +140,7 @@
                 <!-- category_article_content -->
                 <div class="media_social">
                     <!-- <span><a href="#"><i class="fa fa-share-alt"></i>424 </a> Shares</span> -->
-                    <span><i class="fa fa-comments-o"></i><a href="">{{ count($item->comments) }}</a> Comments</span>
+                    <span><i class="fa fa-comments-o"></i>{{ count($item->comments) }} Comments</span>
                 </div>
                 <!-- media_social -->
             </div>
@@ -165,7 +165,7 @@
 
                         <div class="media_social">
                             <!-- <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Shares</span> -->
-                            <span><i class="fa fa-comments-o"></i><a href="">{{ count($item->comments) }}</a> Comments</span>
+                            <span><i class="fa fa-comments-o"></i>{{ count($item->comments) }} Comments</span>
                 </div>
                     </div>
                 </div>
@@ -211,7 +211,7 @@
                     <a href="single.html" target="_self"> <i class="fa fa-share-alt"></i>424</a> Shares
                 </span> -->
                 <span>
-                    <a href="single.html" target="_self"><i class="fa fa-comments-o"></i>{{ count($item->comments) }}</a> Comments
+                    <i class="fa fa-comments-o"></i>{{ count($item->comments) }} Comments
                 </span>
             </div>
         </div>
@@ -324,7 +324,7 @@
             </h3>
 
             <div class="media_social">
-                <span><i class="fa fa-comments-o"></i><a href="#">{{ $item->comments_count }}</a> Comments</span>
+                <span><i class="fa fa-comments-o"></i>{{ $item->comments_count }} Comments</span>
             </div>
         </div>
     </div>
