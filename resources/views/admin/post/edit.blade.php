@@ -74,7 +74,7 @@
 
                                 <div class="form-group">
                                     <label for="description" name="description" class="control-label mb-1">Description</label>
-                                    <textarea id="description" name="description" class="form-control my-editor" rows="8" cols="12">"{{ $post->description }}</textarea>
+                                    <textarea id="description" name="description" class="form-control ckeditor" rows="8" cols="12">"{{ $post->description }}</textarea>
                                 </div>
 
                                 <div class="form-group">
