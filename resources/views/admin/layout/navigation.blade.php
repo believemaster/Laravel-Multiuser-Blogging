@@ -169,6 +169,13 @@
           </a>
         </li>
         @endpermission
+        <li class="header">Videos</li>
+        <li>
+          <a href="#">
+            <i class="fa fa-play"></i>
+            <span>Feature Coming Soon</span>
+          </a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
