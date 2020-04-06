@@ -15,6 +15,28 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomePageController@index');
+Route::post('/subscribe', 'HomePageController@subscribe');
+Route::get('/about', 'PagesController@about');
+Route::get('/membership', 'PagesController@membership');
+Route::get('/jobs', 'PagesController@jobs');
+Route::get('/sitemap', 'PagesController@sitemap');
+
+Route::get('/contact', 'PagesController@contact');
+Route::post('/contact-submit', 'PagesController@contactSubmit');
+
+Route::get('/news-updates', 'PagesController@newsletter');
+Route::get('/podcast', 'PagesController@podcast');
+Route::get('/advertisement-policy', 'PagesController@advPolicy');
+
+Route::get('/technical-issue', 'PagesController@techIssues');
+Route::post('/technical-issue/submit', 'PagesController@techIssuesSubmit');
+
+Route::get('/complaints', 'PagesController@complaint');
+Route::post('/complaints/submit', 'PagesController@complaintSubmit');
+
+Route::get('/terms-condition', 'PagesController@termsCondition');
+Route::get('/privacy-policy', 'PagesController@privacyPolicy');
+Route::get('/cookies-policy', 'PagesController@cookiesPolicy'); 
 
 Route::get('/sign-in/google', 'Auth\LoginController@googleLogin');
 Route::get('/sign-in/google/redirect', 'Auth\LoginController@googleLoginRedirect');

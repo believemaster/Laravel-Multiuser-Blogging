@@ -8,7 +8,7 @@
                 </label>
 
                 <div class="col-sm-3">
-                    <input type="email" id="email" name="email" class="form-control input-lg">
+                    <input type="email" id="email" name="email" class="form-control input-lg" placeholder="Enter Your Email">
                 </div>
                 <div class="col-sm-1">
                     <input type="submit" value="Sign Up" class="btn btn-large pink">
@@ -42,31 +42,30 @@
                 <div class="row">
                     <div class="col-xs-4">
                         <ul class="list-unstyled left">
-                        @foreach($shareData['categories']->take(6) as $category)
+                            <li><a href="{{ url('/about') }}">About Us</a></li>
+                            <li><a href="{{ url('/membership') }}">Membership</a></li>
+                            <!-- <li><a href="{{ url('/') }}">Blog</a></li> -->
+                            <li><a href="{{ url('/jobs') }}">Job</a></li>
+                            <li><a href="{{ url('/sitemap') }}">SiteMap</a></li>
+                            @foreach($shareData['categories']->take(5) as $category)
                             <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
-                        @endforeach
-                            <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Membership</a></li>
-                            <li><a href="{{ url('/') }}">Blog</a></li>
-                            <li><a href="#">Job</a></li>
-                            <li><a href="#">SiteMap</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="col-xs-8">
                         <ul class="list-unstyled">
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Newsletter Alerts</a></li>
-                            <li><a href="#">Podcast</a></li>
-                            <li><a href="#">Sms Subscription</a></li>
-                            <li><a href="#">Advertisement Policy</a></li>
-                            <li><a href="#">Report Technical issue</a></li>
-                            <li><a href="#">Complaints and Corrections</a></li>
-                            <li><a href="#">Terms and Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Cookie Policy</a></li>
-                            <li><a href="#">Securedrop</a></li>
-                            <li><a href="#">Archives</a></li>
+                            <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                            <li><a href="{{ url('/news-updates') }}">Newsletter Alerts</a></li>
+                            <li><a href="{{ url('/podcast') }}">Podcast</a></li>
+                            <!-- <li><a href="#">Sms Subscription</a></li> -->
+                            <li><a href="{{ url('/advertisement-policy') }}">Advertisement Policy</a></li>
+                            <li><a href="{{ url('/technical-issue') }}">Report Technical issue</a></li>
+                            <li><a href="{{ url('/complaints') }}">Complaints and Corrections</a></li>
+                            <li><a href="{{ url('/terms-condition') }}">Terms and Conditions</a></li>
+                            <li><a href="{{ url('/privacy-policy') }}">Privacy Policy</a></li>
+                            <li><a href="{{ url('/cookies-policy') }}">Cookie Policy</a></li>
+                            <!-- <li><a href="#">Securedrop</a></li> -->
+                            <!-- <li><a href="#">Archives</a></li> -->
                         </ul>
                     </div>
                 </div>

@@ -143,6 +143,14 @@
                                             </ul>
                                         </div>
                                     </li>
+                                    <li>
+                                        <div class="m-menu-content">
+                                            <ul class="col-sm-3">
+                                                <li class="dropdown-header">Podcast</li>
+                                                <li><a href="#">Coming Soon</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
