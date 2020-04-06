@@ -25,6 +25,7 @@ Route::get('/contact', 'PagesController@contact');
 Route::post('/contact-submit', 'PagesController@contactSubmit');
 
 Route::get('/news-updates', 'PagesController@newsletter');
+
 Route::get('/podcast', 'PagesController@podcast');
 Route::get('/advertisement-policy', 'PagesController@advPolicy');
 
@@ -135,6 +136,22 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
     Route::get('/profile', 'Admin\ProfileController@index');
     Route::put('/profile/update', 'Admin\ProfileController@update');
+
+    // Mailbox Routes
+    
+    Route::get('/contacts/list', 'PagesController@contactList');
+    Route::get('/contacts/details/{id}', 'PagesController@contactDetails');
+    Route::delete('/contacts/delete/{id}', 'PagesController@contactDestroy');
+
+    Route::get('/newsletters/list', 'PagesController@newsletterList');
+
+    Route::get('/issues/list', 'PagesController@techIssuesList');
+    Route::get('/issues/details/{id}', 'PagesController@techIssuesDetails');
+    Route::delete('/issues/delete/{id}', 'PagesController@techIssuesDestroy');
+
+    Route::get('/complaints/list', 'PagesController@complaintList');
+    Route::get('/complaints/details/{id}', 'PagesController@complaintDetails');
+    Route::delete('/complaints/delete/{id}', 'PagesController@complaintDestroy');
 
 });
 

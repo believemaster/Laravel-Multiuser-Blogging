@@ -243,7 +243,7 @@
         </div>
     </div>
     @endforeach
-    <p class="widget_divider"><a href="#" target="_self">More News&nbsp;&raquo;</a></p>
+    <p class="widget_divider"><a href="{{ url('/') }}" target="_self">More News&nbsp;&raquo;</a></p>
 </div>
 <!-- Popular News -->
 
@@ -325,7 +325,7 @@
                 <i class="fa fa-star-half-full"></i>
             </span></div>
     </div>
-    <p class="widget_divider"><a href="#" target="_self">More News&nbsp;&raquo;</a></p>
+    <p class="widget_divider"><a href="{{ url('/') }}" target="_self">More News&nbsp;&raquo;</a></p>
 </div>
 <!-- Reviews News -->
 
@@ -355,7 +355,7 @@
         </div>
     </div>
     @endforeach
-    <p class="widget_divider"><a href="#" target="_self">More News&nbsp;&nbsp;&raquo; </a></p>
+    <p class="widget_divider"><a href="{{ url('/') }}" target="_self">More News&nbsp;&nbsp;&raquo; </a></p>
 </div>
 <!-- Most Commented News -->
 

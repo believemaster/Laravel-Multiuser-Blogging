@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Contact;
 use App\Issue;
 use App\Complaint;
+use App\Subscribe;
 
 class PagesController extends Controller
 {
@@ -35,9 +36,42 @@ class PagesController extends Controller
         return view('front.pages.contact');
     }
 
+    public function contactList()
+    {
+        $page_name = 'Contacts Inbox';
+        $data = Contact::all();
+
+        return view('admin.mailbox.contacts', compact('page_name', 'data'));
+    }
+
+    public function contactDetails($id)
+    {
+
+        $page_name = 'Contacts Details';
+        $data = Contact::find($id);
+
+        return view('admin.mailbox.contactsDetails', compact('page_name', 'data'));
+    }
+
+    public function contactDestroy($id)
+    {
+        $data = Contact::find($id);
+        $data->delete();
+
+        return redirect()->action('PagesController@contactList')->with('success', 'Contact Deleted Successfully');
+    }
+
     public function newsletter()
     {
         return view('front.pages.newsletter');
+    }
+
+    public function newsletterList()
+    {
+        $page_name = 'Subscribes Inbox';
+        $data = Subscribe::all();
+
+        return view('admin.mailbox.subscribes', compact('page_name', 'data'));
     }
 
     public function podcast()
@@ -55,9 +89,59 @@ class PagesController extends Controller
         return view('front.pages.techIssues');
     }
 
+    public function techIssuesList()
+    {
+
+        $page_name = 'Issues Inbox';
+        $data = Issue::all();
+
+        return view('admin.mailbox.issues', compact('page_name', 'data'));
+    }
+    
+    public function techIssuesDetails($id)
+    {
+
+        $page_name = 'Issues Details';
+        $data = Issue::find($id);
+
+        return view('admin.mailbox.issuesDetails', compact('page_name', 'data'));
+    }
+
+    public function techIssuesDestroy($id)
+    {
+        $data = Issue::find($id);
+        $data->delete();
+
+        return redirect()->action('PagesController@techIssuesList')->with('success', 'Issue Deleted Successfully');
+    }
+
     public function complaint()
     {
         return view('front.pages.complaint');
+    }
+
+    public function complaintList()
+    {
+        $page_name = 'Complaints Inbox';
+        $data = Complaint::all();
+
+        return view('admin.mailbox.complaints', compact('page_name', 'data'));
+    }
+    
+    public function complaintDetails($id)
+    {
+        $page_name = 'Complaints Details';
+        $data = Complaint::find($id);
+
+        return view('admin.mailbox.complaintsDetails', compact('page_name', 'data'));
+    }
+    
+    public function complaintDestroy($id)
+    {
+        $data = Complaint::find($id);
+        $data->delete();
+
+        return redirect()->action('PagesController@complaintList')->with('success', 'Complaint Deleted Successfully');
     }
 
     public function termsCondition()

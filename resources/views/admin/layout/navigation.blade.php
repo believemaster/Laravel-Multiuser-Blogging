@@ -161,6 +161,44 @@
           </a>
         </li>
         @endpermission
+
+        @permission(['Permission Update', 'All'])
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-envelope"></i> <span>Mail Box</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <a href="{{ url('/admin/newsletters/list') }}">
+                <i class="fa fa-address-book"></i>
+                <span>Subscribes</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ url('/admin/contacts/list') }}">
+                <i class="fa fa-phone"></i>
+                <span>Contacts</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ url('/admin/issues/list') }}">
+                <i class="fa fa-bug"></i>
+                <span>Issues</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ url('/admin/complaints/list') }}">
+                <i class="fa fa-lightbulb-o"></i>
+                <span>Complaints</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        @endpermission
+
         @permission(['System Settings', 'All'])
         <li>
           <a href="{{ url('/admin/settings') }}">

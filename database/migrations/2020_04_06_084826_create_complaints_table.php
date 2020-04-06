@@ -17,9 +17,9 @@ class CreateComplaintsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email');
-            $table->string('articleTitle');
-            $table->string('articleCategory');
-            $table->string('Complaint_Correction');
+            $table->longText('articleTitle');
+            $table->longText('articleCategory');
+            $table->longText('Complaint_Correction');
             $table->timestamps();
         });
     }

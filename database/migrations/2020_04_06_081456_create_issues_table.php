@@ -17,7 +17,7 @@ class CreateIssuesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email');
-            $table->string('issue');
+            $table->longText('issue');
             $table->timestamps();
         });
     }
