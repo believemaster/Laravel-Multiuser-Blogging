@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomePageController@index');
 Route::post('/subscribe', 'HomePageController@subscribe');
+
+Route::get('/all-authors', 'PagesController@allAuthors');
+Route::get('/all-categories', 'PagesController@allCategory');
+
 Route::get('/about', 'PagesController@about');
 Route::get('/membership', 'PagesController@membership');
 Route::get('/jobs', 'PagesController@jobs');
@@ -37,13 +41,15 @@ Route::post('/complaints/submit', 'PagesController@complaintSubmit');
 
 Route::get('/terms-condition', 'PagesController@termsCondition');
 Route::get('/privacy-policy', 'PagesController@privacyPolicy');
-Route::get('/cookies-policy', 'PagesController@cookiesPolicy'); 
+Route::get('/cookie-policy', 'PagesController@cookiePolicy'); 
 
+// OAuths
 Route::get('/sign-in/google', 'Auth\LoginController@googleLogin');
 Route::get('/sign-in/google/redirect', 'Auth\LoginController@googleLoginRedirect');
 
 Route::get('/sign-in/facebook', 'Auth\LoginController@facebookLogin');
 Route::get('/sign-in/facebook/redirect', 'Auth\LoginController@facebookLoginRedirect');
+
 
 Route::get('/listing', 'ListingPageController@index');
 Route::get('/category/{id}', 'ListingPageController@listingCategory');

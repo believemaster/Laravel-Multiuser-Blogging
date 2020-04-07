@@ -1756,7 +1756,7 @@ body {
 #social-sidebar {
 	left: 0;
 	position: fixed;
-	top: 30%;
+	top: 25%;
 }
 #social-sidebar li:first-child a { border-top-right-radius: 5px; }
 #social-sidebar li:last-child a { border-bottom-right-radius: 5px; }
@@ -1797,7 +1797,7 @@ body {
 	content: "";
 	display: block;
 	height: 8px;
-  width: 8px;
+    width: 8px;
 	left: -4px;
 	margin-top: -4px;
 	position: absolute;
@@ -1813,9 +1813,9 @@ body {
 #social-sidebar a[class*="facebook"] span,
 #social-sidebar a[class*="facebook"] span:before {background: #3B5998;}
 
-#social-sidebar a[class*="google"]:hover,
-#social-sidebar a[class*="google"] span,
-#social-sidebar a[class*="google"] span:before {background: #E34429;}
+#social-sidebar a[class*="smile-o"]:hover,
+#social-sidebar a[class*="smile-o"] span,
+#social-sidebar a[class*="smile-o"] span:before {background: #E34429;}
 
 #social-sidebar a[class*="dribbble"]:hover,
 #social-sidebar a[class*="dribbble"] span,
@@ -1823,7 +1823,7 @@ body {
 
 #social-sidebar a[class*="instagram"]:hover,
 #social-sidebar a[class*="instagram"] span,
-#social-sidebar a[class*="instagram"] span:before {background: #f8983e;}
+#social-sidebar a[class*="instagram"] span:before {background: #f8bd3e;}
 
 #social-sidebar a[class*="github"]:hover,
 #social-sidebar a[class*="github"] span,
@@ -1832,3 +1832,4 @@ body {
 #social-sidebar a[class*="youtube"]:hover,
 #social-sidebar a[class*="youtube"] span,
 #social-sidebar a[class*="youtube"] span:before {background: #E34429;}
+

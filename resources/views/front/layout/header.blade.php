@@ -109,9 +109,10 @@
                                         <div class="m-menu-content">
                                             <ul class="col-sm-3">
                                                 <li class="dropdown-header">Authors</li>
-                                                @foreach($shareData['authors'] as $author)
+                                                @foreach($shareData['authors']->slice(0, 5) as $author)
                                                 <li><a href="{{ url('/author') }}/{{ $author->id }}">{{ $author->name }}</a></li>
                                                 @endforeach
+                                                <li><a href="{{ url('/all-authors') }}"><b>All Authors >></b></a></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -122,16 +123,7 @@
                                                 @foreach($shareData['categories']->slice(0, 5) as $category)
                                                 <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
                                                 @endforeach
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="m-menu-content">
-                                            <ul class="col-sm-3">
-                                                <li class="dropdown-header">Categories</li>
-                                                @foreach($shareData['categories']->slice(5, 10) as $category)
-                                                <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
-                                                @endforeach
+                                                <li><a href="{{ url('/all-categories') }}"><b>All Categories >></b></a></li>
                                             </ul>
                                         </div>
                                     </li>

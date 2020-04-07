@@ -28,25 +28,25 @@
 <!-- Sticky Sidebar -->
 <ul id="social-sidebar">
   <li>
-    <a class="fa fa-twitter"><span>Twitter</span></a>
+    <a href="https://www.twitter.com/believe_master" class="fa fa-twitter"><span>Twitter</span></a>
   </li>
   <li>
-    <a class="fa fa-facebook"><span>Facebook</span></a>
+    <a href="https://www.facebook.com/believemaster" class="fa fa-facebook"><span>Facebook</span></a>
   </li>
   <li>
-    <a class="fa fa-google"><span>Google</span></a>
+    <a href="https://www.instagram.com/believemaster" class="fa fa-instagram"><span>Instagram</span></a>
   </li>
   <li>
-    <a class="fa fa-dribbble"><span>Dribbble</span></a>
+    <a href="https://www.facebook.com/yanikkumarBM/" class="fa fa-smile-o"><span>YKBM</span></a>
   </li>
   <li>
-    <a class="fa fa-instagram"><span>Instagram</span></a>
+    <a href="https://www.dribbble.com/believemaster" class="fa fa-dribbble"><span>Dribbble</span></a>
   </li>
   <li>
-    <a class="fa fa-github"><span>Github</span></a>
+    <a href="https://www.github.com/believemaster" class="fa fa-github"><span>Github</span></a>
   </li>
   <li>
-    <a class="fa fa-youtube-play"><span>Youtube</span></a>
+    <a href="https://www.youtube.com/believemaster" class="fa fa-youtube-play"><span>Youtube</span></a>
   </li>
 </ul>
 <!-- Sidebar -->
@@ -60,48 +60,25 @@
 
 <div class="uc-mobile-menu uc-mobile-menu-effect">
     <button type="button" class="close" aria-hidden="true" data-toggle="offcanvas"
-            id="uc-mobile-menu-close-btn">&times;</button>
+            id="uc-mobile-menu-close-btn">&times;
+    </button>
     <div>
         <div>
             <ul id="menu">
-                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li><br>
+                <li style="color: white;" class="text-center"><b>Categories</b></li>
                 @foreach($shareData['categories']->take(5) as $category)
                 <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
                 @endforeach
-                <li class="dropdown m-menu-fw">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">More
-                    <span><i class="fa fa-angle-down"></i></span></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="m-menu-content">
-                                <ul class="col-sm-3">
-                                    <li class="dropdown-header">Categories</li>
-                                    @foreach($shareData['categories']->slice(5, 20) as $category)
-                                    <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown m-menu-fw">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Authors
-                    <span><i class="fa fa-angle-down"></i></span></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="m-menu-content">
-                                <ul class="col-sm-3">
-                                    <li class="dropdown-header">Authors</li>
-                                    @foreach($shareData['authors'] as $author)
-                                    <li><a href="{{ url('/author') }}/{{ $author->id }}">{{ $author->name }}</a></li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
+                <li><a href="{{ url('/all-categories') }}">More <i class="fa fa-angle-right"></i></a></li><br>
+                <li style="color: white;" class="text-center"><b>Authors</b></li>
+                @foreach($shareData['authors']->take(5) as $author)
+                <li><a href="{{ url('/author') }}/{{ $author->id }}">{{ $author->name }}</a></li>
+                @endforeach
+                <li><a href="{{ url('/all-authors') }}">More <i class="fa fa-angle-right"></i></a></li>
             </ul>
         </div>
+        <div class="text-center">&copy; Believe Master {{ date('Y') }} <b>V1.2</b></div>
     </div>
 </div>
 <!-- .uc-mobile-menu -->

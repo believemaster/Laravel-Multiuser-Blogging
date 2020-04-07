@@ -214,6 +214,13 @@
             <span>Feature Coming Soon</span>
           </a>
         </li>
+        <li class="header">Podcast</li>
+        <li>
+          <a href="#">
+            <i class="fa fa-microphone"></i>
+            <span>Feature Coming Soon</span>
+          </a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

@@ -63,7 +63,7 @@
                             <li><a href="{{ url('/complaints') }}">Complaints and Corrections</a></li>
                             <li><a href="{{ url('/terms-condition') }}">Terms and Conditions</a></li>
                             <li><a href="{{ url('/privacy-policy') }}">Privacy Policy</a></li>
-                            <li><a href="{{ url('/cookies-policy') }}">Cookie Policy</a></li>
+                            <li><a href="{{ url('/cookie-policy') }}">Cookie Policy</a></li>
                             <!-- <li><a href="#">Securedrop</a></li> -->
                             <!-- <li><a href="#">Archives</a></li> -->
                         </ul>
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <p>&copy; Copyright 2020-Believe Master News . Developed by: <a href="https://believemaster.github.io">Believe Master</a> </p>
+                        <p>&copy; Copyright {{ date('Y') }}-Believe Master News . Developed by: <a href="https://believemaster.github.io" class="red-color">Believe Master</a> </p>
                     </div>
                     <div class="col-sm-3">
                         <p>All In One News</p>

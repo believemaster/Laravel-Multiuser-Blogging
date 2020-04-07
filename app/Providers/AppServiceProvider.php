@@ -39,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
             elseif($key === 3) $admin_logo = $setting->value;
         }
 
-        $categories = Category::where('status', 1)->paginate(8);
+        $categories = Category::where('status', 1)->paginate(100);
 
         $authors = User::where('id', '!=', 1)->get();
 
