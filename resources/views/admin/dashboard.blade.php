@@ -93,7 +93,7 @@
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-email-outline"></i></span>
+            <span class="info-box-icon bg-red"><i class="ion ion-ios-email-outline"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Total Subscribers</span>
@@ -106,7 +106,7 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-comments"></i></span>
+            <span class="info-box-icon bg-aqua"><i class="fa fa-comments"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Total Comments</span>
