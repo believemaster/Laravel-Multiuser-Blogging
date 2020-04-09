@@ -28,7 +28,7 @@
                         <!-- feature_article_title -->
 
                         <div class="feature_article_date">
-                        <a href="{{ url('/author') }}/{{ $hot_news->creator->id }}" >{{ $hot_news->creator->name }}</a>,
+                        <a href="{{ url('/author') }}/{{ $hot_news->creator->id }}">{{ $hot_news->creator->name }}</a>,
                         <a href="#" target="_self">{{ date('F j,Y', strtotime($hot_news->created_at)) }}</a></div>
                         <!-- feature_article_date -->
 
@@ -39,7 +39,7 @@
 
                         <div class="article_social">
                             <!-- <span><i class="fa fa-share-alt"></i><a href="#">424</a>Shares</span> -->
-                            <span><i class="fa fa-comments-o"></i><a href="{{ url('/details') }}/{{ $hot_news->comments_count }}">{{ $hot_news->comments_count }}</a>Comments</span>
+                            <span><i class="fa fa-comments-o"></i><a href="{{ url('/details') }}/{{ $hot_news->slug }}">{{ $hot_news->comments_count }} Comments</a></span>
                         </div>
                         <!-- article_social -->
 
@@ -79,7 +79,7 @@
 
                         <div class="article_social">
                             <!-- <span><i class="fa fa-share-alt"></i><a href="#">424</a>Shares</span> -->
-                            <span><i class="fa fa-comments-o"></i><a href="{{ url('/details') }}/{{ $hot_news->comments_count }}">{{ $hot_news->comments_count }}</a>Comments</span>
+                            <span><i class="fa fa-comments-o"></i><a href="{{ url('/details') }}/{{ $hot_news->slug }}">{{ $hot_news->comments_count }} Comments</a></span>
                         </div>
                         <!-- article_social -->
 
@@ -346,7 +346,7 @@
         <p>If you are serious to know about Believe Master and want know more about the organition you can completely 
         find out on Believe Master Organisation. Moreover if your are a content creator just ping us a mail for joining
         BM News.</p>
-        <button class="btn pink">Read more</button>
+        <button class="btn pink"><a  href="https://www.believemaster.com">Read more</a></button>
     </div>
 </div>
 <!-- Founder News -->
@@ -372,7 +372,7 @@
         <p>You can comments to the any post you like and you comments will be showacased once approved by the editors or by the admin.
         If you wish to provide content to our website you can contact us for a editors request. If you are a developer and opensourcely provide
         features to our website feel free to contact and joing the Development Team a.k.a BM Devs.</p>
-        <button class="btn pink">Read more</button>
+        <button class="btn pink"><a href="{{ url('/about') }}">Read more</button>
     </div>
 </div>
 <!--  Readers Corner News -->

@@ -210,7 +210,7 @@ Deleting cookies does not mean you are permanently opted out of any advertising 
         <p>If you are serious to know about Believe Master and want know more about the organition you can completely 
         find out on Believe Master Organisation. Moreover if your are a content creator just ping us a mail for joining
         BM News.</p>
-        <button class="btn pink">Read more</button>
+        <button class="btn pink"><a  href="https://www.believemaster.com">Read more</a></button>
     </div>
 </div>
 <!-- Founder News -->
@@ -236,7 +236,7 @@ Deleting cookies does not mean you are permanently opted out of any advertising 
         <p>You can comments to the any post you like and you comments will be showacased once approved by the editors or by the admin.
         If you wish to provide content to our website you can contact us for a editors request. If you are a developer and opensourcely provide
         features to our website feel free to contact and joing the Development Team a.k.a BM Devs.</p>
-        <button class="btn pink">Read more</button>
+        <button class="btn pink"><a href="{{ url('/about') }}">Read more</button>
     </div>
 </div>
 <!--  Readers Corner News -->
