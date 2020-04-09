@@ -68,6 +68,7 @@
                                 <div class="form-group">
                                     <label for="image" class="control-label mb-1">Image</label>
                                     <input type="file" id="image" name="image" class="form-control">
+                                    <small>**Please upload image in square resolution. (recommended: 90x90)</small>
                                 </div>
 
                                 <button id="" type="submit" class="btn btn-md btn-info">
