@@ -58,7 +58,7 @@
                     <td>{{ $row->view_count }}</td>
 
                     <td>
-                    @permission(['Publish Comment', 'All'])
+                    @permission(['Publish Post', 'All'])
                         <form method="post" action="{{ url('/admin/post/status/'.$row->id) }}" style="display:inline">
                         @method('PUT')
                         @csrf

@@ -113,7 +113,7 @@
     </div>
     <!-- article_title -->
 
-    @foreach($category->posts->take(5) as $key=>$item)
+    @foreach($category->posts->where('status','1')->take(5) as $key=>$item)
     @if($key === 0)
     <div class="category_article_wrapper">
         <div class="row">
@@ -189,6 +189,7 @@
 </div>
 <!-- Left Section -->
 
+<!-- Right Side -->
 <div class="col-md-4">
 <div class="widget">
     <div class="widget_title widget_black">

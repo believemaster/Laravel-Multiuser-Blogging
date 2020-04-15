@@ -13,7 +13,7 @@ class CreateSubscribesTable extends Migration
      */
     public function up()
     {
-        Schema::create('subscribe5', function (Blueprint $table) {
+        Schema::create('subscribes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('email');
             $table->timestamps();

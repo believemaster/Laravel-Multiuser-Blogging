@@ -86,6 +86,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/author', 'Admin\AuthorController@index');
     Route::get('/author/create', 'Admin\AuthorController@create');
     Route::post('/author/store', 'Admin\AuthorController@store');
+    Route::put('/author/status/{id}', ['uses'=>'Admin\AuthorController@status', 'as'=>'author-status']);
     Route::get('/author/edit/{id}', ['uses'=>'Admin\AuthorController@edit', 'as'=>'author-edit']);
     Route::put('/author/update/{id}', ['uses'=>'Admin\AuthorController@update', 'as'=>'author-update']);
     Route::delete('/author/delete/{id}', ['uses'=>'Admin\AuthorController@destroy', 'as'=>'author-delete']);

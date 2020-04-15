@@ -27,13 +27,13 @@ class HomePageController extends Controller
                             ->limit(2)
                             ->get();
 
-        $category_posts = Category::with('posts')
-                                    ->where('status',1)
-                                    ->orderBy('id','DESC')
-                                    ->limit(5)
-                                    ->get();
+        $category = Category::with('posts')
+                                ->where('status',1)
+                                ->orderBy('id','DESC')
+                                ->limit(5)
+                                ->get();
 
-        return view('front.home', compact('hot_news', 'top_viewed', 'category_posts'));
+        return view('front.home', compact('hot_news', 'top_viewed', 'category'));
     }
 
     public function subscribe(Request $request)

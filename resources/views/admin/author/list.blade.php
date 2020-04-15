@@ -38,6 +38,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Role</th>
+                    <th>Status</th>
                     <th>Action</th>
                     </tr>
                 </thead>
@@ -55,6 +56,19 @@
                                 @endforeach
                             </ul>
                         @endif
+                    </td>
+                    <td>
+                    @permission(['Publish Post', 'All'])
+                        <form method="post" action="{{ url('/admin/author/status/'.$row->id) }}" style="display:inline">
+                        @method('PUT')
+                        @csrf
+                        @if($row->status === 1)
+                        <button type="submit" class="btn btn-xs btn-success"><i class="fa fa-check-circle"></i> Active</button>
+                        @else
+                        <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times-circle"></i> Inactive</button>
+                        @endif
+                        </form>
+                    @endpermission
                     </td>
                     <td>
                         <a href="{{ url('/admin/author/edit/'.$row->id) }}" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>

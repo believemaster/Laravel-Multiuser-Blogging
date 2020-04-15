@@ -51,6 +51,14 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="status" name="status" class="control-label mb-1">Status</label>
+                                    <select id="status" type="text" name="status" class="form-control" placeholder="Status">
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="roles" name="roles[]" class="control-label mb-1">Roles</label>
                                     <select id="roles" name="roles[]" class="form-control select2" style="width: 100%;" data-placeholder="Select Role" multiple="multiple">
                                         @foreach($roles as $roles)

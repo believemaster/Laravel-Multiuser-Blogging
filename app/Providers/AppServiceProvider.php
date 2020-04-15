@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
 
         $categories = Category::where('status', 1)->paginate(100);
 
-        $authors = User::where('id', '!=', 1)->get();
+        $authors = User::where('id', '!=', 1)->where('status', 1)->get();
 
         $most_viewed = Post::with(['creator', 'comments'])
                             ->where('status', 1)

@@ -49,12 +49,14 @@ class AuthorController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required',
+            'status' => 'required',
             'roles.*' => 'required'
         ],[
             'name.required' => "Name Field is Required",
             'email.email' => "Invalid Email Format",
             'email.unique' => "Email Already Exist",
             'password' => "Password Must Be 6 Characters Minimum",
+            'status' => 'Status must be Active or Inactive',
         ]);
 
         $author = new User();
@@ -62,6 +64,7 @@ class AuthorController extends Controller
         $author->email = $request->email;
         $author->password = Hash::make($request->password);
         $author->type = 2;
+        $author->status = $request->status;
         $author->save();
 
         foreach($request->roles as $value) {
@@ -144,5 +147,25 @@ class AuthorController extends Controller
         User::where('id', $id)->delete();
 
         return redirect()->action('Admin\AuthorController@index')->with('success', "Author Deleted Successfully");
+    }
+
+    /**
+     * Make Status the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function status($id)
+    {
+        $user = User::find($id);
+        if($user->status === 1) {
+            $user->status = 0;
+        } else {
+            $user->status = 1;
+        }
+        $user->save();
+
+        return redirect()->action('Admin\AuthorController@index')->with('success', 'Author Status Changed Successfully');
+
     }
 }
