@@ -592,8 +592,8 @@ section {
 }
 
 .navbar-toggle .icon-bar {
-    width: 14px;
-    height: 3px;
+    width: 25px;
+    height: 6px;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -814,9 +814,22 @@ section {
     bottom          : 35px;
     left            : 25%;
     content         : " ";
-    width           : 75%;
+    width           : 25%;
     border-top      : 2px solid #eee;
     z-index         : 1;
+}
+
+@media screen and (max-width: 768px) {
+    .article_title:after {
+        position        : relative;
+        display         : inline-block;
+        bottom          : 35px;
+        left            : 50%;
+        content         : " ";
+        width           : 50%;
+        border-top      : 2px solid #eee;
+        z-index         : 1;
+    }
 }
 
 .header_black h2:after {
@@ -961,7 +974,7 @@ section {
     }
 }
 
-.category_article_wrapper .blockquote {
+.category_article_wrapper .light {
     display         : block;
     background      : #efecec;
     padding         : 25px 0px 25px 45px;
@@ -1057,7 +1070,7 @@ section {
     margin-bottom: 30px;
 }
 
-.entity_content blockquote {
+.entity_content light {
     display: block;
     padding: 15px 20px 15px 45px;
     margin: 0px 20px 15px 0px;
@@ -1072,7 +1085,7 @@ section {
     box-shadow: 2px 2px 15px #ccc;
 }
 
-.entity_content blockquote::before {
+.entity_content light::before {
     content: "\201C";
     font-family: Georgia, serif;
     font-size: 60px;
@@ -1083,11 +1096,11 @@ section {
     top: 20px;
 }
 
-.entity_content blockquote::after {
+.entity_content light::after {
     content: "";
 }
 
-.entity_content blockquote a {
+.entity_content light a {
     text-decoration: none;
     background: #eee;
     cursor: pointer;
@@ -1095,12 +1108,40 @@ section {
     color: #c76c0c;
 }
 
-.entity_content blockquote a:hover {
+.entity_content light a:hover {
     color: #666;
 }
 
-.entity_content blockquote em {
+.entity_content light em {
     font-style: italic;
+}
+
+@media screen and (max-width: 768px){
+        .entity_content light {
+        display: block;
+        padding: 12px 12px 12px 30px;
+        margin: 0px 0px 15px 0px;
+        position: relative;
+        font-size: 20px;
+        line-height: 1.3em;
+        color: #666;
+        width: 100%;
+        border: none ;
+        -moz-box-shadow: 2px 2px 15px #ccc;
+        -webkit-box-shadow: 2px 2px 15px #ccc;
+        box-shadow: 2px 2px 15px #ccc;
+    }
+
+    .entity_content light::before {
+        content: "\201C";
+        font-family: Georgia, serif;
+        font-size: 35px;
+        font-weight: bold;
+        color: #999;
+        position: absolute;
+        left: 8px;
+        top: 10px;
+    }
 }
 
 .entity_inner__title {

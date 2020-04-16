@@ -106,15 +106,15 @@
 <div class="row">
 <div class="col-md-8">
 
-@foreach($shareData['categories'] as $category)
+
 <div class="category_section mobile">
+@foreach($category_posts as $category)
     <div class="article_title header_black">
         <h2><a href="{{ url('/category') }}/{{ $category->id }}" target="_self">{{ $category->name }}</a></h2>
     </div>
-    <!-- article_title -->
-
-    @foreach($category->posts->where('status','1')->take(5) as $key=>$item)
-    @if($key === 0)
+    <!-- article_title ->sortByDesc('created_at') -->
+    @foreach($category->posts->where('status', 1)->take(5)->reverse() as $key=>$item)
+    @if($loop->first)
     <div class="category_article_wrapper">
         <div class="row">
             <div class="col-md-6">
@@ -147,7 +147,7 @@
         </div>
     </div>
     @else
-        @if($key === 1)
+        @if($key === 0)
     <div class="category_article_wrapper">
         <div class="row">
         @endif
@@ -160,7 +160,7 @@
                     <div class="media-body">
                         <span class="tag purple">{{ $category->name }}</span>
 
-                        <h3 class="media-heading"><a href="{{ url('/details') }}/{{ $item->slug }}">{{ $item->title }}</a></h3>
+                        <h3 class="media-heading"><a href="{{ url('/details') }}/{{ $item->slug }}">{{ str_limit($item->title, 50, '...') }}</a></h3>
                         <span class="media-date"><a href="#">{{ date('F j,Y', strtotime($item->created_at)) }}</a>, by: <a href="{{ url('/author') }}/{{ $item->creator->id }}">{{ $item->creator->name }}</a></span>
 
                         <div class="media_social">
@@ -177,12 +177,12 @@
     @endif
     @endforeach
     <p class="divider"><a href="{{ url('/category') }}/{{ $category->id }}">More News&nbsp;&raquo;</a></p>
-</div>
 @endforeach
+</div>
 <!-- Category News Section -->
 <nav aria-label="Page navigation" class="pagination_section">
     <div class="pagination">
-        {{ $shareData['categories']->links() }}
+    {{ $category_posts->links() }}
     </div>
 </nav>
 <!-- navigation -->

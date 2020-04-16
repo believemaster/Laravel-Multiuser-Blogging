@@ -60,6 +60,24 @@
                                     <input type="file" id="admin_logo" name="admin_logo" class="form-control">
                                 </div>
 
+                                <h4>Meta Tags Update :</h4>
+
+                                <div class="form-group">
+                                    <label for="meta_title" class="control-label mb-1">Meta Title</label>
+                                    <input id="meta_title" name="meta_title" value="{{ $meta_title }}" type="text" class="form-control">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="meta_keyword" class="control-label mb-1">Meta Keyword</label>
+                                    <textarea id="meta_keyword" name="meta_keyword" type="text" class="form-control" rows="4">{{ $meta_keyword }}</textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="meta_description" class="control-label mb-1">Meta Description</label>
+                                    <textarea id="meta_description" name="meta_description" type="text" class="form-control" rows='4'>{{ $meta_description }}</textarea>
+                                </div>
+
+
                                 <button id="payment-button" type="submit" class="btn btn-md btn-info">
                                     <i class="fa fa-save fa-lg"></i>&nbsp;
                                     <span id="">Update</span>

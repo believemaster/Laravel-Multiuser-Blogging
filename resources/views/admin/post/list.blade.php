@@ -63,16 +63,30 @@
                         @method('PUT')
                         @csrf
                         @if($row->status === 1)
-                        <button type="submit" class="btn btn-xs btn-success"><i class="fa fa-check-circle"></i> Published</button>
+                        <button type="submit" class="btn btn-xs btn-success">
+                            <i class="fa fa-check-circle"></i> Published
+                        </button>
                         @else
-                        <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times-circle"></i> Unpublished</button>
+                        <button type="submit" class="btn btn-xs btn-danger">
+                            <i class="fa fa-times-circle"></i> Unpublished
+                        </button>
                         @endif
                         </form>
+                    @else
+                        @if($row->status === 1)
+                        <button class="btn btn-xs btn-success" disabled>
+                            <i class="fa fa-check-circle "></i> Published
+                        </button>
+                        @else
+                        <button class="btn btn-xs btn-danger" disabled>
+                            <i class="fa fa-times-circle"></i> Unpublished
+                        </button>
+                        @endif
                     @endpermission
                     </td>
 
                     <td>
-                    @permission(['Publish Comment', 'All'])
+                    @permission(['Publish Post', 'All'])
                         <form method="post" action="{{ url('/admin/post/hot/news/'.$row->id) }}" style="display:inline">
                         @method('PUT')
                         @csrf
@@ -82,7 +96,18 @@
                         <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times-circle"></i> No</button>
                         @endif
                         </form>
+                    @else
+                        @if($row->hot_news === 1)
+                        <button class="btn btn-xs btn-success" disabled>
+                            <i class="fa fa-check-circle "></i> Yes
+                        </button>
+                        @else
+                        <button class="btn btn-xs btn-danger" disabled>
+                            <i class="fa fa-times-circle"></i> No
+                        </button>
+                        @endif
                     @endpermission
+                    </td>
                     </td>
 
                     <td>
@@ -92,12 +117,14 @@
                         @permission(['Post Add', 'All'])
                         <a href="{{ url('/admin/post/edit/'.$row->id) }}" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
                         @endpermission
-                        @permission(['Post Add', 'All'])
+                        @permission(['Post Delete', 'All'])
                         <form method="post" action="{{ url('/admin/post/delete/'.$row->id) }}" style="display:inline">
                         @method('DELETE')
                         @csrf
                         <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></button>
                         </form>
+                        @else
+                        <button class="btn btn-xs btn-danger" disabled><i class="fa fa-trash"></i></button>
                         @endpermission
                     </td>
                     </tr>

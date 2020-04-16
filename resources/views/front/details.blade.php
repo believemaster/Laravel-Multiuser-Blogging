@@ -75,7 +75,7 @@
         {{ $post->short_description }}
         </p> -->
 
-        <blockquote class="pull-left">{{ $post->short_description }}</blockquote>
+        <light class="pull-left">{{ $post->short_description }}</light>
 
         <p>
             {!! $post->description !!}

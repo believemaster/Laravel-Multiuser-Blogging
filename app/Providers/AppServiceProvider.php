@@ -37,9 +37,12 @@ class AppServiceProvider extends ServiceProvider
             elseif($key === 1) $favicon = $setting->value;
             elseif($key === 2) $front_logo = $setting->value;
             elseif($key === 3) $admin_logo = $setting->value;
+            elseif($key === 4) $meta_title = $setting->value;
+            elseif($key === 5) $meta_keyword = $setting->value;
+            elseif($key === 6) $meta_description = $setting->value;
         }
 
-        $categories = Category::where('status', 1)->paginate(100);
+        $categories = Category::where('status', 1)->paginate(8);
 
         $authors = User::where('id', '!=', 1)->where('status', 1)->get();
 
@@ -60,6 +63,9 @@ class AppServiceProvider extends ServiceProvider
             'favicon'=>$favicon,
             'front_logo'=>$front_logo,
             'admin_logo'=>$admin_logo,
+            'meta_title'=>$meta_title,
+            'meta_keyword'=>$meta_keyword,
+            'meta_description'=>$meta_description,
             'categories'=>$categories,
             'authors'=>$authors,
             'most_viewed'=>$most_viewed,

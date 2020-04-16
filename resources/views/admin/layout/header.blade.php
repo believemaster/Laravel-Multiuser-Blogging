@@ -160,8 +160,6 @@
               <li class="user-header">
                 @if(Auth::user()->img)
                 <img src="{{ asset('/storage/others') }}/{{ Auth::user()->email }}/{{ Auth::user()->img }}" class="img-circle" alt="User Image">
-                @elseif(Auth::user()->img)
-                <img src="{{ Auth::user()->img }}" class="img-circle" alt="User Image">
                 @else
                 <img src="{{ asset('/storage/others/user.png') }}" class="img-circle" alt="User Image">
                 @endif

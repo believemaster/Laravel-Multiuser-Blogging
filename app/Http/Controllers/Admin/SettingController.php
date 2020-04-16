@@ -13,7 +13,14 @@ class SettingController extends Controller
         $setting = Setting::find(1);
         $system_name = $setting->value;
 
-        return view('admin.setting.update', compact('page_name', 'system_name'));
+        $setting_meta_title = Setting::find(5);
+        $meta_title = $setting_meta_title->value;
+        $setting_meta_key = Setting::find(6);
+        $meta_keyword = $setting_meta_key->value;
+        $setting_meta_desc = Setting::find(7);
+        $meta_description = $setting_meta_desc->value;
+
+        return view('admin.setting.update', compact('page_name', 'system_name', 'meta_keyword', 'meta_title', 'meta_description'));
     }
 
     public function update(Request $request) {
@@ -62,6 +69,18 @@ class SettingController extends Controller
 
         $sys_settings = Setting::find(1);
         $sys_settings->value = $request->system_name;
+        $sys_settings->save();
+
+        $sys_settings = Setting::find(5);
+        $sys_settings->value = $request->meta_title;
+        $sys_settings->save();
+
+        $sys_settings = Setting::find(6);
+        $sys_settings->value = $request->meta_keyword;
+        $sys_settings->save();
+
+        $sys_settings = Setting::find(7);
+        $sys_settings->value = $request->meta_description;
         $sys_settings->save();
 
         return redirect()->action('Admin\SettingController@index')->with('success', 'Settings Updated Successfully');

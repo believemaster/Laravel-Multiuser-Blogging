@@ -2,11 +2,6 @@
 <html>
 <head>
     @include('front.layout.top')
-    <meta property="og:url"           content="https://localhost:8000" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Your Website Title" />
-    <meta property="og:description"   content="Your description" />
-    <meta property="og:image"         content="" />
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar">

@@ -162,7 +162,7 @@
         </li>
         @endpermission
 
-        @permission(['Permission Update', 'All'])
+        @permission(['Mail Box', 'All'])
         <li class="treeview">
           <a href="#">
             <i class="fa fa-envelope"></i> <span>Mail Box</span>
