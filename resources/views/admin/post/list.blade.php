@@ -55,7 +55,21 @@
 
                     <td>{{ $row->title }}</td>
                     <td>{{ $row->creator->name }}</td>
-                    <td>{{ $row->view_count }}</td>
+                    
+                    @if($row->view_count >= 1000)
+                        @php
+                        $in_K = $row->view_count / 1000
+                        @endphp
+                    <td>{{ $in_K }}k <br>
+                        @if( $row->view_count === $top_viewed) 
+                        <small class="label pull-right bg-purple pull-left">Top <i class="fa fa-eye"></i></small>
+                        @endif
+                    </td>
+                    @else
+                    <td>{{ $row->view_count }}
+                        @if( $row->view_count === $top_viewed) <small class="label pull-right bg-purple">Top <i class="fa fa-eye"></i></small> @endif
+                    </td>
+                    @endif
 
                     <td>
                     @permission(['Publish Post', 'All'])

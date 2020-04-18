@@ -15,7 +15,7 @@ class PagesController extends Controller
     {
         $page_name = 'All Authors';
         
-        return view('front.pages.allAuthors', compact('page_name', 'data'));
+        return view('front.pages.allAuthors', compact('page_name'));
     }
 
     public function allCategory()
@@ -42,7 +42,7 @@ class PagesController extends Controller
 
     public function sitemap()
     {
-        return view('front.pages.sitemap');
+        return view('sitemap')->header('Content-Type', 'text/xml');
     }
 
     public function contact()

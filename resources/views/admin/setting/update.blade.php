@@ -77,6 +77,28 @@
                                     <textarea id="meta_description" name="meta_description" type="text" class="form-control" rows='4'>{{ $meta_description }}</textarea>
                                 </div>
 
+                                <h4>Promotion Videos Update(Paste Only Embed Src Links Only) :</h4>
+                                <div class="form-group">
+                                    <label for="video1" class="control-label mb-1">Video Embed Link 1</label>
+                                    <input id="video1" name="video1" type="text" class="form-control" rows='4' value="{{ $video1 }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="video2" class="control-label mb-1">Video Embed Link 2</label>
+                                    <input id="video2" name="video2" type="text" class="form-control" rows='4' value="{{ $video2 }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="video3" class="control-label mb-1">Video Embed Link 3</label>
+                                    <input id="video3" name="video2" type="text" class="form-control" rows='4' value="{{ $video3 }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="video4" class="control-label mb-1">Video Embed Link 4</label>
+                                    <input id="video4" name="video4" type="text" class="form-control" rows='4' value="{{ $video4 }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="video5" class="control-label mb-1">Video Embed Link 5</label>
+                                    <input id="video5" name="video4" type="text" class="form-control" rows='4' value="{{ $video5 }}">
+                                </div>
+
 
                                 <button id="payment-button" type="submit" class="btn btn-md btn-info">
                                     <i class="fa fa-save fa-lg"></i>&nbsp;

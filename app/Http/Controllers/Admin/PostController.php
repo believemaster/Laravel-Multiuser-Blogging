@@ -25,7 +25,10 @@ class PostController extends Controller
         } else {
             $data = Post::with(['creator'])->where('created_by', Auth::user()->id)->orderBy('id', 'desc')->get();
         }
-        return view('admin.post.list', compact('page_name', 'data'));
+
+        $top_viewed = Post::max('view_count');
+
+        return view('admin.post.list', compact('page_name', 'data', 'top_viewed'));
     }
 
     /**

@@ -20,31 +20,7 @@
 @include('front.layout.header')
 
     @yield('content')
-<!-- Sticky Sidebar -->
-<ul id="social-sidebar">
-  <li>
-    <a href="https://www.twitter.com/believe_master" class="fa fa-twitter"><span>Twitter</span></a>
-  </li>
-  <li>
-    <a href="https://www.facebook.com/believemaster" class="fa fa-facebook"><span>Facebook</span></a>
-  </li>
-  <li>
-    <a href="https://www.instagram.com/believemaster" class="fa fa-instagram"><span>Instagram</span></a>
-  </li>
-  <li>
-    <a href="https://www.facebook.com/yanikkumarBM/" class="fa fa-smile-o"><span>YKBM</span></a>
-  </li>
-  <li>
-    <a href="https://www.dribbble.com/believemaster" class="fa fa-dribbble"><span>Dribbble</span></a>
-  </li>
-  <li>
-    <a href="https://www.github.com/believemaster" class="fa fa-github"><span>Github</span></a>
-  </li>
-  <li>
-    <a href="https://www.youtube.com/believemaster" class="fa fa-youtube-play"><span>Youtube</span></a>
-  </li>
-</ul>
-<!-- Sidebar -->
+
 
 @include('front.layout.footer')
 

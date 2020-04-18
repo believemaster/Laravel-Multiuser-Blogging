@@ -40,6 +40,11 @@ class AppServiceProvider extends ServiceProvider
             elseif($key === 4) $meta_title = $setting->value;
             elseif($key === 5) $meta_keyword = $setting->value;
             elseif($key === 6) $meta_description = $setting->value;
+            elseif($key === 7) $video1 = $setting->value;
+            elseif($key === 8) $video2 = $setting->value;
+            elseif($key === 9) $video3 = $setting->value;
+            elseif($key === 10) $video4 = $setting->value;
+            elseif($key === 11) $video5 = $setting->value;
         }
 
         $categories = Category::where('status', 1)->paginate(8);
@@ -66,6 +71,11 @@ class AppServiceProvider extends ServiceProvider
             'meta_title'=>$meta_title,
             'meta_keyword'=>$meta_keyword,
             'meta_description'=>$meta_description,
+            'video1'=>$video1,
+            'video2'=>$video2,
+            'video3'=>$video3,
+            'video4'=>$video4,
+            'video5'=>$video5,
             'categories'=>$categories,
             'authors'=>$authors,
             'most_viewed'=>$most_viewed,

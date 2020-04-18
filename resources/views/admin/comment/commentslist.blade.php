@@ -33,7 +33,7 @@
                     <th>#</th>
                     <th>Name</th>
                     <th>Comment</th>
-                    <th>Post Id</th>
+                    <th>Post Title</th>
                     <th>Status</th>
                     <th>Email</th>
                     <th>Action</th>
@@ -45,7 +45,7 @@
                     <td>{{ ++$i }}</td>
                     <td>{{ $row->name }}</td>
                     <td>{{ $row->comment }}</td>
-                    <td>{{ $row->post_id }}</td>
+                    <td>{{ $row->post->title }}</td>
                     <td>
                     
                     <form method="post" action="{{ url('/admin/comment/status/'.$row->id) }}" style="display:inline">

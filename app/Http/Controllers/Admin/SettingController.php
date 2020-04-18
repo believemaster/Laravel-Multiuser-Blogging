@@ -20,7 +20,31 @@ class SettingController extends Controller
         $setting_meta_desc = Setting::find(7);
         $meta_description = $setting_meta_desc->value;
 
-        return view('admin.setting.update', compact('page_name', 'system_name', 'meta_keyword', 'meta_title', 'meta_description'));
+        $video_one = Setting::find(8);
+        $video1 = $video_one->value;
+
+        $video_two = Setting::find(9);
+        $video2 = $video_two->value;
+
+        $video_three = Setting::find(10);
+        $video3 = $video_three->value;
+
+        $video_four = Setting::find(11);
+        $video4 = $video_four->value;
+
+        $video_five = Setting::find(12);
+        $video5 = $video_five->value;
+
+        return view('admin.setting.update', compact('page_name', 
+                                                    'system_name', 
+                                                    'meta_keyword', 
+                                                    'meta_title', 
+                                                    'meta_description',
+                                                    'video1',
+                                                    'video2',
+                                                    'video3',
+                                                    'video4',
+                                                    'video5' ));
     }
 
     public function update(Request $request) {
@@ -81,6 +105,26 @@ class SettingController extends Controller
 
         $sys_settings = Setting::find(7);
         $sys_settings->value = $request->meta_description;
+        $sys_settings->save();
+
+        $sys_settings = Setting::find(8);
+        $sys_settings->value = $request->video1;
+        $sys_settings->save();
+
+        $sys_settings = Setting::find(9);
+        $sys_settings->value = $request->video2;
+        $sys_settings->save();
+
+        $sys_settings = Setting::find(10);
+        $sys_settings->value = $request->video3;
+        $sys_settings->save();
+
+        $sys_settings = Setting::find(11);
+        $sys_settings->value = $request->video4;
+        $sys_settings->save();
+
+        $sys_settings = Setting::find(12);
+        $sys_settings->value = $request->video5;
         $sys_settings->save();
 
         return redirect()->action('Admin\SettingController@index')->with('success', 'Settings Updated Successfully');

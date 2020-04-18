@@ -66,15 +66,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/permission', ['uses'=>'Admin\PermissionController@index', 'as'=>'permission-list', 
                                'middleware'=>'permission:Permission List|All']);
     Route::get('/permission/create', ['uses'=>'Admin\PermissionController@create', 'as'=>'permission-create', 
-                                      'middleware'=>'permission:Permission List|All']);
+                                      'middleware'=>'permission:Permission Add|All']);
     Route::post('/permission/store', ['uses'=>'Admin\PermissionController@store', 'as'=>'permission-store', 
-                                      'middleware'=>'permission:Permission List|All']);
+                                      'middleware'=>'permission:Permission Add|All']);
     Route::get('/permission/edit/{id}', ['uses'=>'Admin\PermissionController@edit', 'as'=>'permission-edit', 
-                                         'middleware'=>'permission:Permission List|All']);
+                                         'middleware'=>'permission:Permission Update|All']);
     Route::put('/permission/update/{id}', ['uses'=>'Admin\PermissionController@update', 'as'=>'permission-update', 
-                                           'middleware'=>'permission:Permission List|All']);
+                                           'middleware'=>'permission:Permission Update|All']);
     Route::delete('/permission/delete/{id}', ['uses'=>'Admin\PermissionController@delete', 'as'=>'permission-delete', 
-                                              'middleware'=>'permission:Permission List|All']);
+                                              'middleware'=>'permission:Permission Delete|All']);
     
     Route::get('/roles', 'Admin\RoleController@index');
     Route::get('/roles/create', 'Admin\RoleController@create');
@@ -124,7 +124,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
                                     'middleware'=>'permission:Post Delete|All']);
 
     Route::get('/comments', ['uses'=>'Admin\CommentController@showComments', 'as'=>'comments-all',
-                            'middleware'=>'permission:Post List|All']);             
+                                'middleware'=>'permission:Post List|All']);             
     Route::get('/comment/{id}', ['uses'=>'Admin\CommentController@index', 'as'=>'comment-list', 
                                 'middleware'=>'permission:Post List|All']);
     Route::get('/comment/reply/{id}', ['uses'=>'Admin\CommentController@reply', 'as'=>'comment-view', 
@@ -137,9 +137,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
                                         'middleware'=>'permission:Post List|All']);
 
     Route::get('/settings', ['uses'=>'Admin\SettingController@index', 'as'=>'setting', 
-                            'middleware'=>'permission:Post List|All']);
+                            'middleware'=>'permission:System Settings|All']);
     Route::put('/settings/update', ['uses'=>'Admin\SettingController@update', 'as'=>'setting-update', 
-                                    'middleware'=>'permission:Post List|All']);
+                                    'middleware'=>'permission:System Settings|All']);
 
     Route::get('/profile', 'Admin\ProfileController@index');
     Route::put('/profile/update', 'Admin\ProfileController@update');
