@@ -6,7 +6,7 @@
 <head>
     @include('admin.layout.top')
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
    @include('admin.layout.header')
@@ -15,7 +15,11 @@
    
     @yield('content')
     
-<div class="control-sidebar-bg"></div>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
 </div>
 
 @include('admin.layout.bottom')

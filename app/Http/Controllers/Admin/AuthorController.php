@@ -133,6 +133,7 @@ class AuthorController extends Controller
         foreach($request->roles as $value) {
             $author->attachRole($value);
         }
+
         return redirect()->action('Admin\AuthorController@index')->with('success', 'Author Updated Successfully');
     }
 

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "bm-news-273306",
+  "private_key_id": "f0e1f572d8f415c2c6b90653b991059a698e153d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCsBSGNwxN3blFM\nsUS6N35h07Cw+3RJX4H7fCc53eDSOwsMiO4s3EYSKyPPlSanmtNFkS9Y6/yj8VR1\nNCz/kapmsPZ8OtVw7N2AT7bkfMVEmPeyuc9yQRBRnTeiLeNzmjGyse3KhewCWrHu\n+8gS3uk7cqT1WbuaZkRPj59LeDFSr+CNN2M/VGlYR3IKHTGyDnYuffI3/fAIHHyT\n8ahRUSEyUDjgno3kI7UteMubkUtfPHwzvzAyZr2J3awYTrRHNeRcdi8DKUz07AUe\n93oe8TahLb046mZCVrR69lPRyPBbmhowbzJHfw3hxiSKpwTLl/jgP880b1ubGdb+\nHr87ewZVAgMBAAECggEAJMST/3EK4CQ8TGA3iHYEFXTh93JH0McRSWeoGr5KJ6Vn\nHy7FeeE7OPbvmJcQxBJbxiraK++E+KXEn6ifVaEVAw4gIT2SEakPTzW6qevhXmAz\n0YfVx14Q1uD72zZjv3nd1Ywif39QitBH6AT5Js9umr5OdALSDpZ9U2QncEIoiLul\nSYsA1OPTe6RrPeko3dM+vwvXWgNLSm6Qvd3puS4C8MP9eYl3nU4lzmMtrHMyikN7\nhYIwYMkJ3sKg8qspPlQ/zDDWFfTQ1keGSXn83pKA/PGFv45fXdYTSZRE5jcBVTTd\nkUPNy/p3sx9K6CQmn7E/DB7nzsr42GUsiEccVOvYAQKBgQDY5DbUuQIG5Dyuzllp\nXVEZjCC0BVkHOWVLFyaWfkpqm1fX8gRZx9m/fFGNtusQGPfh7WF7fPZ0IrkuE/Yc\nm6EyvyDsCSfBp5EXmLlTYLHBgBrfJVVmsaFBGoEa1t2HZfKfSR1P/DhBeKNr6T6L\nj7+ePg7LUaro9wkPQSKEi4LbFQKBgQDLCaLxptb7rtEt6yB/P5yHbfoAP1C/CQQv\nETaJJFHJLgRA0BDAohrTZddXVtE7wm4EsSKtyGtEb4pBGZ3SH7YP6C1OjHKUmkA8\nTx6aFiB4gH9yTketUp6fY9QitkeGj8jDdDvTF8793v406aYxhkOwgJo1fYtvglQ8\nTtQV6r1OQQKBgDsH2fiJpgiUJAP7u5AWytTmM5xrfDCgKXaHhYQeOUjMoNrwTsjU\nwOoB/vxQFaga85R1FDwU5cr0DGyDGE/u96+lH2O+lih5396JPZ94yMh+glHLinPZ\n0qayfQL+CespDyDVOHoljnYbTHc5U0GOzTtXbpVd0+N2IOwa8Tcb9XCFAoGBAMIq\n+wsCNMIIUr8JBtDqMnVJdTXbVwr6QmgInBDXDOfJ/ANHd13hKKpV0HQT8JCnxbLy\n+2kaK4sM6DiNmOIjtWbM8NcXdVQrl5aVS3ysAG185WSY++8C/fML8wknLIvA4YwZ\nkkSzlh4urQhJEch20DDxK4hQAZKoHop2EFjNXjCBAoGBALEk20EgR3m/6lc+k8jc\nhsvBCLfCHelQFeFT5lk7NZGFzOacy9Hy1xSKsuo8617X3W+Oo0N/uAXpr/FaT0bN\nrQIJy+ULaV1TQYlLHQmvsQcjl42ZAvRRV4JpGoZTqKbCkKPJwaCJBmkp5KHgYrMa\nG5qthiuECCGpUI6C7HmPFiqf\n-----END PRIVATE KEY-----\n",
+  "client_email": "bmnews@bm-news-273306.iam.gserviceaccount.com",
+  "client_id": "102418882543020287554",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bmnews%40bm-news-273306.iam.gserviceaccount.com"
+}

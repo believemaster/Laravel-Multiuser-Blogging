@@ -1,47 +1,49 @@
-<!-- jQuery 3 -->
-<script src="{{ asset('/admin/assets/bower_components/jquery/dist/jquery.min.js') }}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{ asset('/admin/assets/bower_components/jquery-ui/jquery-ui.min.js') }}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
-<!-- Bootstrap 3.3.7 -->
-<script src="{{ asset('/admin/assets/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-<!-- Morris.js charts -->
-<script src="{{ asset('/admin/assets/bower_components/raphael/raphael.min.js') }}"></script>
-<script src="{{ asset('/admin/assets/bower_components/morris.js/morris.min.js') }}"></script>
+
+<!-- Admin Lte3 -->
+<!-- jQuery -->
+<script src="{{ asset('/admin/assets/plugins/jquery/jquery.min.js') }}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{{ asset('/admin/assets/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('/admin/assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- Material UI Bootstrap -->
+<link rel="stylesheet" href="{{ asset('/admin/assets/plugins/bootstrap/js/bootstrap-material-design.min.css')}}">
+<!-- ChartJS -->
+<script src="{{ asset('/admin/assets/plugins/chart.js/Chart.min.js') }}"></script>
 <!-- Sparkline -->
-<script src="{{ asset('/admin/assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
-<!-- jvectormap -->
-<script src="{{ asset('/admin/assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
-<script src="{{ asset('/admin/assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
+<script src="{{ asset('/admin/assets/plugins/sparklines/sparkline.js') }}"></script>
+<!-- JQVMap -->
+<script src="{{ asset('/admin/assets/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
+<script src="{{ asset('/admin/assets/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
 <!-- jQuery Knob Chart -->
-<script src="{{ asset('/admin/assets/bower_components/jquery-knob/dist/jquery.knob.min.js') }}"></script>
+<script src="{{ asset('/admin/assets/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
 <!-- daterangepicker -->
-<script src="{{ asset('/admin/assets/bower_components/moment/min/moment.min.js') }}"></script>
-<script src="{{ asset('/admin/assets/bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
-<!-- datepicker -->
-<script src="{{ asset('/admin/assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="{{ asset('/admin/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
-<!-- Slimscroll -->
-<script src="{{ asset('/admin/assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
-<!-- FastClick -->
-<script src="{{ asset('/admin/assets/bower_components/fastclick/lib/fastclick.js') }}"></script>
+<script src="{{ asset('/admin/assets/plugins/moment/moment.min.js') }}"></script>
+<script src="{{ asset('/admin/assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{ asset('/admin/assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+<!-- Summernote -->
+<script src="{{ asset('/admin/assets/plugins/summernote/summernote-bs4.min.js') }}"></script>
+<!-- overlayScrollbars -->
+<script src="{{ asset('/admin/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('/admin/assets/dist/js/adminlte.min.js') }}"></script>
+<script src="{{ asset('/admin/assets/dist/js/adminlte.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('/admin/assets/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('/admin/assets/dist/js/demo.js') }}"></script>
 <!-- DataTables -->
-<script src="{{ asset('/admin/assets/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('/admin/assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
-<!-- Select2 -->
-<script src="{{ asset('/admin/assets/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
-<!-- Responsice Datatable -->
-<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.js"></script>
+<script src="{{ asset('/admin/assets/plugins/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('/admin/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+
 
     <script>
         ( function ( $ ) {

@@ -1,5 +1,7 @@
 @extends('front.layout.master')
 
+@section('title', $post->title)
+
 @section('content')
 
 <section id="entity_section" class="entity_section">
@@ -87,7 +89,7 @@
     <div class="entity_footer">
         <div class="entity_tag">
         @foreach($related_news as $news)
-            <span class="blank"><a href="{{ url('/category') }}/{{ $news->id }}">{{ $news->category['name'] }}</a></span>
+            <span class="blank"><a href="{{ url('/category') }}/{{ $news->category['id'] }}">{{ $news->category['name'] }}</a></span>
         @endforeach
         </div>
         <!-- entity_tag -->
@@ -119,7 +121,7 @@
                     <img class="media-object" src="{{ asset('/storage/post') }}/{{ $news->thumb_image }}" alt="{{ $news->title }}"></a>
                 </div>
                 <div class="media-body">
-                    <span class="tag purple"><a href="{{ url('/category') }}/{{ $news->id }}" target="_self">{{ $news->category['name'] }}</a></span>
+                    <span class="tag purple"><a href="{{ url('/category') }}/{{ $news->category['id'] }}" target="_self">{{ $news->category['name'] }}</a></span>
 
                     <h3 class="media-heading"><a href="{{ url('/details') }}/{{ $news->slug }}" target="_self">{{ $news->title }}</a></h3>
                     <span class="media-date"><a href="#">{{ date('j F -y', strtotime($news->created_at)) }}</a>,  by: <a href="{{ url('/author') }}/{{ $news->creator->id }}">{{ $news->creator['name'] }}</a></span>

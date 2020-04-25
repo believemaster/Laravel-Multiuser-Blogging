@@ -30,9 +30,9 @@ class HomePageController extends Controller
         $category_posts = Category::with('posts')
                                 ->where('status',1)
                                 ->orderBy('id','DESC')
-                                ->paginate(8);
+                                ->paginate(5);
 
-        return view('front.home', compact('hot_news', 'top_viewed', 'category_posts'));
+        return view('front.home', compact('hot_news', 'top_viewed', 'category_posts', 'top_authors'));
     }
 
     public function subscribe(Request $request)

@@ -104,89 +104,88 @@
 <section id="category_section" class="category_section">
 <div class="container">
 <div class="row">
-<div class="col-md-8">
-
-
-<div class="category_section mobile">
-@foreach($category_posts as $category)
-    <div class="article_title header_black">
-        <h2><a href="{{ url('/category') }}/{{ $category->id }}" target="_self">{{ $category->name }}</a></h2>
-    </div>
-    <!-- article_title ->sortByDesc('created_at') -->
-    @foreach($category->posts->where('status', 1)->take(5)->reverse() as $key=>$item)
-    @if($loop->first)
-    <div class="category_article_wrapper">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="top_article_img">
-                    <a href="{{ url('/details') }}/{{ $item->slug }}">
-                    <img class="img-responsive" src="{{ asset('/storage/post') }}/{{ $item->list_image }}" alt="{{ $item->title }}">
-                    </a>
+    <div class="col-md-8">
+        <div class="category_section mobile">
+            @foreach($category_posts as $category)
+                <!-- article_title -->
+            
+                <div class="article_title header_black">
+                    <h2><a href="{{ url('/category') }}/{{ $category->id }}" target="_self">{{ $category->name }}</a></h2>
                 </div>
-                <!-- top_article_img -->
-            </div>
-            <div class="col-md-6">
-                <span class="tag purple">{{ $category->name }}</span>
+                @foreach($category->posts->where('status', 1)->reverse()->take(5) as $key=>$item)
+                @if($loop->first)
+                <div class="category_article_wrapper">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="top_article_img">
+                                <a href="{{ url('/details') }}/{{ $item->slug }}">
+                                <img class="img-responsive" src="{{ asset('/storage/post') }}/{{ $item->list_image }}" alt="{{ $item->title }}">
+                                </a>
+                            </div>
+                            <!-- top_article_img -->
+                        </div>
+                        <div class="col-md-6">
+                            <span class="tag purple">{{ $category->name }}</span>
 
-                <div class="category_article_title">
-                    <h2><a href="{{ url('/details') }}/{{ $item->slug }}">{{ $item->title }}</a></h2>
-                </div>
-                <!-- category_article_title --->
-                <div class="category_article_date"><a href="#">{{ date('F j,Y', strtotime($item->created_at)) }}</a>, by: <a href="{{ url('/author') }}/{{ $item->creator->id }}">{{ $item->creator->name }}</a></div>
-                <!-- category_article_date -->
-                <div class="category_article_content">
-                    {{ str_limit($item->short_description, 100, '...') }}
-                </div>
-                <!-- category_article_content -->
-                <div class="media_social">
-                    <!-- <span><a href="#"><i class="fa fa-share-alt"></i>424 </a> Shares</span> -->
-                    <span><i class="fa fa-comments-o"></i>{{ count($item->comments) }} Comments</span>
-                </div>
-                <!-- media_social -->
-            </div>
-        </div>
-    </div>
-    @else
-        @if($key === 0)
-    <div class="category_article_wrapper">
-        <div class="row">
-        @endif
-            <div class="col-md-6" style="margin-bottom: 2%">
-                <div class="media">
-                    <div class="media-left">
-                        <a href="{{ url('/details') }}/{{ $item->slug }}"><img class="media-object" src="{{ asset('/storage/post') }}/{{ $item->thumb_image }}"
-                                         alt="{{ $item->title }}"></a>
-                    </div>
-                    <div class="media-body">
-                        <span class="tag purple">{{ $category->name }}</span>
-
-                        <h3 class="media-heading"><a href="{{ url('/details') }}/{{ $item->slug }}">{{ str_limit($item->title, 50, '...') }}</a></h3>
-                        <span class="media-date"><a href="#">{{ date('F j,Y', strtotime($item->created_at)) }}</a>, by: <a href="{{ url('/author') }}/{{ $item->creator->id }}">{{ $item->creator->name }}</a></span>
-
-                        <div class="media_social">
-                            <!-- <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Shares</span> -->
-                            <span><i class="fa fa-comments-o"></i>{{ count($item->comments) }} Comments</span>
-                </div>
+                            <div class="category_article_title">
+                                <h2><a href="{{ url('/details') }}/{{ $item->slug }}">{{ $item->title }}</a></h2>
+                            </div>
+                            <!-- category_article_title --->
+                            <div class="category_article_date"><a href="#">{{ date('F j,Y', strtotime($item->created_at)) }}</a>, by: <a href="{{ url('/author') }}/{{ $item->creator->id }}">{{ $item->creator->name }}</a></div>
+                            <!-- category_article_date -->
+                            <div class="category_article_content">
+                                {{ str_limit($item->short_description, 100, '...') }}
+                            </div>
+                            <!-- category_article_content -->
+                            <div class="media_social">
+                                <!-- <span><a href="#"><i class="fa fa-share-alt"></i>424 </a> Shares</span> -->
+                                <span><i class="fa fa-comments-o"></i>{{ count($item->comments) }} Comments</span>
+                            </div>
+                            <!-- media_social -->
+                        </div>
                     </div>
                 </div>
-            </div>
-            @if($loop->last)
+                @else
+                    @if($key === 1)
+                <div class="category_article_wrapper">
+                    <div class="row">
+                    @endif
+                        <div class="col-md-6" style="margin-bottom: 2%">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="{{ url('/details') }}/{{ $item->slug }}"><img class="media-object" src="{{ asset('/storage/post') }}/{{ $item->thumb_image }}"
+                                                    alt="{{ $item->title }}"></a>
+                                </div>
+                                <div class="media-body">
+                                    <span class="tag purple">{{ $category->name }}</span>
+
+                                    <h3 class="media-heading"><a href="{{ url('/details') }}/{{ $item->slug }}">{{ str_limit($item->title, 50, '...') }}</a></h3>
+                                    <span class="media-date"><a href="#">{{ date('F j,Y', strtotime($item->created_at)) }}</a>, by: <a href="{{ url('/author') }}/{{ $item->creator->id }}">{{ $item->creator->name }}</a></span>
+
+                                    <div class="media_social">
+                                        <!-- <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Shares</span> -->
+                                        <span><i class="fa fa-comments-o"></i>{{ count($item->comments) }} Comments</span>
+                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        @if($key === 0)
+                    </div>
+                </div>
+                @endif
+                @endif
+                @endforeach
+                <p class="divider"><a href="{{ url('/category') }}/{{ $category->id }}">More News&nbsp;&raquo;</a></p>
+            @endforeach
         </div>
+        <!-- Category News Section -->
+        <nav aria-label="Page navigation" class="pagination_section">
+            <div class="pagination">
+            {{ $category_posts->links() }}
+            </div>
+        </nav>
+        <!-- navigation -->
     </div>
-    @endif
-    @endif
-    @endforeach
-    <p class="divider"><a href="{{ url('/category') }}/{{ $category->id }}">More News&nbsp;&raquo;</a></p>
-@endforeach
-</div>
-<!-- Category News Section -->
-<nav aria-label="Page navigation" class="pagination_section">
-    <div class="pagination">
-    {{ $category_posts->links() }}
-    </div>
-</nav>
-<!-- navigation -->
-</div>
 <!-- Left Section -->
 
 <!-- Right Side + Videos -->

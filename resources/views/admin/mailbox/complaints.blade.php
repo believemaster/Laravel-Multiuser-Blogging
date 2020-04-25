@@ -4,6 +4,7 @@
 
     <div class="content-wrapper">
         <section class="content-header">
+        <div class="container-fluid">
         @if($message = Session::get('success'))
           <div class="alert alert-success">
               {{ $message }}
@@ -56,6 +57,7 @@
           <!-- /. box -->
         </div>
         <!-- /.col -->
+        </div>
         </section>
     </div>
 

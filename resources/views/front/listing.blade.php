@@ -1,5 +1,9 @@
 @extends('front.layout.master')
 
+@foreach($posts->take(1) as $post)
+@section('title', $post->category->name)
+@endforeach
+
 @section('content')
 
 <section class="breadcrumb_section">

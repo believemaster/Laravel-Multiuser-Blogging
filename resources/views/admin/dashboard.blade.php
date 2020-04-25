@@ -6,24 +6,31 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        {{ Auth::user()->name }}
-        <small>Dashboard</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li class="active"><a href="{{ url('admin/dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-      </ol>
-    </section>
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">{{ Auth::user()->name }} Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content container-fluid">
-
+    <section class="content">
+      <div class="container-fluid">
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-aqua">
+          <div class="small-box bg-info">
             <div class="inner">
               <h3>{{ $bloggers_count }}<sup style="font-size: 20px">+</sup></h3>
 
@@ -106,7 +113,7 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="fa fa-comments"></i></span>
+            <span class="info-box-icon bg-info"><i class="fa fa-comments"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Total Comments</span>
@@ -151,17 +158,47 @@
       <!-- /.row -->
       @endpermission
 
+    @php 
+    /*
+    <!-- Analytics -->
+        <table id="example1" class="table table-bordered table-striped dt-responsive" width="100%">
+        <thead>
+            <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Views</th>
+            <th>Date</th>
+            <th>Total Visitors</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach($analyticsData as $i=>$data)
+            <tr>
+            <td>{{ ++$i }}</td>
+            <td>{{ $data['pageTitle'] }}</td>
+            <td>{{ $data['date'] }}</td>
+            <td>{{ $data['pageViews'] }}</td>
+            <td>{{ $data['visitors'] }}</td>
+            </tr>
+          @endforeach
+        </tbody>
+        </table>   
+        <!-- analytics -->
+        */
+        @endphp
 
+      </div>
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
   <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
+    <strong>Copyright &copy; 2020-2022 <a href="https://believemaster.com">Believe Master</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 2.0
     </div>
-    <strong>Copyright &copy; 2020-2022 <a href="https://www.believemaster.github.io">Believe Master</a>.</strong> All rights
-    reserved.
   </footer>
 
 @endsection

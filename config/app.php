@@ -186,6 +186,8 @@ return [
          // Facebook GAuth
          Laravel\Socialite\SocialiteServiceProvider::class,
 
+        //  Tracker
+
     ],
 
     /*
@@ -245,6 +247,8 @@ return [
 
         // Facebook GAuth
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
+        // Tracker
 
     ],
 

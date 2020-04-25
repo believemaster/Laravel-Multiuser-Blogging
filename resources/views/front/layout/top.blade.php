@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $shareData['system_name'] }}</title>
+    <title>@yield('title') | {{ $shareData['system_name'] }}</title>
     <meta name="title" content="{{ $shareData['meta_title'] }}">
     <meta name="keywords" content="{{ $shareData['meta_keyword'] }}">
     <meta name="description" content="{{ $shareData['meta_description'] }}">
