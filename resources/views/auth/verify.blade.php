@@ -9,23 +9,17 @@
     <title>{{ $shareData['system_name'] }}</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <!-- Bootstrap Material UI -->
+    <link rel="stylesheet" href="{{ asset('/admin/assets/plugins/bootstrap/css/bootstrap-material-design.min.css') }}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/bower_components/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/bower_components/Ionicons/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/dist/css/AdminLTE.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/dist/css/adminlte.min.css') }}">
     <!-- iCheck -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/plugins/iCheck/square/blue.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -39,7 +33,8 @@
     </a>
   </div>
   <!-- /.login-logo -->
-  <div class="login-box-body">
+  <div class="card">
+    <div class="card-body login-card-body">
     @if (session('resent'))
         <div class="alert alert-success" role="alert">
             {{ __('A fresh verification link has been sent to your email address.') }}
@@ -48,18 +43,22 @@
 
     {{ __('Before proceeding, please check your email for a verification link.') }}
     {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}">{{ __('click here to request another') }}</a>.
-  <!-- /.login-box-body -->
-</div>
+    <!-- /.login-box-body -->
+    </div>
+  </div>
 <!-- /.login-box -->
 
 
 
-    <!-- jQuery 3 -->
-    <script src="{{ asset('admin/assets/bower_components/jquery/dist/jquery.min.js') }}"></script>
+     <!-- jQuery 3 -->
+     <script src="{{ asset('admin/assets/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 3.3.7 -->
-    <script src="{{ asset('admin/assets/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/plugins/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!-- iCheck -->
     <script src="{{ asset('admin/assets/plugins/iCheck/icheck.min.js') }}"></script>
+    <!-- jquery-validation -->
+    <script src="{{ asset('admin/assets/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/plugins/jquery-validation/additional-methods.min.js') }}"></script>
     <script>
     $(function () {
         $('input').iCheck({

@@ -4,6 +4,7 @@
 
   <!-- favicon -->
   <link href="{{ asset('storage/others') }}/{{ $shareData['favicon'] }}" rel=icon>
+
   <!-- New AdminLTE -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +28,21 @@
   <link rel="stylesheet" href="{{ asset('/admin/assets/plugins/daterangepicker/daterangepicker.css') }}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('/admin/assets/plugins/summernote/summernote-bs4.css') }}">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="{{ asset('/admin/assets/plugins/sweetalert2/sweetalert2.css') }}">
+  <link rel="stylesheet" href="{{ asset('/admin/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="{{ asset('/admin/assets/plugins/toastr/toastr.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="{{ asset('/admin/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{ asset('/admin/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+
+  <link rel="stylesheet" href="{{ asset('/admin/assets/plugins/datatables-rowreorder/css/rowReorder.bootstrap4.css') }}">
+  <link rel="stylesheet" href="{{ asset('/admin/assets/plugins/datatables-responsive/css/responsive.bootstrap4.css') }}">
+
+
+  <!-- User CDN Below If Above DT Responsive Fails -->
+  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.6/css/rowReorder.dataTables.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css"> -->

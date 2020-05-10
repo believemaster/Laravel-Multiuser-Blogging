@@ -12,6 +12,12 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ url('/contact') }}" class="nav-link">Contact</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ url('/technical-issue') }}" class="nav-link">Issues</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ url('/complaints') }}" class="nav-link">Complaints</a>
+      </li>
     </ul>
 
     <!-- SEARCH FORM -->
@@ -29,9 +35,9 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- User Account Menu -->
-      <li class="dropdown user user-menu">
+      <li class="nav-item dropdown user user-menu my-auto ml-2">
         <!-- Menu Toggle Button -->
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <a href="#" class="dropdown-toggle text-info" data-toggle="dropdown">
           <!-- The user image in the navbar-->
           @if(Auth::user()->img)
           <img src="{{ asset('/storage/others') }}/{{ Auth::user()->email }}/{{ Auth::user()->img }}" class="user-image" alt="User Image" height="160px" width="160px">
@@ -41,7 +47,7 @@
           <!-- hidden-xs hides the username on small devices so only the image appears. -->
           <span class="hidden-xs">{{ Auth::user()->name }}</span>
         </a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu dropdown-menu-right">
           <!-- The user image in the menu -->
           <li class="user-header">
             @if(Auth::user()->img)
@@ -55,10 +61,10 @@
             </p>
           </li>
           <li class="user-footer">
-            <div class="pull-left">
+            <div class="float-left">
               <a href="{{ url('/admin/profile') }}" class="btn btn-default btn-flat">Profile</a>
             </div>
-            <div class="pull-right">
+            <div class="float-right">
               <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
@@ -71,6 +77,8 @@
           </li>
         </ul>
       </li>
+      @php
+      /*
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -156,11 +164,14 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      <li class="nav-item">
+      */
+      @endphp
+      
+      <!-- <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
           <i class="fas fa-th-large"></i>
         </a>
-      </li>
+      </li> -->
     </ul>
   </nav>
   <!-- /.navbar -->

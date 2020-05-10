@@ -9,16 +9,16 @@
     <title>{{ $shareData['system_name'] }}</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <!-- Bootstrap Material UI -->
+    <link rel="stylesheet" href="{{ asset('/admin/assets/plugins/bootstrap/css/bootstrap-material-design.min.css') }}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/bower_components/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/bower_components/Ionicons/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/dist/css/AdminLTE.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/dist/css/adminlte.min.css') }}">
     <!-- iCheck -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/plugins/iCheck/square/blue.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,51 +35,62 @@
 <div class="login-box">
   <div class="login-logo">
     <a href="{{ url('/') }}">
-        <img class="align-content" src="{{ asset('public/others') }}/{{ $shareData['admin_logo'] }}" alt="">
+        <!-- <img class="align-content" src="{{ asset('public/others') }}/{{ $shareData['admin_logo'] }}" alt=""> -->
+        <b>BM</b>News
     </a>
   </div>
   <!-- /.login-logo -->
-  <div class="login-box-body">
-    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
-    <p class="login-box-msg">Reset Password BM News</p>
+  <div class="card">
+      @if (session('status'))
+          <div class="alert alert-success" role="alert">
+              {{ session('status') }}
+          </div>
+      @endif
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Reset Password BM News</p>
 
-    <form method="POST" action="{{ route('password.update') }}">
-    @csrf
-      <input type="hidden" name="token" value="{{ $token }}">
-      <div class="form-group has-feedback">
-      <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
-      <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-        @error('email')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-        @enderror
-      <div class="form-group has-feedback">
-      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-      <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="">
-        <button type="submit" class="btn btn-primary btn-block btn-flat">{{ __('Reset Password') }}</button>
-      </div>
-    </form>
+      <form method="POST" action="{{ route('password.update') }}">
+      @csrf
+        <input type="hidden" name="token" value="{{ $token }}">
+        <div class="form-group has-feedback">
+        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+          @error('email')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+          @enderror
+        <div class="form-group has-feedback">
+        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">{{ __('Reset Password') }}</button>
+        </div>
+      </form>
+    </div>
+    <!-- /.login-box-body -->
   </div>
-  <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
 
 
 
-    <!-- jQuery 3 -->
-    <script src="{{ asset('admin/assets/bower_components/jquery/dist/jquery.min.js') }}"></script>
+   <!-- jQuery 3 -->
+   <script src="{{ asset('admin/assets/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 3.3.7 -->
-    <script src="{{ asset('admin/assets/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/plugins/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!-- iCheck -->
     <script src="{{ asset('admin/assets/plugins/iCheck/icheck.min.js') }}"></script>
+    <!-- jquery-validation -->
+    <script src="{{ asset('admin/assets/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/plugins/jquery-validation/additional-methods.min.js') }}"></script>
+
     <script>
     $(function () {
         $('input').iCheck({

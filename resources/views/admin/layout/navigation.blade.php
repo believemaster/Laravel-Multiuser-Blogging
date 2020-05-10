@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ url('/') }}" class="brand-link">
-      <img src="{{ asset('storage/others') }}/{{ $shareData['admin_logo'] }}" alt="BM News" class="brand-image img-circle elevation-3"
+      <img src="{{ asset('storage/others') }}/{{ $shareData['admin_logo'] }}" alt="BM News" class="elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light"><i class="fa fa-newspaper-o"></i></span>
     </a>
@@ -15,11 +15,11 @@
           @if(Auth::user()->img)
             <img src="{{ asset('/storage/others') }}/{{ Auth::user()->email }}/{{ Auth::user()->img }}" class="img-circle elevation-2" alt="{{ Auth::user()->name }}">
           @else
-            <img src="{{ asset('/storage/others/user.png') }}" class="img-circle" alt="{{ Auth::user()->name }}">
+            <img src="{{ asset('/storage/others/user.png') }}" class="img-circle elevation-2" alt="{{ Auth::user()->name }}">
           @endif
         </div>
         <div class="info">
-          <a href="#" class="d-block">HOWDY! {{ Auth::user()->name }}</a>
+          <a href="{{ url('/admin/dashboard') }}" class="d-block">HOWDY! {{ Auth::user()->name }}</a>
         </div>
       </div>
 

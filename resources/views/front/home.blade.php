@@ -113,7 +113,7 @@
                     <h2><a href="{{ url('/category') }}/{{ $category->id }}" target="_self">{{ $category->name }}</a></h2>
                 </div>
                 @foreach($category->posts->where('status', 1)->reverse()->take(5) as $key=>$item)
-                @if($loop->first)
+                @if($loop->last)
                 <div class="category_article_wrapper">
                     <div class="row">
                         <div class="col-md-6">
@@ -146,7 +146,7 @@
                     </div>
                 </div>
                 @else
-                    @if($key === 1)
+                    @if($key === 0)
                 <div class="category_article_wrapper">
                     <div class="row">
                     @endif
@@ -169,7 +169,7 @@
                                 </div>
                             </div>
                         </div>
-                        @if($key === 0)
+                        @if($loop->last)
                     </div>
                 </div>
                 @endif

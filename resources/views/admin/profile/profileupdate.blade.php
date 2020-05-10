@@ -6,27 +6,35 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        {{ Auth::user()->name }}
-        <small>Profile</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li class="active"><a href="{{ url('admin/dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-      </ol>
-    </section>
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h1>
+                    {{ Auth::user()->name }} Profile
+                </h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-info">Home</a></li>
+                        <li class="breadcrumb-item active">Profile</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="content">
         <div class="row">
-            <div class="col-xs-12">
-                <div class="box box-primary">
-                    <div class="box-header with-border">
+            <div class="col-sm-12">
+                <div class="card card-info card-outline">
+                    <div class="card-header with-border">
                         <strong class="card-title">{{ $page_name }}</strong>
                     </div>
-                    <div class="box-body">
+                    <div class="card-body">
                         <!-- Credit Card -->
                         <div id="">
-                            <div class="box-body">
+                            <div class="card-body">
                             @if(count($errors) > 0)
                             <div class="alert alert-danger" role="alert">
                                 <ul>
@@ -97,10 +105,10 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
+    <div class="float-right hidden-xs">
+      <b>Version</b> 2.0
     </div>
-    <strong>Copyright &copy; 2020-2022 <a href="https://www.believemaster.github.io">Believe Master</a>.</strong> All rights
+    <strong>Copyright &copy; 2020-2022 <a href="https://www.believemaster.github.io" class="text-info">Believe Master</a>.</strong> All rights
     reserved.
   </footer>
 

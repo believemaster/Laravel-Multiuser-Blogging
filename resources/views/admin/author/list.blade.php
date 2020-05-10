@@ -12,7 +12,7 @@
                     </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-info">Home</a></li>
                         <li class="breadcrumb-item active">Authors</li>
                     </ol>
                 </div>
@@ -23,12 +23,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <div class="card">
+                <div class="card card-info card-outline">
 
                     @if($message = Session::get('success'))
-                    <div class="alert alert-success">
-                        {{ $message }}
-                    </div>
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <i class="icon fas fa-check"></i> {{ $message }}
+                        </div>
                     @endif
 
                     <div class="card-header">

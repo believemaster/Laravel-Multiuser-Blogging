@@ -28,6 +28,59 @@
       <div class="container-fluid">
       <!-- Small boxes (Stat box) -->
       <div class="row">
+        <div class="col-md-12">
+          <div class="card card-widget widget-user">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header text-white"
+                  style="background: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg') center center;">
+              <h3 class="widget-user-username text-right">{{ Auth::user()->name }}</h3>
+              @if(Auth::user()->type == 1)
+              <h5 class="widget-user-desc text-right">Super Admin</h5>
+              @elseif(Auth::user()->type == 2)
+              <h5 class="widget-user-desc text-right">Author</h5>
+              @elsef=if(Auth::user()->type == 3)
+              <h5 class="widget-user-desc text-right">Editor</h5>
+              @endif
+            </div>
+            <div class="widget-user-image">
+            <img class="img-resonsive" src="{{ asset('/storage/others') }}/{{ Auth::user()->email }}/{{ Auth::user()->img }}" alt="User Avatar">
+            </div>
+            <div class="card-footer bg-gray">
+            @php
+            /*
+              <div class="row">
+                <div class="col-sm-4 border-right">
+                  <div class="description-block">
+                    <h5 class="description-header">3,200</h5>
+                    <span class="description-text">POSTS</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-4 border-right">
+                  <div class="description-block">
+                    <h5 class="description-header">13,000</h5>
+                    <span class="description-text">LIKES</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-4">
+                  <div class="description-block">
+                    <h5 class="description-header">35</h5>
+                    <span class="description-text">COMMENTS</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+            */
+            @endphp
+            </div>
+          </div>
+          <!-- /.widget-user -->
+        </div>
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-info">
@@ -62,7 +115,7 @@
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-yellow">
+          <div class="small-box bg-secondary">
             <div class="inner">
               <h3>{{ $authors_count }}</h3>
 
@@ -143,7 +196,7 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+            <span class="info-box-icon bg-secondary"><i class="ion ion-ios-people-outline"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Total Users</span>

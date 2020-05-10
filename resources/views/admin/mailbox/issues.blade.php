@@ -11,11 +11,11 @@
         </div>
         @endif
         <div class="col-md-12">
-          <div class="card card-primary">
+          <div class="card card-info card-outline">
             <div class="card-header with-border">
               <h3 class="card-title">{{ $page_name }}</h3>
 
-              <div class="card-tools pull-right">
+              <div class="card-tools float-right">
                 <div class="has-feedback">
                   <input type="text" class="form-control input-sm" placeholder="Search Mail">
                   <span class="glyphicon glyphicon-search form-control-feedback"></span>

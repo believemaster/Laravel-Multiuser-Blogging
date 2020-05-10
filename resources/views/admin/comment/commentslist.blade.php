@@ -4,30 +4,39 @@
 
 
     <div class="content-wrapper">
-        <section class="content-header">
-        <h1>
-            {{ $page_name }}
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="{{ url('admin/dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Comments List</li>
-        </ol>
-        </section>
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                    <h1>
+                        {{ $page_name }}
+                    </h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-info">Home</a></li>
+                            <li class="breadcrumb-item active">Comments</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <section class="content">
             <div class="row">
-                <div class="col-xs-12">
-                    <div class="box">
+                <div class="col-sm-12">
+                    <div class="card card-info card-outline">
                 @if($message = Session::get('success'))
                     <div class="alert alert-success">
                         {{ $message }}
                     </div>
                 @endif
 
-                    <div class="box-header">
-                        <h3 class="box-title">{{ $page_name }}</h3>
+                    <div class="card-header">
+                        <h3 class="card-title">{{ $page_name }}</h3>
                     </div>
-                    <div class="box-body">
-                <table id="example1" class="table table-bordered table-striped dt-responsive">
+                    <div class="card-body">
+                <table id="example1" class="table table-bordered table-hover dt-responsive">
                 <thead>
                     <tr>
                     <th>#</th>

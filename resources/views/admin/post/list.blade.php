@@ -12,24 +12,25 @@
                         </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-info">Home</a></li>
                             <li class="breadcrumb-item active">Posts</li>
                         </ol>
                     </div>
                 </div>
             </div>
         </div>
+        
         <section class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="card">
                         @if($message = Session::get('success'))
-                            <div class="alert alert-success">
-                                {{ $message }}
+                            <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <i class="icon fas fa-check"></i> {{ $message }}
                             </div>
                         @endif
-
+                    <div class="card card-info card-outline">
                         <div class="card-header">
                             <h3 class="card-title">{{ $page_name }}</h3>
                             @permission(['Post Add', 'All'])
@@ -37,7 +38,7 @@
                             @endpermission
                         </div>
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-hover dt-responsive" width="100%">
+                            <table id="example1" class="table table-bordered table-hover responsive">
                             <thead>
                                 <tr>
                                 <th>#</th>
@@ -69,12 +70,12 @@
                                     @endphp
                                 <td>{{ $in_K }}k <br>
                                     @if( $row->view_count === $top_viewed) 
-                                    <small class="label pull-right bg-purple pull-left">Top <i class="fa fa-eye"></i></small>
+                                    <small class="badge float-left bg-purple">Top <i class="fa fa-eye"></i></small>
                                     @endif
                                 </td>
                                 @else
                                 <td>{{ $row->view_count }}
-                                    @if( $row->view_count === $top_viewed) <small class="label pull-right bg-purple">Top <i class="fa fa-eye"></i></small> @endif
+                                    @if( $row->view_count === $top_viewed) <small class="badge float-left bg-purple">Top <i class="fa fa-eye"></i></small> @endif
                                 </td>
                                 @endif
 
@@ -163,22 +164,23 @@
 
     {{-- Data Table JS --}}
 
-    <script>
-    $(function () {
-        $('#example1').DataTable({
+    <script type="text/javascript">
+     $(function () {
+        $("#example1").DataTable({
             responsive: true
-        })
+        });
         $('#example2').DataTable({
-        'paging'      : true,
-        'lengthChange': false,
-        'searching'   : false,
-        'ordering'    : true,
-        'info'        : true,
-        'autoWidth'   : false
-        })
-    })
+        "paging": true,
+        "lengthChange": true,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": true,
+        });
+    });
     </script>
 
     {{-- Data Table JS Ends --}}
+    
 
 @endsection

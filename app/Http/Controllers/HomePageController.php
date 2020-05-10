@@ -27,12 +27,12 @@ class HomePageController extends Controller
                             ->limit(2)
                             ->get();
 
-        $category_posts = Category::with('posts')
+        $category_posts = Category::whereHas('posts')
                                 ->where('status',1)
-                                ->orderBy('id','DESC')
+                                ->orderBy('id', 'DESC')
                                 ->paginate(5);
 
-        return view('front.home', compact('hot_news', 'top_viewed', 'category_posts', 'top_authors'));
+        return view('front.home', compact('hot_news', 'top_viewed', 'category_posts'));
     }
 
     public function subscribe(Request $request)

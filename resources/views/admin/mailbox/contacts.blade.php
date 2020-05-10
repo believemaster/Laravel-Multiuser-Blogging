@@ -11,7 +11,7 @@
           </div>
         @endif
         <div class="col-md-12">
-          <div class="card card-primary">
+          <div class="card card-info card-outline">
             <div class="card-header with-border">
               <h3 class="card-title">{{ $page_name }}</h3>
 

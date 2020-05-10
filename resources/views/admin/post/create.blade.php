@@ -18,36 +18,45 @@
         });
     </script>
 
-        <script>
-            CKEDITOR.replace('description',{
-                filebrowserImageBrowseUrl: '{{ url("/public") }}/laravel-filemanager?type-Images',
-                filebrowserImageBrowseUrl: '{{ url("/public") }}/laravel-filemanager/upload?type-Images&_token={{ csrf_token() }}',
-                filebrowserBrowseUrl: '{{ url("/public") }}/laravel-filemanager?type-Files',
-                filebrowserBrowseUrl: '{{ url("/public") }}/laravel-filemanager/upload?type-Files&_token={{ csrf_token() }}',
-            });
-        </script>
+    <script>
+        CKEDITOR.replace('description',{
+            filebrowserImageBrowseUrl: '{{ url("/public") }}/laravel-filemanager?type-Images',
+            filebrowserImageBrowseUrl: '{{ url("/public") }}/laravel-filemanager/upload?type-Images&_token={{ csrf_token() }}',
+            filebrowserBrowseUrl: '{{ url("/public") }}/laravel-filemanager?type-Files',
+            filebrowserBrowseUrl: '{{ url("/public") }}/laravel-filemanager/upload?type-Files&_token={{ csrf_token() }}',
+        });
+    </script>
     <div class="content-wrapper">
-        <section class="content-header">
-        <h1>
-            {{ $page_name }}
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li>Posts</li>
-            <li class="active">Create</li>
-        </ol>
-        </section>
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                    <h1>
+                        {{ $page_name }}
+                    </h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-info">Home</a></li>
+                            <li class="breadcrumb-item">Post</li>
+                            <li class="breadcrumb-item active">Create</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <section class="content">
         <div class="row">
-            <div class="col-xs-12">
-                <div class="box box-primary">
-                    <div class="box-header with-border">
+            <div class="col-sm-12">
+                <div class="card card-info card-outline">
+                    <div class="card-header with-border">
                         <strong class="card-title">{{ $page_name }}</strong>
                     </div>
-                    <div class="box-body">
+                    <div class="card-body">
                         <!-- Credit Card -->
                         <div id="">
-                            <div class="box-body">
+                            <div class="card-body">
                         @if(count($errors) > 0)
                         <div class="alert alert-danger" role="alert">
                             <ul>
